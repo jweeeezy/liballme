@@ -1,4 +1,5 @@
 NAME		=	liballme.a
+INCLUDE_DIR	=	./include/
 LIBFT_DIR	=	./libft/
 LIBFT		=	$(LIBFT_DIR)libft.a
 LIBME_DIR	=	./libme/
@@ -7,6 +8,7 @@ PRINTF_DIR	=	./printf/
 PRINTF		=	$(PRINTF_DIR)libftprintf.a
 GNL_DIR		=	./get_next_line/
 GNL		=	$(GNL_DIR)libgnl.a
+VPATH		=	$(INCLUDE_DIR)
 LIB_MERGE	=	ar -crsT $(NAME)
 REMOVE		=	rm -f
 
