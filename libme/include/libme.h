@@ -50,7 +50,8 @@ char	*ft_strdup_set(char const *str_to_search, char const *str_set_to_find);
 void	ft_strrev(char *str_to_reverse);
 //	Purpose:	Counts the index of an array
 //	Arguments	array_to_count
-size_t	ft_array_len(void **array_to_count);
+size_t	ft_input_len(char **array_to_count);
+void	ft_input_print(char **array_to_print);
 
 #endif
 

@@ -7,7 +7,7 @@ char	*ft_input_strjoin(char **argv)
 
 	if (argv == NULL)
 		return (NULL);
-	index = 1;
+	index = 0;
 	str_return = ft_str_empty();
 	if (str_return == NULL)
 		return (NULL);

@@ -1,6 +1,6 @@
 #include "libme.h"
 
-size_t	ft_array_len(void **array_to_count)
+size_t	ft_input_len(char **array_to_count)
 {
 	size_t	index;
 
