@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2022/09/26 12:18:19 by jwillert         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME			=	libme.a
 INCLUDE_DIR		=	./include/
 SRC_DIR			=	./src/
@@ -17,19 +5,19 @@ OBJ_DIR			=	./obj/
 LIBFT_DIR		=	../libft/
 LIBFT			=	$(LIBFT_DIR)libft.a
 VPATH			=	$(SRC_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
-SRC_FILES		=	ft_array_strjoin.c\
-				ft_itoa_hexadecimal.c\
-				ft_itoa_hexadecimal_long.c\
-				ft_itoa_unsigned.c\
-				ft_ptr_get_address.c\
-				ft_str_empty.c\
-				ft_str_find_char.c\
-				ft_strdup_set.c\
-				ft_strrev.c	
+SRC_FILES		=	ft_input_strjoin.c\
+					ft_itoa_hexadecimal.c\
+					ft_itoa_hexadecimal_long.c\
+					ft_itoa_unsigned.c\
+					ft_ptr_get_address.c\
+					ft_str_empty.c\
+					ft_str_find_char.c\
+					ft_strdup_set.c\
+					ft_strrev.c	
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
-SRC			=	$(addprefix $(SRC_DIR),$(SRC_FILES))
-OBJ			=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
-CC			=	cc
+SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
+OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
+CC				=	cc
 CFLAGS			=	-Wall -Wextra -Werror
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)/include/
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@ 
@@ -41,24 +29,24 @@ REMOVE			=	rm -f
 
 all:				$(NAME)
 $(NAME):			$(OBJ_FILES)
-				$(MAKE) -C $(LIBFT_DIR)
-				cp $(LIBFT) $(NAME)
-				$(LIB_CREATE) $(OBJ)
+					$(MAKE) -C $(LIBFT_DIR)
+					cp $(LIBFT) $(NAME)
+					$(LIB_CREATE) $(OBJ)
 %.o:				%.c		
-				$(CC_OBJ)
+					$(CC_OBJ)
 list:				$(NAME)
-				@echo
-				@echo
-				@echo "Library <$(NAME)> is containing the following functions:"
-				@ar -t $(NAME) | sort -g
-				@echo
-				@echo
+					@echo
+					@echo
+					@echo "Library <$(NAME)> is containing the following functions:"
+					@ar -t $(NAME) | sort -g
+					@echo
+					@echo
 clean:
-				$(MAKE) clean -C $(LIBFT_DIR)
-				$(REMOVE) $(OBJ)
+					$(MAKE) clean -C $(LIBFT_DIR)
+					$(REMOVE) $(OBJ)
 fclean: 			clean
-				$(MAKE) fclean -C $(LIBFT_DIR)
-				$(REMOVE) $(NAME)
-re:				fclean
-				$(MAKE)
+					$(MAKE) fclean -C $(LIBFT_DIR)
+					$(REMOVE) $(NAME)
+re:					fclean
+					$(MAKE)
 
