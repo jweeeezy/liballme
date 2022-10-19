@@ -48,6 +48,9 @@ char	*ft_strdup_set(char const *str_to_search, char const *str_set_to_find);
 //	Purpose:	Reverses a str in place (no malloc used)
 //	Argument:	str_to_reverse
 void	ft_strrev(char *str_to_reverse);
+//	Purpose:	Counts the index of an array
+//	Arguments	array_to_count
+size_t	ft_array_len(void **array_to_count);
 
 #endif
 
