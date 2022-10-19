@@ -1,6 +1,6 @@
 #include "libme.h"
 
-char	*ft_array_strjoin(char **argv)
+char	*ft_input_strjoin(char **argv)
 {
 	size_t	index;
 	char	*str_return;

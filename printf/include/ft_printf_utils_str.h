@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF__UTILS_STR_H
-# define FT_PRINTF_STR_UTILS_H
+#ifndef FT_PRINTF_UTILS_STR_H
+# define FT_PRINTF_UTILS_STR_H
 # include "ft_printf.h"
 
 //	takes char c and (output-)length and prints like 'c'

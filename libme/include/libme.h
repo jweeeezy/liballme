@@ -17,7 +17,7 @@
 //	Purpose:	Puts all strings in an array into one string separated by a blank space (with malloc)
 //	Argument:	array with strings
 //	Return:		String containing all array strings
-char	*ft_array_strjoin(char **argv);
+char	*ft_input_strjoin(char **argv);
 //	Purpose:	Converts an unsigned long int (e.g. address of a ptr) into a hexadecimal str (with malloc) either in lowercase (flag_caps = 0) or uppercase (flag_caps = 1)
 //	Argument:	ulint_to_convert (can be casted), flag_caps
 //	Return:		Newly allocated str version of the ulint in hexadecimal
