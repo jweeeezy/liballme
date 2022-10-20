@@ -43,7 +43,7 @@ list:
 				@echo
 				@echo
 test:			
-				$(CC) $(CFLAGS) $(INCLUDE) main.c $(NAME)
+				$(CC) $(CFLAGS) $(INCLUDE) main.c lst_print_content.c $(NAME)
 libft:			
 				$(MAKE) -C $(LIBFT_DIR)
 				cp $(LIBFT) $(NAME)
