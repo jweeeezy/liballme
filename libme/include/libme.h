@@ -14,6 +14,11 @@
 # define LIBME_H
 # include "libft.h"
 
+typedef struct s_lst
+{
+	int	content;
+	struct	s_lst	*next;
+}		t_lst;
 //	Purpose:	Puts all strings in an array into one string separated by a blank space (with malloc)
 //	Argument:	array with strings
 //	Return:		String containing all array strings
@@ -52,6 +57,7 @@ void	ft_strrev(char *str_to_reverse);
 //	Arguments	array_to_count
 size_t	ft_input_len(char **array_to_count);
 void	ft_input_print(char **array_to_print);
+void	ft_lst_free(t_lst **lst_to_free);
 
 #endif
 
