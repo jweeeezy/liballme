@@ -40,4 +40,3 @@ size_t	gnl_strlcpy(char *string_target,
 size_t	gnl_strlen(const char *string);
 
 #endif
-

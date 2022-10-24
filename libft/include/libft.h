@@ -24,25 +24,25 @@ typedef struct s_list
 //	Purpose:	Check char if its value is part of the alphabet
 //	Argument:	c_to_check
 //	Return:		True (1) or false (0)
-int	ft_isalpha(int c_to_check);
+int		ft_isalpha(int c_to_check);
 //	Purpose:	Check char if its value is representing a digit
 //	Argument:	c_to_check
 //	Return:		True (1) or false (0)
-int	ft_isdigit(int c_to_check);
+int		ft_isdigit(int c_to_check);
 //	Purpose:	Check char if its value is either part of
 //			the alphabet or a digit or not
 //	Argument:	c_to_check
 //	Return:		True (1) or false (0)
-int	ft_isalnum(int c_to_check);
+int		ft_isalnum(int c_to_check);
 //	Purpose:	Check char if its value is part of the ASCII table
 //	Argument:	c_to_check
 //	Return:		True (1) or false (0)
-int	ft_isascii(int c_to_check);
+int		ft_isascii(int c_to_check);
 //	Purpose:	Check char if its value is part of the printable char
 //			of the ASCII table
 //	Argument:	c_to_check
 //	Return:		True (1) or false (0)
-int	ft_isprint(int c_to_check);
+int		ft_isprint(int c_to_check);
 //	Purpose:	Count the length of a str
 //	Argument:	str_to_count
 //	Return:		Length of the str
@@ -78,11 +78,11 @@ size_t	ft_strlcat(char *str_target, const char *str_source,
 //	Purpose:	Change value of a lowercase char to an uppercase char
 //	Argument:	c_to_change
 //	Return:		New value of the char
-int	ft_toupper(int c_to_change);
+int		ft_toupper(int c_to_change);
 //	Purpose:	Change value of an uppercase char to a lowercase char
 //	Argument:	c_to_change
 //	Return:		New value of the char
-int	ft_tolower(int c_to_change);
+int		ft_tolower(int c_to_change);
 //	Purpose:	Search for the first occurence of a char in a str
 //	Argument:	str_to_seach, c_to_find
 //	Return:		ptr to the first occurence or NULL if it fails
@@ -95,14 +95,14 @@ char	*ft_strrchr(const char *str_to_search, int c_to_find);
 //			until the first difference is found
 //	Argument:	str_first, str_second, amount of bytes
 //	Return:		Difference or 0 if there is none
-int	ft_strncmp(const char *str_first, const char *str_second, size_t bytes);
+int		ft_strncmp(const char *str_first, const char *str_second, size_t bytes);
 //	Purpose:	Search for a char at a memory address for an amount of bytes
 //	Argument:	memory address, c_to_find, amount of bytes
 //	Return:		ptr to the address if the char is found or NULL if it failed
 void	*ft_memchr(const void *ptr_to_search, int c_to_find, size_t bytes);
 //	compares byte string s1 and byte string s2 for n bytes
 //	|| returns difference if there is any or NULL
-int	ft_memcmp(const void *str_first, const void *str_second, size_t bytes);
+int		ft_memcmp(const void *str_first, const void *str_second, size_t bytes);
 //	Purpose:	Search for the occurence of a str (needle)
 //			in another str (haystack) for a specific amount of char
 //	Argument:	str haystack, str needle, amount of char
@@ -112,7 +112,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t length);
 //			a str and convert the number to its int representation
 //	Argument:	str
 //	Return:		Converted number as an int
-int	ft_atoi(const char *str_to_convert);
+int		ft_atoi(const char *str_to_convert);
 //	Purpose:	Allocates (with malloc) a specific size (count * bytes)
 //			and sets 0 as values
 //	Argument:	Count, Amount of bytes
@@ -174,7 +174,7 @@ t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *node_to_add);
 //	Purpose:	Counts the amount of nodes in a lst
 //	Argument:	lst
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 //	Purpose:	Get the address of the last node of a lst
 //	Argument:	lst
 //	Return:		ptr to last node

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_input_strjoin.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 15:48:45 by jwillert          #+#    #+#             */
+/*   Updated: 2022/10/24 15:48:49 by jwillert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libme.h"
 
 char	*ft_input_strjoin(char **argv)
@@ -19,4 +31,3 @@ char	*ft_input_strjoin(char **argv)
 	}
 	return (str_return);
 }
-

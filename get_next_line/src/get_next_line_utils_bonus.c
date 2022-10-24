@@ -38,7 +38,8 @@ char	*gnl_strjoin(char *string_first, char *string_second)
 	return (string_new);
 }
 
-size_t	gnl_strlcat(char *string_target, char *string_source, size_t size_needed)
+size_t	gnl_strlcat(char *string_target,
+		char *string_source, size_t size_needed)
 {
 	size_t	offset;
 	size_t	size_target;
@@ -59,7 +60,8 @@ size_t	gnl_strlcat(char *string_target, char *string_source, size_t size_needed)
 	return (size_source + size_target);
 }
 
-size_t	gnl_strlcpy(char *string_target, char *string_source, size_t size_needed)
+size_t	gnl_strlcpy(char *string_target,
+		char *string_source, size_t size_needed)
 {
 	size_t	index;
 

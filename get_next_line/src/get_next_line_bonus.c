@@ -85,7 +85,7 @@ static char	*gnl_adjust_buffer(char *buffer_to_adjust)
 
 static char	*gnl_read_until_newline(int fd, char *buffer_static)
 {
-	char		*buffer_read;
+	char	*buffer_read;
 	int		read_return;
 
 	buffer_read = malloc (sizeof (char) * (BUFFER_SIZE + 1));
@@ -121,4 +121,3 @@ char	*get_next_line(int fd)
 	buffer_static[fd] = gnl_adjust_buffer(buffer_static[fd]);
 	return (buffer_return);
 }
-

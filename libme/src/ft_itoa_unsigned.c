@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:26 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 15:24:13 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:50:42 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*ft_uint_to_str(char *str_return,
 
 char	*ft_itoa_unsigned(unsigned int uint_to_convert)
 {
-	int	int_digits;
+	int		int_digits;
 	char	*str_return;
 
 	int_digits = 1;

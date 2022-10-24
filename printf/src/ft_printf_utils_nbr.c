@@ -55,7 +55,7 @@ int	ft_ifu(unsigned int nu, int length)
 int	ft_ifxlower(unsigned int nu, int length)
 {
 	char	*str;
-	int	caps;
+	int		caps;
 
 	caps = 0;
 	str = NULL;
@@ -77,7 +77,7 @@ int	ft_ifxlower(unsigned int nu, int length)
 int	ft_ifxupper(unsigned int nu, int length)
 {
 	char	*str;
-	int	caps;
+	int		caps;
 
 	caps = 1;
 	str = NULL;
