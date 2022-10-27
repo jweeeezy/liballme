@@ -1,6 +1,6 @@
 #include "libme.h"
 
-static size_t	str_iter_spaces(const char *str_to_iter)
+static size_t	str_iter_spaces(char *str_to_iter)
 {
 	size_t	index;
 
@@ -16,7 +16,7 @@ static size_t	str_iter_spaces(const char *str_to_iter)
 	return (index);
 }
 
-static long int	str_to_lint(const char *str_to_convert, size_t index, char sign_algebraic)
+static long int	str_to_lint(char *str_to_convert, size_t index, char sign_algebraic)
 {
 	long int	lint_return;
 
@@ -35,7 +35,7 @@ static long int	str_to_lint(const char *str_to_convert, size_t index, char sign_
 	return (lint_return * sign_algebraic);
 }
 
-long int	ft_atoi_long(const char *str_to_convert)
+long int	ft_atoi_long(char *str_to_convert)
 {
 	char		sign_algebraic;
 	size_t		index;

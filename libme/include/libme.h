@@ -78,6 +78,6 @@ void	ft_lst_free(t_lst **lst_to_free);
 //			handle INT_MAX and INT_MIN and throws an error (9 999 999 999)
 //	Argument:	str_to_convert
 //	Return:		Newly allocated long (with malloc), str wont be freed!
-long	ft_atoi_long(const char *str_to_convert);
+long	ft_atoi_long(char *str_to_convert);
 
 #endif
