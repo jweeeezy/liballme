@@ -16,7 +16,8 @@ SRC_FILES		=	ft_input_strjoin.c\
 				ft_strrev.c\
 				ft_input_len.c\
 				ft_input_print.c\
-				ft_lst_free.c
+				ft_lst_free.c\
+				ft_atoi_long.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC			=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

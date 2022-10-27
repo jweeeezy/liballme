@@ -74,5 +74,10 @@ void	ft_input_print(char **array_to_print);
 //	Purpose:	Frees all nodes of a linked lst
 //	Argument:	lst_to_free
 void	ft_lst_free(t_lst **lst_to_free);
+//	Purpose:	Converts a str to its number representation. Uses the data type long to
+//			handle INT_MAX and INT_MIN and throws an error (9 999 999 999)
+//	Argument:	str_to_convert
+//	Return:		Newly allocated long (with malloc), str wont be freed!
+long	ft_atoi_long(const char *str_to_convert);
 
 #endif
