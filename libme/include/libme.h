@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/10/24 15:45:19 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/02 09:48:53 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,9 @@ void	ft_input_print(char **array_to_print);
 //	Purpose:	Frees all nodes of a linked lst
 //	Argument:	lst_to_free
 void	ft_lst_free(t_lst **lst_to_free);
-//	Purpose:	Converts a str to its number representation. Uses the data type long to
-//			handle INT_MAX and INT_MIN and throws an error (9 999 999 999)
+//	Purpose:	Converts a str to its number representation. Uses the data
+//				type long to handle INT_MAX and INT_MIN
+//				and throws an error (9 999 999 999)
 //	Argument:	str_to_convert
 //	Return:		Newly allocated long (with malloc), str wont be freed!
 long	ft_atoi_long(char *str_to_convert);

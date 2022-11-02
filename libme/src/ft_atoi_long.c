@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/02 09:49:16 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/02 09:50:44 by jwillert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libme.h"
 
 static size_t	str_iter_spaces(char *str_to_iter)
@@ -16,7 +28,8 @@ static size_t	str_iter_spaces(char *str_to_iter)
 	return (index);
 }
 
-static long int	str_to_lint(char *str_to_convert, size_t index, char sign_algebraic)
+static long int	str_to_lint(char *str_to_convert, size_t index,
+		char sign_algebraic)
 {
 	long int	lint_return;
 
@@ -30,8 +43,9 @@ static long int	str_to_lint(char *str_to_convert, size_t index, char sign_algebr
 		lint_return = (lint_return * 10) + (str_to_convert[index] - 48);
 		index++;
 	}
-	if (lint_return * sign_algebraic > 2147483647 || lint_return * sign_algebraic < -2147483648)
-			return (9999999999);
+	if (lint_return * sign_algebraic > 2147483647
+		|| lint_return * sign_algebraic < -2147483648)
+		return (9999999999);
 	return (lint_return * sign_algebraic);
 }
 
