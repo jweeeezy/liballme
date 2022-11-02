@@ -6,20 +6,21 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:49:16 by jwillert          #+#    #+#             */
-/*   Updated: 2022/10/24 15:49:20 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:19:32 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	ft_lst_free(t_lst **lst_to_free)
+void	ft_lst_free(t_lst *lst_to_free)
 {
-	t_lst	*lst_temp;
+	t_lst *prev;
 
-	while (lst_to_free != NULL && *lst_to_free != NULL)
+	prev = lst_to_free;
+	while (lst_to_free != NULL)
 	{
-		lst_temp = (*(*(lst_to_free))).next;
-		free(*lst_to_free);
-		*lst_to_free = lst_temp;
+		prev = lst_to_free;
+		lst_to_free = lst_to_free->next;
+		free(prev);
 	}
 }

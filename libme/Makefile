@@ -22,9 +22,9 @@ OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC			=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
 CC			=	cc
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -g
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)/include/
-CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@ 
+CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f
 
@@ -36,7 +36,7 @@ $(NAME):			$(OBJ_FILES)
 				$(MAKE) -C $(LIBFT_DIR)
 				cp $(LIBFT) $(NAME)
 				$(LIB_CREATE) $(OBJ)
-%.o:				%.c		
+%.o:				%.c
 				$(CC_OBJ)
 list:				$(NAME)
 				@echo

@@ -23,7 +23,7 @@ INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_INCLUDE) -I $(LIBME_INCLUDE) -I $(PRINT
 .PHONY:				all list test libft libme printf gnl clean fclean re
 
 all:				$(NAME)
-$(NAME):		
+$(NAME):
 				$(MAKE) -C $(PRINTF_DIR)
 				$(MAKE) -C $(GNL_DIR)
 				cp $(PRINTF) ./obj
@@ -35,16 +35,17 @@ $(NAME):
 				rm ./obj/libgnl.a
 				ar -cr $(NAME) *.o
 				rm *.o
-list:			
+				rm __.SYMDEF\ SORTED
+list:
 				@echo
 				@echo
 				@echo "Library <$(NAME)> is containing the following functions:"
 				@ar -t $(NAME) | sort -g
 				@echo
 				@echo
-test:			
+test:
 				$(CC) $(CFLAGS) $(INCLUDE) main.c $(NAME)
-libft:			
+libft:
 				$(MAKE) -C $(LIBFT_DIR)
 				cp $(LIBFT) $(NAME)
 libme:
@@ -56,7 +57,7 @@ printf:
 gnl:
 				$(MAKE) -C $(GNL_DIR)
 				cp $(GNL) $(NAME)
-clean:			
+clean:
 				$(MAKE) clean -C $(LIBFT_DIR)
 				$(MAKE) clean -C $(LIBME_DIR)
 				$(MAKE) clean -C $(PRINTF_DIR)

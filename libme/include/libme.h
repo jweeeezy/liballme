@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/02 09:48:53 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:05:44 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ size_t	ft_input_len(char **array_to_count);
 void	ft_input_print(char **array_to_print);
 //	Purpose:	Frees all nodes of a linked lst
 //	Argument:	lst_to_free
-void	ft_lst_free(t_lst **lst_to_free);
+void	ft_lst_free(t_lst *lst_to_free);
 //	Purpose:	Converts a str to its number representation. Uses the data
 //				type long to handle INT_MAX and INT_MIN
 //				and throws an error (9 999 999 999)
