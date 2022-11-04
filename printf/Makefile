@@ -20,7 +20,7 @@ LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f
 
 .DELETE_ON_ERROR:
-.PHONY:				all list clean fclean re
+.PHONY:				all clean fclean re list
 
 all:				$(NAME)
 $(NAME):			$(OBJ_FILES)
@@ -29,13 +29,6 @@ $(NAME):			$(OBJ_FILES)
 					$(LIB_CREATE) $(OBJ)
 %.o:				%.c
 					$(CC_OBJ)
-list:				$(NAME)
-					@echo
-					@echo
-					@echo "Library <$(NAME)> is containing the following functions:"
-					@ar -t $(NAME) | sort -g
-					@echo
-					@echo
 clean:
 					$(MAKE) clean -C $(LIBME_DIR)
 					$(REMOVE) $(OBJ)
@@ -44,3 +37,10 @@ fclean: 			clean
 					$(REMOVE) $(NAME)
 re:					fclean
 					$(MAKE)
+list:
+					@echo
+					@echo
+					@echo "Library <$(NAME)> is containing the following functions:"
+					@ar -t $(NAME) | sort -g
+					@echo
+					@echo
