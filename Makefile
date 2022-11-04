@@ -19,7 +19,6 @@ CFLAGS			=	-Wall -Wextra -Werror
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_INCLUDE) -I $(LIBME_INCLUDE) -I $(PRINTF_INCLUDE) -I $(GNL_INCLUDE)
 SRC_FILES		=	$(OBJ_FILES:.o=.c)
 OBJ_FILES		=	$(shell ar -t $(PRINTF) | grep ft_) $(shell ar -t $(GNL) | grep get)
-SYMDEF			=	$(shell if test -f "__.SYMDEF\ SORTED"; then rm __.SYMDEF\ SORTED fi)
 
 .DELETE_ON_ERROR:
 .PHONY:				all clean fclean re list test libft libft_make libme libme_make printf printf_make gnl gnl_make
@@ -31,9 +30,9 @@ $(NAME):			printf_make gnl_make
 					ar -x ./libftprintf.a
 					ar -x ./libgnl.a
 					ar -cr $(NAME) $(OBJ_FILES)
-					mv $(OBJ_FILES) ./obj
-					rm libgnl.a
-					rm libftprintf.a
+					$(REMOVE) $(OBJ_FILES)
+					$(REMOVE) libgnl.a
+					$(REMOVE) libftprintf.a
 					test -f ./__.SYMDEF\ SORTED && rm __.SYMDEF\ SORTED
 clean:
 					$(MAKE) clean -C $(LIBFT_DIR)
