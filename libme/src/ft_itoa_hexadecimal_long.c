@@ -71,6 +71,6 @@ char	*ft_itoa_hexadecimal_long(unsigned long int int_to_convert,
 	string_return = ft_ulint_to_string(int_to_convert, flag_caps);
 	if (string_return == NULL)
 		return (NULL);
-	ft_strrev(string_return);
+	ft_str_rev(string_return);
 	return (string_return);
 }

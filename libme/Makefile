@@ -13,7 +13,7 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_str_empty.c\
 					ft_str_find_char.c\
 					ft_strdup_set.c\
-					ft_strrev.c\
+					ft_str_rev.c\
 					ft_input_len.c\
 					ft_input_print.c\
 					ft_lst_free.c\

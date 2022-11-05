@@ -68,6 +68,6 @@ char	*ft_itoa_hexadecimal(unsigned int uint_to_convert, int flag_caps)
 	str_return = ft_uint_to_string(uint_to_convert, flag_caps);
 	if (str_return == NULL)
 		return (NULL);
-	ft_strrev(str_return);
+	ft_str_rev(str_return);
 	return (str_return);
 }
