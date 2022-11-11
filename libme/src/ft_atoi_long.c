@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:49:16 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/02 09:50:44 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:44:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ long int	ft_atoi_long(char *str_to_convert)
 {
 	char		sign_algebraic;
 	size_t		index;
+	size_t		offset;
 
 	if (str_to_convert == NULL)
 		return (9999999991);
@@ -64,5 +65,10 @@ long int	ft_atoi_long(char *str_to_convert)
 			sign_algebraic = -1;
 		index++;
 	}
+	offset = index;
+	while (ft_isdigit(str_to_convert[offset]) && str_to_convert[offset] != '\0')
+		offset++;
+	if (offset - index > 10)
+		return (9999999999);
 	return (str_to_lint(str_to_convert, index, sign_algebraic));
 }
