@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/02 18:05:44 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:05:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ void	ft_lst_free(t_lst *lst_to_free);
 //	Argument:	str_to_convert
 //	Return:		Newly allocated long (with malloc), str wont be freed!
 long	ft_atoi_long(char *str_to_convert);
+void	*ft_realloc(void *ptr_to_realloc, size_t size_old, size_t size_new);
 
 #endif
