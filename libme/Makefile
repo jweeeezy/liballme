@@ -18,7 +18,19 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_input_print.c\
 					ft_lst_free.c\
 					ft_atoi_long.c\
-					ft_realloc.c
+					ft_realloc.c\
+					ft_str_check_set.c\
+					ft_str_check_precursor.c\
+					ft_str_check_needle.c\
+					ft_str_check_viable_char.c\
+					ft_lst_size.c\
+					ft_lst_index.c\
+					ft_lst_last.c\
+					ft_lst_add_back.c\
+					ft_lst_new.c\
+					ft_lst_header_new.c\
+					ft_lst_header_free.c\
+					ft_lst_check_duplicate.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_lst_last.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 15:52:23 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 16:51:17 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/11 17:11:57 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/11 17:12:08 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	*ft_realloc(void *ptr_to_realloc, size_t size_old, size_t size_new)
+t_lst	*ft_lst_last(t_lst *lst_to_iterate)
 {
-	void	*ptr_temp;
+	t_lst	*lst_index;
 
-	if (ptr_to_realloc == NULL)
-		return ((void *)malloc(size_new));
-	if (size_old == 0)
-		return (ptr_to_realloc);
-	if (size_new == 0)
-	{
-		free(ptr_to_realloc);
+	if (lst_to_iterate == NULL)
 		return (NULL);
-	}
-	ptr_temp = (void *)malloc(size_new);
-	if (ptr_temp == NULL)
-		return (NULL);
-	ft_memmove(ptr_temp, ptr_to_realloc, size_old);
-	free(ptr_to_realloc);
-	return (ptr_temp);
+	lst_index = lst_to_iterate;
+	while ((*lst_index).next != NULL)
+		lst_index = (*lst_index).next;
+	return (lst_index);
 }

@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_str_check_set.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 15:52:23 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 16:51:17 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/11 16:48:02 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/11 16:56:29 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	*ft_realloc(void *ptr_to_realloc, size_t size_old, size_t size_new)
+char	ft_str_check_set(const char *str_to_check, const char *str_set)
 {
-	void	*ptr_temp;
+	size_t	index;
+	size_t	index_set;
 
-	if (ptr_to_realloc == NULL)
-		return ((void *)malloc(size_new));
-	if (size_old == 0)
-		return (ptr_to_realloc);
-	if (size_new == 0)
+	index = 0;
+	index_set = 0;
+	if (str_to_check == NULL || str_set == NULL)
+		return (0);
+	while (str_to_check[index] != '\0')
 	{
-		free(ptr_to_realloc);
-		return (NULL);
+		index_set = 0;
+		while (str_set[index_set] != '\0')
+		{
+			if (str_to_check[index] == str_set[index_set])
+				return (1);
+			index_set++;
+		}
+		index++;
 	}
-	ptr_temp = (void *)malloc(size_new);
-	if (ptr_temp == NULL)
-		return (NULL);
-	ft_memmove(ptr_temp, ptr_to_realloc, size_old);
-	free(ptr_to_realloc);
-	return (ptr_temp);
+	return (0);
 }
