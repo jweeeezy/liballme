@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 18:04:55 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/12 12:39:40 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void			ft_str_rev(char *str_to_reverse);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Puts all strings in an array into one string separated by a
+//	Purpose:	Puts all strings of an array into one string separated by a
 //				blank space (with malloc)
 //	Argument:	array with strings
 //	Return:		String containing all array strings
