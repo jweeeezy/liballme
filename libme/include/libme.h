@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/12 16:38:21 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/12 22:00:40 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,8 +161,13 @@ char			*ft_strdup_set(char const *str_to_search,
 //
 //
 /* ************************************************************************** */
-/*		 					INPUT (ARGV / ARRAY) RELATED					 */
+/*		 					INPUT / ARGV / ARRAY RELATED					 */
 /* ************************************************************************** */
+//
+//
+/// @brief 		Frees all strings and the array itself
+/// @param array_to_free
+void			array_str_free(char **array_to_free);
 //
 //
 /// @brief 		Puts all strings of one input into one string (with malloc)
@@ -221,7 +226,7 @@ char			*ft_itoa_unsigned(unsigned int uint_to_convert);
 ///				as a data type to throw an error if either malloc fails
 ///				(9999999991) or to prevent an overflow (9999999999)
 /// @param str_to_convert
-/// @return
+/// @return Long int representation of string
 long			ft_atoi_long(char *str_to_convert);
 //
 //
