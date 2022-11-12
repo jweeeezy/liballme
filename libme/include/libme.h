@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/12 12:39:40 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:38:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 /* ************************************************************************** */
 //
 //
-//		Containing:
-//
 //		int				content;
 //		struct s_lst	*next;
 typedef struct s_lst
@@ -30,7 +28,7 @@ typedef struct s_lst
 	int				content;
 	struct s_lst	*next;
 }					t_lst;
-//		Containing:
+//
 //
 //		char			*title;
 //		t_lst			*head;
@@ -39,17 +37,60 @@ typedef struct s_lst_header
 	char			*title;
 	t_lst			*head;
 }					t_lst_header;
-size_t			ft_lst_size(t_lst *lst_to_count);
-t_lst			*ft_lst_index(t_lst *lst_to_iterate, size_t index);
-t_lst			*ft_lst_last(t_lst *lst_to_iterate);
+//
+//
+/// @brief		Adds a note to the end of a list (with malloc)
+/// @param lst_to_add
+/// @param node_to_add
 void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
-t_lst			*ft_lst_new(int value);
-t_lst_header	*ft_lst_header_new(char *str_title);
-void			ft_lst_header_free(t_lst_header **lst_to_free);
+//
+//
+/// @brief		Checks if there is a duplicate value in a list
+/// @param lst_to_check
+/// @return 0 (False) or 1 (True)
 char			ft_lst_check_duplicate(t_lst **lst_to_check);
-//	Purpose:	Frees all nodes of a linked lst
-//	Argument:	lst_to_free
+//
+//
+/// @brief		Loops through a list and frees every node
+/// @param lst_to_free
 void			ft_lst_free(t_lst *lst_to_free);
+//
+//
+/// @brief		Creates a new lst_header (with malloc) with a title
+/// @param str_title
+/// @return Pointer to the new struct or NULL
+t_lst_header	*ft_lst_header_new(char *str_title);
+//
+//
+/// @brief		Frees a lst_header and its containing list
+/// @param lst_to_free
+void			ft_lst_header_free(t_lst_header **lst_to_free);
+//
+//
+/// @brief		Takes a size_t and loops to that position/index in a list
+/// @param lst_to_iterate
+/// @param index
+/// @return Pointer to the new position/index or NULL
+t_lst			*ft_lst_index(t_lst *lst_to_iterate, size_t index);
+//
+//
+/// @brief		Loops to the last position/index of a list
+/// @param lst_to_iterate
+/// @return Pointer to the last index or NULL
+t_lst			*ft_lst_last(t_lst *lst_to_iterate);
+//
+//
+/// @brief		Creates a node (with malloc) of type t_lst containing an int
+///				as value
+/// @param value
+/// @return Pointer to the new node or NULL
+t_lst			*ft_lst_new(int value);
+//
+//
+/// @brief		Counts the size (nodes) of a list
+/// @param lst_to_count
+/// @return Size of the list (size_t)
+size_t			ft_lst_size(t_lst *lst_to_count);
 //
 //
 /* ************************************************************************** */
@@ -57,33 +98,66 @@ void			ft_lst_free(t_lst *lst_to_free);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Allocates a str (with malloc) containing only a NULL char
-//	Return:		Newly allocated str
-char			*ft_str_empty(void);
-char			ft_str_check_set(const char *str_to_check, const char *str_set);
-char			ft_str_check_precursor(const char *str_to_check,
-					char c_precursor, char c_to_check);
+/// @brief		Checks if a string (haystack) contains another string (needle)
+/// @param haystack
+/// @param needle
+/// @param length
+/// @return 0 (False) or 1 (True)
 char			ft_str_check_needle(const char *haystack, const char *needle,
 					size_t length);
+//
+//
+/// @brief		Checks if a specific char (c_to_check) has a specific char
+///				(c_precursor) as a precursor and a digit afterwards
+///				(used to check for viable algebraic signs in input)
+/// @param str_to_check
+/// @param c_precursor
+/// @param c_to_check
+/// @return 0 (False) or 1 (True)
+char			ft_str_check_precursor(const char *str_to_check,
+					char c_precursor, char c_to_check);
+//
+//
+/// @brief		Checks if at least one char of str_set is found in str_to_check
+/// @param str_to_check
+/// @param str_set
+/// @return 0 (False) or 1 (True)
+char			ft_str_check_set(const char *str_to_check, const char *str_set);
+//
+//
+/// @brief		Checks a string for anything other than a char of str_set
+/// @param str_to_check
+/// @param str_set
+/// @return 0 (False) or 1 (True)
 char			ft_str_check_viable_char(const char *str_to_check,
 					const char *str_set);
-//	Purpose:	Searches for a char in a str and returns either a 1 (True) if
-//				the char is found or a 0 (False) if the char is not found
-//	Argument:	str_to_search, char_to_find
-//	Return:		1 or 0 in char value
+//
+//
+/// @brief 		Creates a string (with malloc) that is emtpy (only '\0')
+/// @param
+/// @return Pointer to newly allocated string or NULL
+char			*ft_str_empty(void);
+//
+//
+/// @brief		 Checks a string for a specific char
+/// @param str_to_search
+/// @param char_to_find
+/// @return 0 (False) or 1 (True)
 char			ft_str_find_char(char const *str_to_search,
 					char const char_to_find);
-//	Purpose:	Searches for a set of char in a str and duplicates only
-//				those in a newly allocated str (with malloc) in the order
-//				of iterating through the str
-//	Argument:	str_to_search, str_set_to_find
-//	Return:		Newly allocated str containing all char found that are
-//				also in the set
+//
+//
+/// @brief 		Reverses the contents of a string in place
+/// @param str_to_reverse
+void			ft_str_rev(char *str_to_reverse);
+//
+//
+/// @brief 		Duplicates str_to_search but only the chars in str_set_to_find
+/// @param str_to_search
+/// @param str_set_to_find
+/// @return Pointer to the newly allocated string or NULL
 char			*ft_strdup_set(char const *str_to_search,
 					char const *str_set_to_find);
-//	Purpose:	Reverses a str in place (no malloc used)
-//	Argument:	str_to_reverse
-void			ft_str_rev(char *str_to_reverse);
 //
 //
 /* ************************************************************************** */
@@ -91,17 +165,26 @@ void			ft_str_rev(char *str_to_reverse);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Puts all strings of an array into one string separated by a
-//				blank space (with malloc)
-//	Argument:	array with strings
-//	Return:		String containing all array strings
+/// @brief 		Puts all strings of one input into one string (with malloc)
+/// @param argv
+/// @return Pointer to the newly allocated string or NULL
 char			*ft_input_strjoin(char **argv);
-//	Purpose:	Counts the index of an array
-//	Arguments	array_to_count
+//
+//
+/// @brief 		Counts the length of all chars in an array of strings
+/// @param array_to_count
+/// @return Size_t of the length
 size_t			ft_input_len(char **array_to_count);
-//	Purpose:	Prints the content of an array of strings
-//	Argument:	array_to_print
+//
+//
+/// @brief 		Prints the content of an array of strings
+/// @param array_to_print
 void			ft_input_print(char **array_to_print);
+//
+/// @brief 		Counts the number of strings in an array of strings
+/// @param array_to_count
+/// @return Size_t of the amount of strings
+size_t			ft_input_argc(char **array_to_count);
 //
 //
 /* ************************************************************************** */
@@ -109,30 +192,36 @@ void			ft_input_print(char **array_to_print);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Converts an unsigned long int (e.g. address of a ptr) into a
-//				hexadecimal str (with malloc) either in lowercase
-//				(flag_caps = 0)
-//				or uppercase (flag_caps = 1)
-//	Argument:	ulint_to_convert (can be casted), flag_caps
-//	Return:		Newly allocated str version of the ulint in hexadecimal
+/// @brief 		Converts an unsigned long int (address of a ptr) into a
+///				hexadecimal string (with malloc) either in lowercase (flag 0)
+///				or uppercase (flag 1)
+/// @param ulint_to_convert
+/// @param flag_caps
+/// @return Newly allocated string or NULL
 char			*ft_itoa_hexadecimal_long(unsigned long int ulint_to_convert,
 					int flag_caps);
-//	Purpose:	Converts an unsigned int into a hexadecimal str (with malloc)
-//				either in lowercase (flag_caps = 0) or uppercase
-//				(flag_caps = 1)
-//	Argument:	uint_to_convert (can be casted), flag_caps
-//	Return:		Newly allocated str version of the uint in hexadecimal
+//
+//
+/// @brief		Converts an unsigned int into a hexadecimal string
+///				(with malloc) either in lowercase (flag 0) or uppercase (flag 1)
+/// @param uint_to_convert
+/// @param flag_caps
+/// @return Newly allocated string or NULL
 char			*ft_itoa_hexadecimal(unsigned int uint_to_convert,
 					int flag_caps);
-//	Purpose:	Converts an unsigned int into a string (with malloc)
-//	Argument:	uint_to_convert
-//	Return:		Newly allocated str version of the uint
+//
+//
+/// @brief 		Converts an unsigned int into a string (with malloc)
+/// @param uint_to_convert
+/// @return Newly allocated string or NULL
 char			*ft_itoa_unsigned(unsigned int uint_to_convert);
-//	Purpose:	Converts a str to its number representation. Uses the data
-//				type long to handle INT_MAX and INT_MIN
-//				and throws an error (9 999 999 999)
-//	Argument:	str_to_convert
-//	Return:		Newly allocated long (with malloc), str wont be freed!
+//
+//
+/// @brief		Converts a string into its int representation. Uses long int
+///				as a data type to throw an error if either malloc fails
+///				(9999999991) or to prevent an overflow (9999999999)
+/// @param str_to_convert
+/// @return
 long			ft_atoi_long(char *str_to_convert);
 //
 //
@@ -141,11 +230,16 @@ long			ft_atoi_long(char *str_to_convert);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Converts the value of the address of a ptr into a lowercase
-//				hexadecimal format and returns a str (with malloc)
-//	Argument:	ptr
-//	Return:		Newly allocated str in lowercase hexadecimal format
+/// @brief		Converts the address of a pointer into a hexadecimal string
+///				(with malloc)
+/// @param ptr
+/// @return Pointer to the newly allocated string or NULL
 char			*ft_ptr_get_address(void *ptr);
+/// @brief 		NOT WORKING RIGHT YET... !!! DO NOT USE !!!
+/// @param ptr_to_realloc
+/// @param size_old
+/// @param size_new
+/// @return or NULL
 void			*ft_realloc(void *ptr_to_realloc, size_t size_old,
 					size_t size_new);
 
