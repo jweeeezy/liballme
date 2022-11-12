@@ -30,7 +30,8 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_new.c\
 					ft_lst_header_new.c\
 					ft_lst_header_free.c\
-					ft_lst_check_duplicate.c
+					ft_lst_check_duplicate.c\
+					ft_input_argc.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
