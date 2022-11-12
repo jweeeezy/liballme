@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:53:29 by jwillert          #+#    #+#             */
-/*   Updated: 2022/07/10 14:45:18 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:42:41 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,42 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-//	Each call reads (BUFFER_SIZE * bytes) from a file descriptor
-//	returning the first line it encounters, saving spare bytes that
-//	were read in a static_buffer
-//	|| (RETURN) Line read from a file descriptor
+/// @brief		Reads "BUFFER_SIZE" (MACRO) bytes of a file (fd) and returns
+///				a string (with malloc) containing everything until the
+///				first/next 'new line' character
+/// @param fd
+/// @return 	Current line or NULL if End of File / Error occured
 char	*get_next_line(int fd);
-//	Takes string_first and string_second and first copies values
-//	from string_first (strlcpy) and then appends values of string_second
-//	to a newly *MALLOCED* string (strlcat) || (GNL) frees string_first
-//	|| (RETURN) newly allocated string
+//
+//
+/// @brief		Combines (and frees) two strings into one (with malloc)
+/// @param string_first
+/// @param string_second
+/// @return Newly allocated string or NULL
 char	*gnl_strjoin(char *string_first, char *string_second);
-//	Takes address of string_target and appends values from string_source
-//	to the end of string_target and guarantees NULL termination (special cases)
-//	size_needed has to be large enough || (RETURN) length of appended string
+//
+//
+/// @brief		Appends a string after another string and NULL terminates
+/// @param string_target
+/// @param string_source
+/// @param size_needed
+/// @return 	Size_t of combined strlen or 0
 size_t	gnl_strlcat(char *string_target,
 			char *string_source, size_t size_needed);
-//	Takes address of string_target and copies values from string_source
-//	to string_target and guarantees NULL termination (special cases)
-//	size_needed has to be large enough || (RETURN) length of string_source
+//
+//
+/// @brief		Copies Values of one string to another string
+/// @param string_target
+/// @param string_source
+/// @param size_needed
+/// @return		Size_t of strlen
 size_t	gnl_strlcpy(char *string_target,
 			char *string_source, size_t size_needed);
-//	Takes address of string and counts the length || (RETURN) length of string
+//
+//
+/// @brief		Counts bytes of a string
+/// @param string
+/// @return Size_t of all bytes
 size_t	gnl_strlen(const char *string);
 
 #endif
