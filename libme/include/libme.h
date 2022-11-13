@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/12 22:00:40 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:38:59 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 //
 //
 /* ************************************************************************** */
-/* 								LIST RELATED								 */
+/* 							LINKED LIST RELATED								 */
 /* ************************************************************************** */
 //
 //
@@ -54,6 +54,18 @@ char			ft_lst_check_duplicate(t_lst **lst_to_check);
 /// @brief		Loops through a list and frees every node
 /// @param lst_to_free
 void			ft_lst_free(t_lst *lst_to_free);
+//
+//
+/// @brief		Loops through a t_lst and searches for the highest int
+/// @param lst_to_search
+/// @return	highest found int
+int				ft_lst_find_int_max(t_lst *lst_to_search);
+//
+//
+/// @brief		Loops through a t_lst and searches for the lowest int
+/// @param lst_to_search
+/// @return	lowest found int
+int				ft_lst_find_int_min(t_lst *lst_to_search);
 //
 //
 /// @brief		Creates a new lst_header (with malloc) with a title
@@ -165,9 +177,9 @@ char			*ft_strdup_set(char const *str_to_search,
 /* ************************************************************************** */
 //
 //
-/// @brief 		Frees all strings and the array itself
+/// @brief 		Frees all strings in an array and the array itself
 /// @param array_to_free
-void			array_str_free(char **array_to_free);
+void			ft_array_str_free(char **array_to_free);
 //
 //
 /// @brief 		Puts all strings of one input into one string (with malloc)

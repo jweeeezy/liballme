@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_str_free.c                                :+:      :+:    :+:   */
+/*   ft_lst_find_int_min.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 21:58:00 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/13 13:42:19 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/13 14:38:41 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/13 15:39:37 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	ft_array_str_free(char **array_to_free)
+int	ft_lst_find_int_min(t_lst *lst_to_search)
 {
-	size_t	index;
+	int	int_min;
 
-	index = 0;
-	while (array_to_free[index] != NULL)
+	int_min = lst_to_search->content;
+	while (lst_to_search != NULL)
 	{
-		free(array_to_free[index]);
-		index++;
+		if (int_min > lst_to_search->content)
+			int_min = lst_to_search->content;
+		lst_to_search = lst_to_search->next;
 	}
-	free (array_to_free);
+	return (int_min);
 }
