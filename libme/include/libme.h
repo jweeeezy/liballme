@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/14 16:51:03 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:50:59 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
 char			ft_lst_check_duplicate(t_lst **lst_to_check);
 //
 //
-/// @brief		Counts the iterations between two t_lst pointers
+/// @brief		Counts the iterations between two "t_lst" pointers
 /// @param lst_to_check
-/// @return		Size_t of iteration count
+/// @return		Size_t of iteration count or 0 if NULL pointer.
 size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 //
 //
@@ -62,11 +62,26 @@ size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 void			ft_lst_free(t_lst *lst_to_free);
 //
 //
+/// @brief		Compares the number of iterations it takes from a lst_index
+///				to the start or end of the list. For up it takes the first
+///				node and calculates iterations until lst_index where as for
+///				down it takes lst_index as the first node and calculates
+///				the iterations it takes to reach lst_dest_down.
+/// @param lst_start
+/// @param lst_dest_a
+/// @param lst_dest_b
+/// @return		a negative int (-1 and smaller ) for up a 0 if an error
+///				(or bdu) occured or a positive int (+1 and bigger) if
+///				down is the shortest path
+int				ft_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
+					t_lst *lst_dest_down);
+//
+//
 /// @brief		Loops through a t_lst and finds an int value
 /// @param lst_to_search
 /// @param value
 /// @return	Pointer to the node of the value or NULL
-t_lst 			*ft_lst_find_value(t_lst *lst_to_search, int value);
+t_lst			*ft_lst_find_value(t_lst *lst_to_search, int value);
 //
 //
 /// @brief		Loops through a t_lst and searches for the highest int
@@ -101,7 +116,8 @@ void			ft_lst_header_free(t_lst_header **lst_to_free);
 /// @brief		Takes a size_t and loops to that position/index in a list
 /// @param lst_to_iterate
 /// @param index
-/// @return Pointer to the new position/index or NULL
+/// @return Pointer to the new position/index or NULL. If index > lst_size
+///			then lst_index == lst_last
 t_lst			*ft_lst_index(t_lst *lst_to_iterate, size_t index);
 //
 //
