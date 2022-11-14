@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_index.c                                     :+:      :+:    :+:   */
+/*   ft_lst_count_iterations.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:11:11 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/14 17:10:59 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/14 16:48:15 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/14 17:05:55 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-t_lst	*ft_lst_index(t_lst *lst_to_iterate, size_t index)
+size_t	ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end)
 {
+	size_t	index;
 	t_lst	*lst_index;
 
-	if (lst_to_iterate == NULL)
-		return (NULL);
-	lst_index = lst_to_iterate;
-	while (index != 0 && lst_index->next != NULL)
+	index = 0;
+	if (lst_start == NULL || lst_end == NULL)
+		return (0);
+	lst_index = lst_start;
+	while (lst_index != lst_end && lst_index != NULL)
 	{
-		lst_index = (*lst_index).next;
-		index--;
+		index++;
+		lst_index = lst_index->next;
 	}
-	return (lst_index);
+	return (index);
 }

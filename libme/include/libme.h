@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/14 13:52:52 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:51:03 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
 /// @param lst_to_check
 /// @return 0 (False) or 1 (True)
 char			ft_lst_check_duplicate(t_lst **lst_to_check);
+//
+//
+/// @brief		Counts the iterations between two t_lst pointers
+/// @param lst_to_check
+/// @return		Size_t of iteration count
+size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 //
 //
 /// @brief		Loops through a t_lst and frees every node
