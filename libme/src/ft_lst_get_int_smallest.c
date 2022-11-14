@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find_int_max.c                              :+:      :+:    :+:   */
+/*   ft_lst_get_int_smallest.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 15:30:25 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/13 15:33:37 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/13 14:38:41 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/14 13:40:43 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-int	ft_lst_find_int_max(t_lst *lst_to_search)
+int	ft_lst_get_int_smallest(t_lst *lst_to_search)
 {
-	int	int_max;
+	int	int_min;
 
-	int_max = lst_to_search->content;
+	int_min = lst_to_search->content;
 	while (lst_to_search != NULL)
 	{
-		if (int_max < lst_to_search->content)
-			int_max = lst_to_search->content;
+		if (int_min > lst_to_search->content)
+			int_min = lst_to_search->content;
 		lst_to_search = lst_to_search->next;
 	}
-	return (int_max);
+	return (int_min);
 }

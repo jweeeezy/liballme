@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/13 15:38:59 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:52:52 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,34 @@ void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
 char			ft_lst_check_duplicate(t_lst **lst_to_check);
 //
 //
-/// @brief		Loops through a list and frees every node
+/// @brief		Loops through a t_lst and frees every node
 /// @param lst_to_free
 void			ft_lst_free(t_lst *lst_to_free);
+//
+//
+/// @brief		Loops through a t_lst and finds an int value
+/// @param lst_to_search
+/// @param value
+/// @return	Pointer to the node of the value or NULL
+t_lst 			*ft_lst_find_value(t_lst *lst_to_search, int value);
 //
 //
 /// @brief		Loops through a t_lst and searches for the highest int
 /// @param lst_to_search
 /// @return	highest found int
-int				ft_lst_find_int_max(t_lst *lst_to_search);
+int				ft_lst_get_int_biggest(t_lst *lst_to_search);
 //
 //
 /// @brief		Loops through a t_lst and searches for the lowest int
 /// @param lst_to_search
 /// @return	lowest found int
-int				ft_lst_find_int_min(t_lst *lst_to_search);
+int				ft_lst_get_int_smallest(t_lst *lst_to_search);
+//
+//
+/// @brief		Loops through a t_lst and searches for the second smallest int
+/// @param lst_to_search
+/// @return second lowest found int
+int				ft_lst_get_int_second_smallest(t_lst *lst_to_search);
 //
 //
 /// @brief		Creates a new lst_header (with malloc) with a title

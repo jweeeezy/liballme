@@ -25,15 +25,15 @@ OBJ_FILES			=	$(shell ar -t $(FT_PRINTF) | grep ft_) $(shell ar -t $(GNL) | grep
 
 all:				$(NAME)
 $(NAME):			ft_printf_make gnl_make
-					cp $(FT_PRINTF) ./
-					cp $(GNL) ./
-					ar -x ./libftprintf.a
-					ar -x ./libgnl.a
-					ar -cr $(NAME) $(OBJ_FILES)
-					$(REMOVE) $(OBJ_FILES)
-					$(REMOVE) libgnl.a
-					$(REMOVE) libftprintf.a
-					test -f ./__.SYMDEF\ SORTED && rm __.SYMDEF\ SORTED
+					@cp $(FT_PRINTF) ./
+					@cp $(GNL) ./
+					@ar -x ./libftprintf.a
+					@ar -x ./libgnl.a
+					@ar -cr $(NAME) $(OBJ_FILES)
+					@$(REMOVE) $(OBJ_FILES)
+					@$(REMOVE) libgnl.a
+					@$(REMOVE) libftprintf.a
+					@test -f ./__.SYMDEF\ SORTED && rm __.SYMDEF\ SORTED
 clean:
 					$(MAKE) clean -C $(LIBFT_DIR)
 					$(MAKE) clean -C $(LIBME_DIR)

@@ -33,8 +33,10 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_check_duplicate.c\
 					ft_input_argc.c\
 					ft_array_str_free.c\
-					ft_lst_find_int_min.c\
-					ft_lst_find_int_max.c
+					ft_lst_get_int_smallest.c\
+					ft_lst_get_int_biggest.c\
+					ft_lst_get_int_second_smallest.c\
+					ft_lst_find_value.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find_int_min.c                              :+:      :+:    :+:   */
+/*   ft_lst_find_value.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 14:38:41 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/13 15:39:37 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/14 13:41:27 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/14 13:52:57 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-int	ft_lst_find_int_min(t_lst *lst_to_search)
+t_lst *ft_lst_find_value(t_lst *lst_to_search, int value)
 {
-	int	int_min;
+	t_lst	*lst_index;
 
-	int_min = lst_to_search->content;
-	while (lst_to_search != NULL)
+	lst_index = lst_to_search;
+	while (lst_index != NULL)
 	{
-		if (int_min > lst_to_search->content)
-			int_min = lst_to_search->content;
-		lst_to_search = lst_to_search->next;
+		if (lst_index->content == value)
+			return (lst_index);
+		lst_index = lst_index->next;
 	}
-	return (int_min);
+	return (NULL);
 }
