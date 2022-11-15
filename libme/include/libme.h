@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/15 18:38:40 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:47:28 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,6 +283,7 @@ long			ft_atoi_long(char *str_to_convert);
 //
 //
 /// @brief 		Compares the absolute conversion of two integer values
+///				and tells which value is smaller
 /// @param value_a
 /// @param value_b
 /// @return returns -1 (value_a), 0 (no difference) or +1 (value_b)
@@ -290,6 +291,7 @@ char			ft_int_compare_absolute_smallest(int value_a, int value_b);
 //
 //
 /// @brief 		Compares the absolute conversion of two integer values
+///				and tells which value is bigger
 /// @param value_a
 /// @param value_b
 /// @return	returns -1 (value_a), 0 (no difference) or +1 (value b)
