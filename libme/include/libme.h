@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/14 17:50:59 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:38:40 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,7 +220,7 @@ void			ft_array_str_free(char **array_to_free);
 /// @brief 		Puts all strings of one input into one string (with malloc)
 /// @param argv
 /// @return Pointer to the newly allocated string or NULL
-char			*ft_input_strjoin(char **argv);
+char			*ft_input_strjoin(char **array_to_combine);
 //
 //
 /// @brief 		Counts the length of all chars in an array of strings
@@ -275,6 +275,25 @@ char			*ft_itoa_unsigned(unsigned int uint_to_convert);
 /// @param str_to_convert
 /// @return Long int representation of string
 long			ft_atoi_long(char *str_to_convert);
+//
+//
+/* ************************************************************************** */
+/* 									INT RELATED								 */
+/* ************************************************************************** */
+//
+//
+/// @brief 		Compares the absolute conversion of two integer values
+/// @param value_a
+/// @param value_b
+/// @return returns -1 (value_a), 0 (no difference) or +1 (value_b)
+char			ft_int_compare_absolute_smallest(int value_a, int value_b);
+//
+//
+/// @brief 		Compares the absolute conversion of two integer values
+/// @param value_a
+/// @param value_b
+/// @return	returns -1 (value_a), 0 (no difference) or +1 (value b)
+char			ft_int_compare_absolute_biggest(int value_a, int value_b);
 //
 //
 /* ************************************************************************** */

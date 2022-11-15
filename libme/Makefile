@@ -38,7 +38,9 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_get_int_second_smallest.c\
 					ft_lst_find_value.c\
 					ft_lst_count_iterations.c\
-					ft_lst_find_shortest_path.c
+					ft_lst_find_shortest_path.c\
+					ft_int_compare_absolute_biggest.c\
+					ft_int_compare_absolute_smallest.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
