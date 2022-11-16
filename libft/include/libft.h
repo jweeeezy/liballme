@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/12 15:37:58 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:15:09 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,55 +32,62 @@ typedef struct s_list
 }				t_list;
 //
 //
-//	Purpose:	Adds a node to the back of a lst
-//	Arguments:	lst, node_to_add
+/// @brief 		Adds a new node to the back of a t_list
+/// @param lst
+/// @param node_to_add
 void	ft_lstadd_back(t_list **lst, t_list *node_to_add);
 //
 //
-//	Purpose:	Adds a node to the front of a lst
-//	Arguments:	lst, node_to_add
+/// @brief 		Adds a new node to the front of a t_list
+/// @param lst
+/// @param node_to_add
 void	ft_lstadd_front(t_list **lst, t_list *node_to_add);
 //
 //
-//	Purpose:	Applies a function to every node of a lst and frees
-//				the lst afterwards
+/// @brief 		Applies a function to every node.content of a t_list before
+///				freeing all nodes. Does not free the ptr to the list!
+/// @param lst
+/// @param del
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 //
 //
-//	Purpose:	Applies a function to a node of a lst and
-//				frees the lst afterwards
-//	Arguments:	lst, function to apply
+/// @brief 		Applies a function to the node.content and frees it afterwards
+/// @param lst
+/// @param del
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 //
 //
-//	Purpose:	Applies a function to every node of a lst
-//	Arguments:
+/// @brief		Applies a function to every node.content of a list
+/// @param lst
+/// @param f
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 //
 //
-//	Purpose:	Get the address of the last node of a lst
-//	Argument:	lst
-//	Return:		ptr to last node
+/// @brief 		Get the address of the last node of a t_list
+/// @param lst
+/// @return 	Pointer to the last node (no alloc)
 t_list	*ft_lstlast(t_list *lst);
 //
 //
-//	Purpose:	Copies a lst and its contents and applies a function
-//				to every node of that lst. If something fails in the
-//				process everything is beeing freed
-//	Arguments:	lst, function to apply, function to apply on delete
-//	Return:		ptr to the duplicated lst
+/// @brief 		Copies all nodes and nodes.content of a t_list while applying
+///				a function to all nodes.content. If something wents wrong it
+///				will clear and free all nodes and the list
+/// @param lst
+/// @param f
+/// @param del
+/// @return 	Pointer to the new t_list (with malloc)
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 //
 //
-//	Purpose:	Allocates a new linked lst and adds some
-//				data (content) to the first node
-//	Arguments:	content
-//	Return:		ptr (Head) to newly created node
+/// @brief 		Creates a new node and changes node.content with *content
+/// @param content
+/// @return		Pointer to the new node (with malloc)
 t_list	*ft_lstnew(void *content);
 //
 //
-//	Purpose:	Counts the amount of nodes in a lst
-//	Argument:	lst
+/// @brief 		Counts the amount of nodes in a t_list
+/// @param lst
+/// @return		Int of the t_list size
 int		ft_lstsize(t_list *lst);
 //
 //
@@ -89,47 +96,47 @@ int		ft_lstsize(t_list *lst);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Check char if its value is part of the ASCII table
-//	Argument:	c_to_check
-//	Return:		True (1) or false (0)
+/// @brief 		Checks if the value of the char to check is part of the ASCII
+/// @param c_to_check
+/// @return		True (1) or False (0)
 int		ft_isascii(int c_to_check);
 //
 //
-//	Purpose:	Check char if its value is either part of
-//				the alphabet or a digit or not
-//	Argument:	c_to_check
-//	Return:		True (1) or false (0)
+/// @brief 		Checks if the value of the char to check is either part of
+///				the alphabet or a digit
+/// @param c_to_check
+/// @return
 int		ft_isalnum(int c_to_check);
 //
 //
-//	Purpose:	Check char if its value is part of the alphabet
-//	Argument:	c_to_check
-//	Return:		True (1) or false (0)
+/// @brief 		Checks if the value of the char to check is part
+///				of the alphabet
+/// @param c_to_check
+/// @return 	True (1) or False (0)
 int		ft_isalpha(int c_to_check);
 //
 //
-//	Purpose:	Check char if its value is representing a digit
-//	Argument:	c_to_check
-//	Return:		True (1) or false (0)
+/// @brief		Checks if the value of the char to check is a digit
+/// @param c_to_check
+/// @return 	True (1) or False (0)
 int		ft_isdigit(int c_to_check);
 //
 //
-//	Purpose:	Check char if its value is part of the printable char
-//				of the ASCII table
-//	Argument:	c_to_check
-//	Return:		True (1) or false (0)
+/// @brief 		Checks if the value of the char to check is printable (ASCII)
+/// @param c_to_check
+/// @return 	True (1) or False (0)
 int		ft_isprint(int c_to_check);
 //
 //
-//	Purpose:	Change value of an uppercase char to a lowercase char
-//	Argument:	c_to_change
-//	Return:		New value of the char
+/// @brief 		Changes an uppercase char to its lowercase version
+/// @param c_to_change
+/// @return		Lowercase version of char to change
 int		ft_tolower(int c_to_change);
 //
 //
-//	Purpose:	Change value of a lowercase char to an uppercase char
-//	Argument:	c_to_change
-//	Return:		New value of the char
+/// @brief 		Changes an lowercase char to its uppercase version
+/// @param c_to_change
+/// @return		Uppercase version of char to change
 int		ft_toupper(int c_to_change);
 //
 //
@@ -138,89 +145,107 @@ int		ft_toupper(int c_to_change);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Search for the first occurence of a char in a str
-//	Argument:	str_to_seach, c_to_find
-//	Return:		ptr to the first occurence or NULL if it fails
+/// @brief 		Searches for the first occurence of char in a str
+/// @param str_to_search
+/// @param c_to_find
+/// @return 	Pointer to the first occurence or NULL
 char	*ft_strchr(const char *str_to_search, int c_to_find);
 //
 //
-//	Purpose:	Duplicate a str (with malloc)
-//	Argument:	str_to_copy
-//	Return:		ptr to the duplicated str
+/// @brief 		Duplicates a string and its value
+/// @param str_to_copy
+/// @return 	Pointer to the Duplicate (with malloc)
 char	*ft_strdup(const char *str_to_copy);
 //
 //
-//	Purpose:	Apply a function to every character of a str
-//	Arguments:	str_to_iter, function to applu
+/// @brief 		Applies a function to every character of a string
+/// @param str_to_iter
+/// @param f
 void	ft_striteri(char *str_to_iter, void (*f)(unsigned int, char *));
 //
 //
-//	Purpose:	Allocate (with malloc) a str with the values of one str plus
-//				the attached values of another str
-//	Arguments:	str_first, str_second
-//	Return:		ptr the newly created str
+/// @brief 		Combines two strings with the combined values of str_first
+///				and str_second appended
+/// @param str_first
+/// @param str_second
+/// @return 	Pointer the newly allocated string (with malloc)
 char	*ft_strjoin(char const *str_first, char const *str_second);
 //
 //
-//	Purpose:	Copy a specific amount of char from a source str
-//				to the end of target str and NULL terminate if there is room
-//	Arguments:	ptr to target, ptr to source, size_needed for both strings
-//	Return:		Amount of the copied char
+/// @brief 		Copies a specific amount of char from a string source to
+///				the end of target string (including NULL termination
+///				if there is room)
+/// @param str_target
+/// @param str_source
+/// @param size_needed
+/// @return 	Size_t of the combined string size
 size_t	ft_strlcat(char *str_target, const char *str_source,
 			size_t size_needed);
 //
 //
-//	Purpose:	Copy a specific amount of char from a source str
-//				to a target str and NULL terminate if there is room
-//	Arguments:	ptr to target, ptr to source, amount of chars to copy
-//	Return:		Amount of the copied char
+/// @brief 		Copies a specific amount of char from a string source to
+///				a target string (including NULL termination if there is room)
+/// @param str_target
+/// @param str_source
+/// @param size_needed
+/// @return 	Size_t of the new string length
 size_t	ft_strlcpy(char *str_target, const char *str_source,
 			size_t size_needed);
 //
 //
-//	Purpose:	Count the length of a str
-//	Argument:	str_to_count
-//	Return:		Length of the str
+/// @brief 		Counts the amount of characters in a string
+/// @param str_to_count
+/// @return 	Size_t of the string length
 size_t	ft_strlen(const char *str_to_count);
 //
 //
-//	Purpose:	Iterate through two str and compare its values
-//				until the first difference is found
-//	Argument:	str_first, str_second, amount of bytes
-//	Return:		Difference or 0 if there is none
+/// @brief 		Iterates trough two strings and compares its char values until
+///				the first difference is found for a specified amount of bytes
+/// @param str_first
+/// @param str_second
+/// @param bytes
+/// @return 	Int value of the first difference found
 int		ft_strncmp(const char *str_first, const char *str_second, size_t bytes);
 //
 //
-//	Purpose:	Search for the occurence of a str (needle)
-//				in another str (haystack) for a specific amount of char
-//	Argument:	str haystack, str needle, amount of char
-//	Return:		ptr to the first occurence of needle or NULL if it failed
+/// @brief 		Searches for the first occurence of a string (needle) in another
+///				string (haystack) for a specific amount of bytes to be searched
+/// @param haystack
+/// @param needle
+/// @param length
+/// @return 	Pointer to the first occurence
 char	*ft_strnstr(const char *haystack, const char *needle, size_t length);
 //
 //
-//	Purpose:	Apply a function to every character
-//				of a duplicated str (with malloc)
-//	Arguments:	str_to_map, function to applu
-//	Return:		ptr to the newly created string
+/// @brief 		Applies a function to every character of a duplicated string
+/// @param str_to_map
+/// @param f
+/// @return 	Pointer to the newly allocated duplicate (with malloc)
 char	*ft_strmapi(char const *str_to_map, char (*f)(unsigned int, char));
 //
 //
-//	Purpose:	Search for the last occurence of a char in a str
-//	Argument:	str_to_seach, c_to_find
-//	Return:		ptr to the last occurence or NULL if it fails
+/// @brief 		Searches for the last occurence of a char in a string
+///				(Iterating backwards)
+/// @param str_to_search
+/// @param c_to_find
+/// @return 	Pointer to the last occurence
 char	*ft_strrchr(const char *str_to_search, int c_to_find);
 //
 //
-//	Purpose:	Remove any char from a specific set in front of
-//				and at the end of a duplicated str (with malloc)
-//	Arguments:	str_to_trim, str_delimiter (set of characters to be removed)
-//	Return:		ptr to the newly created str
+/// @brief 		Removes any char in a duplicated string (string to trim) out
+///				of a set of char (string delimiter)
+/// @param str_to_trim
+/// @param str_delimiter
+/// @return		Pointer to the newly allocated duplicate (with malloc)
 char	*ft_strtrim(char const *str_to_trim, char const *str_delimiter);
 //
 //
-//	Purpose:	Duplicate a specific amount of char of a str (with malloc)
-//	Argument:	str_source, start (index/offset), length
-//	Return:		ptr to the duplicated/subtracted str
+/// @brief 		Duplicates a specific amount of char in a string starting at
+///				offset (unsigned int start) for (size_t) length
+/// @param str_source
+/// @param start
+/// @param length
+/// @return 	Pointer to the newly allocated duplicate (with malloc)
 char	*ft_substr(char const *str_source, unsigned int start, size_t length);
 //
 //
@@ -229,44 +254,63 @@ char	*ft_substr(char const *str_source, unsigned int start, size_t length);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Set memory amount of bytes pointed to
-//				to 0
-//	Arguments:	ptr to memory address, amount of bytes
+/// @brief 		Set the amount of bytes of memory values pointed to to 0
+/// @param ptr
+/// @param bytes
 void	ft_bzero(void *ptr, size_t bytes);
 //
 //
-//	Purpose:	Allocates (with malloc) a specific size (count * bytes)
-//				and sets 0 as values
-//	Argument:	Count, Amount of bytes
+/// @brief 		Allocates a specific size (count * bytes) and sets all memory
+///				values to 0 with help of bzero
+/// @param count
+/// @param bytes
+/// @return
 void	*ft_calloc(size_t count, size_t bytes);
 //
 //
-//	Purpose:	Search for a char at a memory address for an amount of bytes
-//	Argument:	memory address, c_to_find, amount of bytes
-//	Return:		ptr to the address if the char is found or NULL if it failed
+/// @brief 		Searches for the first occurence of a memory value for an
+///				amount of bytes pointed to by pointer to search
+/// @param ptr_to_search
+/// @param c_to_find
+/// @param bytes
+/// @return 	Pointer to the first occurence
 void	*ft_memchr(const void *ptr_to_search, int c_to_find, size_t bytes);
 //
 //
-//	compares byte string s1 and byte string s2 for n bytes
-//	|| returns difference if there is any or NULL
+/// @brief		Compares the memory values of two pointers for an
+///				specific amount of bytes
+/// @param str_first
+/// @param str_second
+/// @param bytes
+/// @return		Int of first found difference in memory value
 int		ft_memcmp(const void *str_first, const void *str_second, size_t bytes);
 //
 //
-//	Purpose:	Copy a specific amount of bytes of memory values
-//				to another address
-//	Arguments:	ptr to destination, ptr to source, amount of bytes
+/// @brief		Copies a specific amount of bytes of memory values of pointer
+///				source to the memory region pointed to by pointer destination
+/// @param ptr_dst
+/// @param ptr_src
+/// @param bytes
+/// @return		Pointer to destination
 void	*ft_memcpy(void *ptr_dst, const void *ptr_src, size_t bytes);
 //
 //
-//	Purpose:	Copy a specific amount of bytes of memory values
-//				to another address while handling possible overlapping
-//	Arguments:	ptr to destination, ptr to source, amount of bytes
+/// @brief		Copies a specific amount of bytes of memory values pointed to
+///				by pointer source to the memory area pointed to by pointer
+///				destination while handling possible overlapping
+/// @param ptr_dst
+/// @param ptr_src
+/// @param length
+/// @return		Pointer to destination
 void	*ft_memmove(void *ptr_dst, const void *ptr_src, size_t length);
 //
 //
-//	Purpose:	Set memory amount of bytes pointed to
-//				to a specific value
-//	Arguments:	ptr to memory address, value to set, amount of bytes
+/// @brief		Set the amount of bytes of an memory region pointed to a
+///				to a specific value
+/// @param ptr
+/// @param c_value
+/// @param bytes
+/// @return		Pointer to the memory region
 void	*ft_memset(void *ptr, int c_value, size_t bytes);
 //
 //
@@ -275,23 +319,26 @@ void	*ft_memset(void *ptr, int c_value, size_t bytes);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Remove white spaces and algebraic signs in front of a number in
-//				a str and convert the number to its int representation
-//	Argument:	str
-//	Return:		Converted number as an int
+/// @brief 		Removes white spaces and algebraic signs in front of a number
+///				in a string and convert the number to its int representation
+///				while handling possible overflowing with  MIN_INT and MAX_INT
+/// @param str_to_convert
+/// @return 	Integer version of the number or 0 if it fails
+///				(bad error handling!)
 int		ft_atoi(const char *str_to_convert);
 //
 //
-//	Purpose:	Convert an int to a str (with malloc)
-//	Argument:	int_to_convert
-//	Return:		ptr to the newly created str
+/// @brief 		Convert an integer to a string
+/// @param int_to_convert
+/// @return 	Pointer to the newly allocated string (with malloc)
 char	*ft_itoa(int int_to_convert);
 //
 //
-//	Purpose:	Split a str into an array of str (with malloc)
-//				with the help of a char functioning as a splitting delimiter
-//	Arguments:	str_to_split, c_delimiter
-//	Return:		ptr to array of (splitted) str
+/// @brief 		Splits a string and converts it to an array of string by
+///				splitting it with a char delimiter (e.g. ',')
+/// @param str_to_split
+/// @param c_delimiter
+/// @return		Pointer to the newly allocated array (with malloc)
 char	**ft_split(char const *str_to_split, char c_delimiter);
 //
 //
@@ -300,23 +347,27 @@ char	**ft_split(char const *str_to_split, char c_delimiter);
 /* ************************************************************************** */
 //
 //
-//	Purpose:	Print a char to a fd
-//	Arguments:	c_to_print, fd
+/// @brief 		Prints a char to a file descriptor
+/// @param c_to_print
+/// @param fd
 void	ft_putchar_fd(char c_to_print, int fd);
 //
 //
-//	Purpose:	Print a str to a fd followed by a new line (\n)
-//	Arguments:	str_to_print, fd
+/// @brief 		Prints a string to a file descriptor followed by a new line
+/// @param str_to_print
+/// @param fd
 void	ft_putendl_fd(char *str_to_print, int fd);
 //
 //
-//	Purpose:	Print an int to a fd
-//	Arguments:	n_to_print
+/// @brief 		Prints an int to a file descriptor
+/// @param int_to_print
+/// @param fd
 void	ft_putnbr_fd(int int_to_print, int fd);
 //
 //
-//	Purpose:	Print a str to a fd
-//	Arguments:	str_to_print, fd
+/// @brief 		Prints a string to a file descriptor
+/// @param str_to_print
+/// @param fd
 void	ft_putstr_fd(char *str_to_print, int fd);
 //
 //

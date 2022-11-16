@@ -18,7 +18,7 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_input_print.c\
 					ft_lst_free.c\
 					ft_atoi_long.c\
-					ft_realloc.c\
+					ft_reallocf.c\
 					ft_str_check_set.c\
 					ft_str_check_precursor.c\
 					ft_str_check_needle.c\

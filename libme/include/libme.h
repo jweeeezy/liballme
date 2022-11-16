@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/15 18:47:28 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:16:33 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,7 +313,7 @@ char			*ft_ptr_get_address(void *ptr);
 /// @param size_old
 /// @param size_new
 /// @return or NULL
-void			*ft_realloc(void *ptr_to_realloc, size_t size_old,
+void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 					size_t size_new);
 
 #endif
