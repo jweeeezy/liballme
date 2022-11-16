@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/16 23:33:54 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/17 00:10:13 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,25 @@ int				ft_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
 /// @param lst_to_search
 /// @param value
 /// @return	Pointer to the node of the value or NULL
-t_lst			*ft_lst_find_value(t_lst *lst_to_search, int value);
+t_lst			*ft_lst_get_value(t_lst *lst_to_search, int value);
 //
 //
 /// @brief		Loops through a t_lst and searches for the highest int
 /// @param lst_to_search
 /// @return	highest found int
-int				ft_lst_get_int_biggest(t_lst *lst_to_search);
+int				ft_lst_find_int_biggest(t_lst *lst_to_search);
 //
 //
 /// @brief		Loops through a t_lst and searches for the lowest int
 /// @param lst_to_search
 /// @return	lowest found int
-int				ft_lst_get_int_smallest(t_lst *lst_to_search);
+int				ft_lst_find_int_smallest(t_lst *lst_to_search);
 //
 //
 /// @brief		Loops through a t_lst and searches for the second smallest int
 /// @param lst_to_search
 /// @return second lowest found int
-int				ft_lst_get_int_second_smallest(t_lst *lst_to_search);
+int				ft_lst_find_int_second_smallest(t_lst *lst_to_search);
 //
 //
 /// @brief		Creates a new lst_header (with malloc) with a title
@@ -305,12 +305,13 @@ char			ft_int_compare_absolute_biggest(int value_a, int value_b);
 
 //	char 	*str;
 //	size_t 	size;
+//	size_t	buffer;
 typedef struct s_vector
 {
 	char	*str;
-	size_t	size;
+	size_t	size_used;
+	size_t	size_allocated;
 }				t_vector_str;
-
 
 ///	VECTOR INIT
 t_vector_str	*ft_vector_str_new(size_t size_of_str)
@@ -318,15 +319,49 @@ t_vector_str	*ft_vector_str_new(size_t size_of_str)
 	t_vector_str	*vector_return;
 
 	vector_return = (t_vector_str *) malloc (sizeof(t_vector_str));
-	vector_return->str = (char *) malloc (sizeof (char) * size_of_str);
-	vector_return->size = size_of_str * 2;
+	vector_return->str = (char *) malloc (sizeof (char) * size_of_str * 2);
+	vector_return->size_used = size_of_str;
+	vector_return->size_allocated = size_of_str * 2;
 	return (vector_return);
 }
+
 ///	VECTOR ADD
+t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
+						char *str_to_add, size_t size_to_add)
+{
+	t_vector_str	*vector_return;
+	if (vector_to_expand->size_used + size_to_add
+			<= vector_to_expand->size_allocated)
+		ft_strlcat(vector_to_expand->str, str_to_add,
+			vector_to_expand->size_used + size_to_add);
+	else
+		vector_return = ft_reallocf(vector_to_expand,
+			vector_to_expand->size_allocated, vector_to_expand->size_used
+			+ size_to_add);
+	return (vector_return);
+}
 
-///
+/// VECTOR DELETE
+t_vector_str	*ft_vector_str_free(t_vector_str *vector_to_free)
+{
+	free(vector_to_free->str);
+	free(vector_to_free);
+}
 
+char			*ft_vector_str_get_str(t_vector_str *vector_to_search)
+{
+	return (vector_to_search->str);
+}
 
+size_t			ft_vector_str_find_size_used(t_vector_str *vector_to_search)
+{
+	return (vector_to_search->size_used);
+}
+
+size_t			ft_vector_str_find_size_allocated(t_vector_str *vector_to_search)
+{
+	return (vector_to_search->size_allocated);
+}
 
 /* ************************************************************************** */
 /*				 					OTHER									 */

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find_value.c                                :+:      :+:    :+:   */
+/*   ft_lst_get_value.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libme.h"
 
-t_lst	*ft_lst_find_value(t_lst *lst_to_search, int value)
+t_lst	*ft_lst_get_value(t_lst *lst_to_search, int value)
 {
 	t_lst	*lst_index;
 

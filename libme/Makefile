@@ -33,10 +33,10 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_check_duplicate.c\
 					ft_input_argc.c\
 					ft_array_str_free.c\
-					ft_lst_get_int_smallest.c\
-					ft_lst_get_int_biggest.c\
-					ft_lst_get_int_second_smallest.c\
-					ft_lst_find_value.c\
+					ft_lst_find_int_smallest.c\
+					ft_lst_find_int_biggest.c\
+					ft_lst_find_int_second_smallest.c\
+					ft_lst_get_value.c\
 					ft_lst_count_iterations.c\
 					ft_lst_find_shortest_path.c\
 					ft_int_compare_absolute_biggest.c\

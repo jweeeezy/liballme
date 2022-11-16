@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_get_int_smallest.c                          :+:      :+:    :+:   */
+/*   ft_lst_find_int_smallest.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libme.h"
 
-int	ft_lst_get_int_smallest(t_lst *lst_to_search)
+int	ft_lst_find_int_smallest(t_lst *lst_to_search)
 {
 	int	int_min;
 
