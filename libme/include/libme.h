@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/16 13:16:33 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:33:54 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -299,6 +299,36 @@ char			ft_int_compare_absolute_biggest(int value_a, int value_b);
 //
 //
 /* ************************************************************************** */
+/*				 					VECTOR									 */
+/* ************************************************************************** */
+
+
+//	char 	*str;
+//	size_t 	size;
+typedef struct s_vector
+{
+	char	*str;
+	size_t	size;
+}				t_vector_str;
+
+
+///	VECTOR INIT
+t_vector_str	*ft_vector_str_new(size_t size_of_str)
+{
+	t_vector_str	*vector_return;
+
+	vector_return = (t_vector_str *) malloc (sizeof(t_vector_str));
+	vector_return->str = (char *) malloc (sizeof (char) * size_of_str);
+	vector_return->size = size_of_str * 2;
+	return (vector_return);
+}
+///	VECTOR ADD
+
+///
+
+
+
+/* ************************************************************************** */
 /*				 					OTHER									 */
 /* ************************************************************************** */
 //
@@ -308,11 +338,13 @@ char			ft_int_compare_absolute_biggest(int value_a, int value_b);
 /// @param ptr
 /// @return Pointer to the newly allocated string or NULL
 char			*ft_ptr_get_address(void *ptr);
-/// @brief 		NOT WORKING RIGHT YET... !!! DO NOT USE !!!
+/// @brief 		Reallocates pointer with size old to a new allocation of size
+///				new while copying its values. Frees the old pointer and allocates
+///				a new one.
 /// @param ptr_to_realloc
 /// @param size_old
 /// @param size_new
-/// @return or NULL
+/// @return Pointer to the new allocation or NULL
 void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 					size_t size_new);
 
