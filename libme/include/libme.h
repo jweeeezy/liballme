@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/17 00:10:13 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/19 17:36:50 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ char			ft_str_check_needle(const char *haystack, const char *needle,
 /// @param c_to_check
 /// @return 0 (False) or 1 (True)
 char			ft_str_check_precursor(const char *str_to_check,
-					char c_precursor, char c_to_check);
+						char c_precursor, char c_to_check);
 //
 //
 /// @brief		Checks if at least one char of str_set is found in str_to_check
@@ -313,55 +313,27 @@ typedef struct s_vector
 	size_t	size_allocated;
 }				t_vector_str;
 
-///	VECTOR INIT
-t_vector_str	*ft_vector_str_new(size_t size_of_str)
-{
-	t_vector_str	*vector_return;
 
-	vector_return = (t_vector_str *) malloc (sizeof(t_vector_str));
-	vector_return->str = (char *) malloc (sizeof (char) * size_of_str * 2);
-	vector_return->size_used = size_of_str;
-	vector_return->size_allocated = size_of_str * 2;
-	return (vector_return);
-}
-
-///	VECTOR ADD
 t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
-						char *str_to_add, size_t size_to_add)
-{
-	t_vector_str	*vector_return;
-	if (vector_to_expand->size_used + size_to_add
-			<= vector_to_expand->size_allocated)
-		ft_strlcat(vector_to_expand->str, str_to_add,
-			vector_to_expand->size_used + size_to_add);
-	else
-		vector_return = ft_reallocf(vector_to_expand,
-			vector_to_expand->size_allocated, vector_to_expand->size_used
-			+ size_to_add);
-	return (vector_return);
-}
+						char *str_to_add, size_t size_to_add);
 
-/// VECTOR DELETE
-t_vector_str	*ft_vector_str_free(t_vector_str *vector_to_free)
-{
-	free(vector_to_free->str);
-	free(vector_to_free);
-}
-
-char			*ft_vector_str_get_str(t_vector_str *vector_to_search)
-{
-	return (vector_to_search->str);
-}
-
-size_t			ft_vector_str_find_size_used(t_vector_str *vector_to_search)
-{
-	return (vector_to_search->size_used);
-}
-
-size_t			ft_vector_str_find_size_allocated(t_vector_str *vector_to_search)
-{
-	return (vector_to_search->size_allocated);
-}
+/// @brief
+/// @param size_of_str
+/// @return
+t_vector_str	*ft_vector_str_new(size_t size_of_str);
+/// @brief
+/// @param vector_to_free
+/// @return
+void			ft_vector_str_free(t_vector_str *vector_to_free);
+/// @brief
+/// @param vector_to_search
+/// @return
+char			*ft_vector_str_get_str(t_vector_str *vector_to_search);
+/// @brief
+/// @param vector_to_search
+/// @return
+size_t			ft_vector_str_find_size_used(t_vector_str *vector_to_search);
+size_t			ft_vector_str_find_size_allocated(t_vector_str *vector_to_search);
 
 /* ************************************************************************** */
 /*				 					OTHER									 */

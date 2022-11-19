@@ -40,7 +40,13 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_count_iterations.c\
 					ft_lst_find_shortest_path.c\
 					ft_int_compare_absolute_biggest.c\
-					ft_int_compare_absolute_smallest.c
+					ft_int_compare_absolute_smallest.c\
+					ft_vector_str_join.c\
+					ft_vector_str_new.c\
+					ft_vector_str_free.c\
+					ft_vector_str_get_str.c\
+					ft_vector_str_find_size_used.c\
+					ft_vector_str_find_size_allocated.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
