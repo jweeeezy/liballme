@@ -6,11 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:21:30 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/14 18:13:44 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/20 22:59:13 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
+#include <stdio.h>
 
 int	ft_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
 		t_lst *lst_dest_down)
@@ -38,6 +39,6 @@ int	ft_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
 	else if (iterations_path_up < iterations_path_down)
 		return (((int) iterations_path_up) * -1);
 	else if (iterations_path_down == iterations_path_up)
-		return ((int) iterations_path_down);
+		return ((int) iterations_path_up * -1);
 	return (0);
 }
