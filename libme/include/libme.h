@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/20 12:44:45 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/20 12:55:22 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,10 @@ size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 size_t			ft_lst_count_nodes(t_lst *lst_to_count);
 //
 //
-/// @brief		Loops through a t_lst and frees every node
-/// @param lst_to_free
-void			ft_lst_free(t_lst *lst_to_free);
+/// @brief 		Fetches the node.content of lst_index
+/// @param lst_index
+/// @return 	int of lst_index.content
+int				ft_lst_fetch_value(t_lst *lst_index);
 //
 //
 /// @brief		Compares the number of iterations it takes from a lst_index
@@ -99,6 +100,11 @@ int				ft_lst_find_int_smallest(t_lst *lst_to_search);
 /// @param lst_to_search
 /// @return second lowest found int
 int				ft_lst_find_int_second_smallest(t_lst *lst_to_search);
+//
+//
+/// @brief		Loops through a t_lst and frees every node
+/// @param lst_to_free
+void			ft_lst_free(t_lst *lst_to_free);
 //
 //
 /// @brief		Takes a size_t and loops to that position/index in a list
