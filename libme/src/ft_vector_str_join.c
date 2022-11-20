@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:19:39 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/20 12:43:10 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:23:50 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,27 @@ t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
 					char *str_to_add, size_t size_to_add)
 {
 	t_vector_str	*vector_return;
+	char			*str_tmp;
 
-	vector_return = NULL;
+	if (vector_to_expand == NULL)
+		return (NULL);
+	vector_return = vector_to_expand;
+	if (size_to_add == 0)
+		size_to_add = ft_strlen(str_to_add);
 	if (vector_to_expand->size_used + size_to_add
 		<= vector_to_expand->size_allocated)
+	{
 		ft_strlcat(vector_to_expand->str, str_to_add,
 			vector_to_expand->size_used + size_to_add);
-	else
-		vector_return = ft_reallocf(vector_to_expand,
-				vector_to_expand->size_allocated, vector_to_expand->size_used
-				+ size_to_add);
+		vector_to_expand->size_used = vector_to_expand->size_used + size_to_add;
+	}
+	else if (vector_to_expand->size_allocated < size_to_add
+		+ vector_to_expand->size_used)
+	{
+		str_tmp = ft_strjoin(vector_to_expand->str, str_to_add);
+		vector_return = ft_vector_str_new(str_tmp);
+		ft_vector_str_free(vector_to_expand);
+		free(str_tmp);
+	}
 	return (vector_return);
 }

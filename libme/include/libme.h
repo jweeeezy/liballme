@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/20 12:55:22 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:34:57 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -320,23 +320,27 @@ typedef struct s_vector
 }				t_vector_str;
 //
 //
-/// @brief
+/// @brief		Adds another string to the existing string of vector_to_expand.
+///				if there is enough space it will use ft_strlcat, else if more
+///				space is needed, it will copy the values and reallocate a new
+///				vector with enough size
 /// @param vector_to_expand
 /// @param str_to_add
 /// @param size_to_add
-/// @return
+/// @return		Pointer to the vector_to_expand or the newly created vector
+///				(with malloc)
 t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
 					char *str_to_add, size_t size_to_add);
 //
 //
-/// @brief		Allocates a new vector aswell as allocates the double amount
-///				of size_of_str (two allocations!)
+/// @brief		Allocates a new vector aswell as allocates twice as much size
+///				as the length of the str_to_add
 /// @param size_of_str
 /// @return		Pointer to the newly allocated vector (with malloc)
-t_vector_str	*ft_vector_str_new(size_t size_of_str);
+t_vector_str	*ft_vector_str_new(const char *str_to_add);
 //
 //
-/// @brief		Frees the string and the vector
+/// @brief		Frees the containing string and the vector itself
 /// @param vector_to_free
 void			ft_vector_str_free(t_vector_str *vector_to_free);
 //
