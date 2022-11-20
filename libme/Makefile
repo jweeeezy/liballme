@@ -23,11 +23,11 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_str_check_precursor.c\
 					ft_str_check_needle.c\
 					ft_str_check_viable_char.c\
-					ft_lst_size.c\
-					ft_lst_index.c\
-					ft_lst_last.c\
+					ft_lst_count_nodes.c\
+					ft_lst_get_index.c\
+					ft_lst_get_last.c\
 					ft_lst_add_back.c\
-					ft_lst_new.c\
+					ft_lst_get_new.c\
 					ft_lst_header_new.c\
 					ft_lst_header_free.c\
 					ft_lst_check_duplicate.c\
@@ -44,9 +44,9 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_vector_str_join.c\
 					ft_vector_str_new.c\
 					ft_vector_str_free.c\
-					ft_vector_str_get_str.c\
-					ft_vector_str_find_size_used.c\
-					ft_vector_str_find_size_allocated.c
+					ft_vector_str_fetch_str.c\
+					ft_vector_str_fetch_size_used.c\
+					ft_vector_str_fetch_size_allocated.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

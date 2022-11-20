@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_str_find_size_allocated.c                :+:      :+:    :+:   */
+/*   ft_vector_str_fetch_str.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 17:26:47 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/19 17:27:21 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/19 17:24:58 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/20 12:42:04 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-size_t			ft_vector_str_find_size_allocated(t_vector_str *vector_to_search)
+char	*ft_vector_str_fetch_str(t_vector_str *vector_to_search)
 {
-	return (vector_to_search->size_allocated);
+	return (vector_to_search->str);
 }

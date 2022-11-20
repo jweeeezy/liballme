@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_new.c                                       :+:      :+:    :+:   */
+/*   ft_lst_get_new.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:15:38 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 17:15:52 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/20 12:27:01 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-t_lst	*ft_lst_new(int value)
+t_lst	*ft_lst_get_new(int value)
 {
 	t_lst	*lst_head;
 

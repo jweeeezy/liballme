@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/19 17:36:50 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/20 12:44:45 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,12 @@ char			ft_lst_check_duplicate(t_lst **lst_to_check);
 size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 //
 //
+/// @brief		Counts the size (nodes) of a list
+/// @param lst_to_count
+/// @return Size of the list (size_t)
+size_t			ft_lst_count_nodes(t_lst *lst_to_count);
+//
+//
 /// @brief		Loops through a t_lst and frees every node
 /// @param lst_to_free
 void			ft_lst_free(t_lst *lst_to_free);
@@ -77,13 +83,6 @@ int				ft_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
 					t_lst *lst_dest_down);
 //
 //
-/// @brief		Loops through a t_lst and finds an int value
-/// @param lst_to_search
-/// @param value
-/// @return	Pointer to the node of the value or NULL
-t_lst			*ft_lst_get_value(t_lst *lst_to_search, int value);
-//
-//
 /// @brief		Loops through a t_lst and searches for the highest int
 /// @param lst_to_search
 /// @return	highest found int
@@ -102,6 +101,34 @@ int				ft_lst_find_int_smallest(t_lst *lst_to_search);
 int				ft_lst_find_int_second_smallest(t_lst *lst_to_search);
 //
 //
+/// @brief		Takes a size_t and loops to that position/index in a list
+/// @param lst_to_iterate
+/// @param index
+/// @return Pointer to the new position/index or NULL. If index > lst_size
+///			then lst_index == lst_last
+t_lst			*ft_lst_get_index(t_lst *lst_to_iterate, size_t index);
+//
+//
+/// @brief		Loops to the last position/index of a list
+/// @param lst_to_iterate
+/// @return Pointer to the last index or NULL
+t_lst			*ft_lst_get_last(t_lst *lst_to_iterate);
+//
+//
+/// @brief		Creates a node (with malloc) of type t_lst containing an int
+///				as value
+/// @param value
+/// @return Pointer to the new node or NULL
+t_lst			*ft_lst_get_new(int value);
+//
+//
+/// @brief		Loops through a t_lst and finds an int value
+/// @param lst_to_search
+/// @param value
+/// @return	Pointer to the node of the value or NULL
+t_lst			*ft_lst_get_value(t_lst *lst_to_search, int value);
+//
+//
 /// @brief		Creates a new lst_header (with malloc) with a title
 /// @param str_title
 /// @return Pointer to the new struct or NULL
@@ -111,33 +138,6 @@ t_lst_header	*ft_lst_header_new(char *str_title);
 /// @brief		Frees a lst_header and its containing list
 /// @param lst_to_free
 void			ft_lst_header_free(t_lst_header **lst_to_free);
-//
-//
-/// @brief		Takes a size_t and loops to that position/index in a list
-/// @param lst_to_iterate
-/// @param index
-/// @return Pointer to the new position/index or NULL. If index > lst_size
-///			then lst_index == lst_last
-t_lst			*ft_lst_index(t_lst *lst_to_iterate, size_t index);
-//
-//
-/// @brief		Loops to the last position/index of a list
-/// @param lst_to_iterate
-/// @return Pointer to the last index or NULL
-t_lst			*ft_lst_last(t_lst *lst_to_iterate);
-//
-//
-/// @brief		Creates a node (with malloc) of type t_lst containing an int
-///				as value
-/// @param value
-/// @return Pointer to the new node or NULL
-t_lst			*ft_lst_new(int value);
-//
-//
-/// @brief		Counts the size (nodes) of a list
-/// @param lst_to_count
-/// @return Size of the list (size_t)
-size_t			ft_lst_size(t_lst *lst_to_count);
 //
 //
 /* ************************************************************************** */
@@ -162,7 +162,7 @@ char			ft_str_check_needle(const char *haystack, const char *needle,
 /// @param c_to_check
 /// @return 0 (False) or 1 (True)
 char			ft_str_check_precursor(const char *str_to_check,
-						char c_precursor, char c_to_check);
+					char c_precursor, char c_to_check);
 //
 //
 /// @brief		Checks if at least one char of str_set is found in str_to_check
@@ -301,8 +301,8 @@ char			ft_int_compare_absolute_biggest(int value_a, int value_b);
 /* ************************************************************************** */
 /*				 					VECTOR									 */
 /* ************************************************************************** */
-
-
+//
+//
 //	char 	*str;
 //	size_t 	size;
 //	size_t	buffer;
@@ -312,29 +312,49 @@ typedef struct s_vector
 	size_t	size_used;
 	size_t	size_allocated;
 }				t_vector_str;
-
-
+//
+//
+/// @brief
+/// @param vector_to_expand
+/// @param str_to_add
+/// @param size_to_add
+/// @return
 t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
-						char *str_to_add, size_t size_to_add);
-
-/// @brief
+					char *str_to_add, size_t size_to_add);
+//
+//
+/// @brief		Allocates a new vector aswell as allocates the double amount
+///				of size_of_str (two allocations!)
 /// @param size_of_str
-/// @return
+/// @return		Pointer to the newly allocated vector (with malloc)
 t_vector_str	*ft_vector_str_new(size_t size_of_str);
-/// @brief
+//
+//
+/// @brief		Frees the string and the vector
 /// @param vector_to_free
-/// @return
 void			ft_vector_str_free(t_vector_str *vector_to_free);
-/// @brief
+//
+//
+/// @brief		Gets the pointer to the allocated string inside the vector
 /// @param vector_to_search
-/// @return
-char			*ft_vector_str_get_str(t_vector_str *vector_to_search);
-/// @brief
+/// @return		Pointer to the previously allocated string in the vector
+char			*ft_vector_str_fetch_str(t_vector_str *vector_to_search);
+//
+//
+/// @brief		Fetches the size_t of size_used inside the vector
 /// @param vector_to_search
-/// @return
-size_t			ft_vector_str_find_size_used(t_vector_str *vector_to_search);
-size_t			ft_vector_str_find_size_allocated(t_vector_str *vector_to_search);
-
+/// @return		Size_t of size_used of the vector
+size_t			ft_vector_str_fetch_size_used(
+					t_vector_str *vector_to_search);
+//
+//
+/// @brief		Fetches the size_t of size_allocated inside the vector
+/// @param vector_to_search
+/// @return		Size_t of size_allocated inside the vector
+size_t			ft_vector_str_fetch_size_allocated(
+					t_vector_str *vector_to_search);
+//
+//
 /* ************************************************************************** */
 /*				 					OTHER									 */
 /* ************************************************************************** */
@@ -346,8 +366,8 @@ size_t			ft_vector_str_find_size_allocated(t_vector_str *vector_to_search);
 /// @return Pointer to the newly allocated string or NULL
 char			*ft_ptr_get_address(void *ptr);
 /// @brief 		Reallocates pointer with size old to a new allocation of size
-///				new while copying its values. Frees the old pointer and allocates
-///				a new one.
+///				new while copying its values. Frees the old pointer and
+///				allocates a new one.
 /// @param ptr_to_realloc
 /// @param size_old
 /// @param size_new

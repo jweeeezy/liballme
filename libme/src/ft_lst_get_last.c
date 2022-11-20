@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_index.c                                     :+:      :+:    :+:   */
+/*   ft_lst_last.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:11:11 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/14 17:10:59 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/11 17:11:57 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/20 12:26:38 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-t_lst	*ft_lst_index(t_lst *lst_to_iterate, size_t index)
+t_lst	*ft_lst_get_last(t_lst *lst_to_iterate)
 {
 	t_lst	*lst_index;
 
 	if (lst_to_iterate == NULL)
 		return (NULL);
 	lst_index = lst_to_iterate;
-	while (index != 0 && lst_index->next != NULL)
-	{
+	while ((*lst_index).next != NULL)
 		lst_index = (*lst_index).next;
-		index--;
-	}
 	return (lst_index);
 }
