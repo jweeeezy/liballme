@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_input_argc.c                                    :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 13:42:03 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/21 16:28:49 by jwillert         ###   ########.fr       */
+/*   Created: 2022/10/24 17:05:18 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/21 15:41:06 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-size_t	ft_input_argc(char **array_to_count)
+void	ft_error(void)
 {
-	size_t	index;
-
-	index = 0;
-	while (array_to_count[index] != NULL)
-		index++;
-	return (index);
+	write(2, "Error\n", 7);
+	exit (0);
 }

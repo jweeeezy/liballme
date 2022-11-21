@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_input_argc.c                                    :+:      :+:    :+:   */
+/*   ft_input_check_empty_str.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 13:42:03 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/21 16:28:49 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/21 16:13:46 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/21 16:23:37 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-size_t	ft_input_argc(char **array_to_count)
+char	ft_input_check_empty_str(char **input_to_check)
 {
 	size_t	index;
 
 	index = 0;
-	while (array_to_count[index] != NULL)
+	while (input_to_check[index] != NULL)
+	{
+		if (ft_strncmp("", input_to_check[index], 2) == 0)
+			return (1);
 		index++;
-	return (index);
+	}
+	return (0);
 }

@@ -47,7 +47,9 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_vector_str_fetch_str.c\
 					ft_vector_str_fetch_size_used.c\
 					ft_vector_str_fetch_size_allocated.c\
-					ft_lst_fetch_value.c
+					ft_lst_fetch_value.c\
+					ft_error.c\
+					ft_input_check_empty_str.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

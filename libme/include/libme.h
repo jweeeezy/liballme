@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/20 15:50:55 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:26:09 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,6 +223,10 @@ char			*ft_strdup_set(char const *str_to_search,
 void			ft_array_str_free(char **array_to_free);
 //
 //
+/// @brief 		Checks the input if there is an empty string ("")
+/// @param input_to_check
+/// @return 	1 (True) or 0 (False)
+char			ft_input_check_empty_str(char **input_to_check);
 /// @brief 		Puts all strings of one input into one string (with malloc)
 /// @param argv
 /// @return Pointer to the newly allocated string or NULL
@@ -385,5 +389,10 @@ char			*ft_ptr_get_address(void *ptr);
 /// @return Pointer to the new allocation or NULL
 void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 					size_t size_new);
+//
+//
+/// @brief 		Prints "Error" to stderr
+/// @param
+void			ft_error(void);
 
 #endif
