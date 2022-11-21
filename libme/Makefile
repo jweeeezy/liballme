@@ -20,7 +20,7 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_atoi_long.c\
 					ft_reallocf.c\
 					ft_str_check_set.c\
-					ft_str_check_precursor.c\
+					ft_str_check_precursor_digit.c\
 					ft_str_check_needle.c\
 					ft_str_check_viable_char.c\
 					ft_lst_count_nodes.c\

@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/21 16:26:09 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:04:35 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ char			ft_str_check_needle(const char *haystack, const char *needle,
 /// @param c_precursor
 /// @param c_to_check
 /// @return 0 (False) or 1 (True)
-char			ft_str_check_precursor(const char *str_to_check,
+char			ft_str_check_precursor_digit(const char *str_to_check,
 					char c_precursor, char c_to_check);
 //
 //
