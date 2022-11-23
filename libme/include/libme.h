@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/21 17:04:35 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:28:54 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,12 @@ void			ft_lst_header_free(t_lst_header **lst_to_free);
 /// @return 0 (False) or 1 (True)
 char			ft_str_check_needle(const char *haystack, const char *needle,
 					size_t length);
+//
+//
+char			*ft_str_merge_needles(const char *str_haystack,
+					const char *str_needle_a,
+					const char *str_needle_b,
+					const char *str_needle_merge);
 //
 //
 /// @brief		Checks if a specific char (c_to_check) has a specific char
