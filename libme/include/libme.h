@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/23 21:28:54 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 13:31:51 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,25 @@ char			ft_str_check_needle(const char *haystack, const char *needle,
 					size_t length);
 //
 //
+
+
+/// @brief
+/// @param haystack
+/// @param needle_a
+/// @param needle_b
+/// @return
+size_t			ft_str_count_needle_occasions(const char *haystack,
+					const char *needle_a, const char *needle_b);
+//
+//
+
+
+/// @brief
+/// @param str_haystack
+/// @param str_needle_a
+/// @param str_needle_b
+/// @param str_needle_merge
+/// @return
 char			*ft_str_merge_needles(const char *str_haystack,
 					const char *str_needle_a,
 					const char *str_needle_b,
@@ -222,6 +241,13 @@ char			*ft_strdup_set(char const *str_to_search,
 /* ************************************************************************** */
 /*		 					INPUT / ARGV / ARRAY RELATED					 */
 /* ************************************************************************** */
+//
+//
+/// @brief 		Initializes an array of array_size of size_t and sets all
+///				values to 0
+/// @param array_size
+/// @return 	The newly allocated array of indexes (with malloc);
+size_t			*ft_array_index_init(size_t	array_size);
 //
 //
 /// @brief 		Frees all strings in an array and the array itself

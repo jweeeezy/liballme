@@ -50,12 +50,14 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_fetch_value.c\
 					ft_error.c\
 					ft_input_check_empty_str.c\
-					ft_str_merge_needles.c
+					ft_array_index_init.c\
+					ft_str_count_needle_occasions.c\
+					ft_str_merge_needle.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
 CC				=	cc
-CFLAGS			=	-Wall -Wextra -Werror -g
+CFLAGS			=	-Wall -Wextra -Werror
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)/include/
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
