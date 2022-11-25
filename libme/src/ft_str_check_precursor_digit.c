@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_check_precursor.c                           :+:      :+:    :+:   */
+/*   ft_str_check_precursor_digit.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:52:04 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 16:56:24 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:51:20 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-char	ft_str_check_precursor(const char *str_to_check, char c_precursor,
+char	ft_str_check_precursor_digit(const char *str_to_check, char c_precursor,
 					char c_to_check)
 {
 	size_t	index;

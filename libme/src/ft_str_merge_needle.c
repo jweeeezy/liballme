@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:18:48 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 13:40:04 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 15:52:24 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,29 +72,37 @@ static char	*haystack_merge_needles(const char **str_array,
 	return (str_return);
 }
 
-char	*prepare_merge(const char **str_array)
+static char	*prepare_merge(const char **str_array)
 {
 	char	*str_return;
 	size_t	*index_array;
+	size_t occasions;
 
 	index_array = ft_array_index_init(4);
 	if (index_array == NULL)
 		return (NULL);
+	occasions = ft_str_count_needle_occasions(str_array[0], str_array[1],
+					str_array[2]);
+	if (occasions == 0)
+		return (ft_strdup(str_array[0]));
 	str_return = (char *) malloc (sizeof (char) * (ft_strlen(str_array[0]))
-			- (ft_str_count_needle_occasions(str_array[0], str_array[1],
-					str_array[2]) * (ft_strlen(str_array[1])
-					+ ft_strlen(str_array[2]) - ft_strlen(str_array[4]))) + 1);
+			- (occasions * (ft_strlen(str_array[1])
+					+ ft_strlen(str_array[2]) - ft_strlen(str_array[3]))) + 1);
+	if (str_return == NULL)
+		return (NULL);
 	str_return = haystack_merge_needles(str_array, index_array, str_return);
 	free (index_array);
 	return (str_return);
 }
 
-char	*ft_str_merge_needles(const char *haystack, const char *needle_a,
+char	*ft_str_merge_needles(char *haystack, const char *needle_a,
 			const char *needle_b, const char *needle_merge)
 {
 	const char	**str_array;
 	char		*str_return;
 
+	if (haystack == NULL)
+		return (NULL);
 	str_array = (const char **) malloc (sizeof (char *) * 4);
 	if (str_array == NULL)
 		return (NULL);

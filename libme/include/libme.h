@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 13:38:05 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:49:00 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,7 +216,7 @@ char			ft_str_find_char(char const *str_to_search,
 /// @param str_needle_b
 /// @param str_needle_merge
 /// @return
-char			*ft_str_merge_needles(const char *str_haystack,
+char			*ft_str_merge_needles(char *str_haystack,
 					const char *str_needle_a,
 					const char *str_needle_b,
 					const char *str_needle_merge);
