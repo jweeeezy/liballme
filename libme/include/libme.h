@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 13:31:51 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 13:38:05 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,29 +160,14 @@ char			ft_str_check_needle(const char *haystack, const char *needle,
 					size_t length);
 //
 //
-
-
-/// @brief
+/// @brief		Counts how many occasions of needle_a followed by needle_b or
+///				vice versa exist in the haystack
 /// @param haystack
 /// @param needle_a
 /// @param needle_b
-/// @return
+/// @return		size_t of occasion count
 size_t			ft_str_count_needle_occasions(const char *haystack,
 					const char *needle_a, const char *needle_b);
-//
-//
-
-
-/// @brief
-/// @param str_haystack
-/// @param str_needle_a
-/// @param str_needle_b
-/// @param str_needle_merge
-/// @return
-char			*ft_str_merge_needles(const char *str_haystack,
-					const char *str_needle_a,
-					const char *str_needle_b,
-					const char *str_needle_merge);
 //
 //
 /// @brief		Checks if a specific char (c_to_check) has a specific char
@@ -223,6 +208,18 @@ char			*ft_str_empty(void);
 /// @return 0 (False) or 1 (True)
 char			ft_str_find_char(char const *str_to_search,
 					char const char_to_find);
+//
+//
+/// @brief
+/// @param str_haystack
+/// @param str_needle_a
+/// @param str_needle_b
+/// @param str_needle_merge
+/// @return
+char			*ft_str_merge_needles(const char *str_haystack,
+					const char *str_needle_a,
+					const char *str_needle_b,
+					const char *str_needle_merge);
 //
 //
 /// @brief 		Reverses the contents of a string in place

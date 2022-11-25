@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:18:48 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 13:31:44 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 13:40:04 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ static void	*needle_copy_merge(const char **str_array, size_t *index_array,
 static char	*haystack_merge_needles(const char **str_array,
 				size_t *index_array, char *str_return)
 {
+	if (str_return == NULL)
+		return (NULL);
 	while (str_array[0][index_array[0]] != '\0')
 	{
 		if (str_array[0][index_array[0]] == str_array[1][0])
@@ -82,8 +84,8 @@ char	*prepare_merge(const char **str_array)
 			- (ft_str_count_needle_occasions(str_array[0], str_array[1],
 					str_array[2]) * (ft_strlen(str_array[1])
 					+ ft_strlen(str_array[2]) - ft_strlen(str_array[4]))) + 1);
-	free (index_array);
 	str_return = haystack_merge_needles(str_array, index_array, str_return);
+	free (index_array);
 	return (str_return);
 }
 
