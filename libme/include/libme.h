@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 14:49:00 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:22:53 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
 /// @brief		Checks if there is a duplicate value in a list
 /// @param lst_to_check
 /// @return 0 (False) or 1 (True)
-char			ft_lst_check_duplicate(t_lst **lst_to_check);
+char			ft_lst_check_duplicate_int(t_lst **lst_to_check);
 //
 //
 /// @brief		Counts the iterations between two "t_lst" pointers
@@ -61,6 +61,12 @@ size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 /// @param lst_to_count
 /// @return Size of the list (size_t)
 size_t			ft_lst_count_nodes(t_lst *lst_to_count);
+//
+//
+/// @brief 		Duplicates all values of a list in to a new list
+/// @param lst_to_duplicate
+/// @return 	Newly allocated lst (with malloc)
+t_lst			*ft_lst_get_duplicate(t_lst *lst_to_duplicate);
 //
 //
 /// @brief 		Fetches the node.content of lst_index

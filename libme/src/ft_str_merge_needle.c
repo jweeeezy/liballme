@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:18:48 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 15:52:24 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:07:51 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static char	*prepare_merge(const char **str_array)
 {
 	char	*str_return;
 	size_t	*index_array;
-	size_t occasions;
+	size_t	occasions;
 
 	index_array = ft_array_index_init(4);
 	if (index_array == NULL)
@@ -84,7 +84,10 @@ static char	*prepare_merge(const char **str_array)
 	occasions = ft_str_count_needle_occasions(str_array[0], str_array[1],
 					str_array[2]);
 	if (occasions == 0)
+	{
+		free (index_array);
 		return (ft_strdup(str_array[0]));
+	}
 	str_return = (char *) malloc (sizeof (char) * (ft_strlen(str_array[0]))
 			- (occasions * (ft_strlen(str_array[1])
 					+ ft_strlen(str_array[2]) - ft_strlen(str_array[3]))) + 1);
@@ -112,5 +115,6 @@ char	*ft_str_merge_needles(char *haystack, const char *needle_a,
 	str_array[3] = needle_merge;
 	str_return = prepare_merge(str_array);
 	free (str_array);
+	free (haystack);
 	return (str_return);
 }

@@ -30,7 +30,7 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_get_new.c\
 					ft_lst_header_new.c\
 					ft_lst_header_free.c\
-					ft_lst_check_duplicate.c\
+					ft_lst_check_duplicate_int.c\
 					ft_input_argc.c\
 					ft_array_str_free.c\
 					ft_lst_find_int_smallest.c\
@@ -52,7 +52,8 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_input_check_empty_str.c\
 					ft_array_index_init.c\
 					ft_str_count_needle_occasions.c\
-					ft_str_merge_needle.c
+					ft_str_merge_needle.c\
+					ft_lst_get_duplicate.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

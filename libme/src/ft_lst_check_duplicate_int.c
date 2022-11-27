@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:19:45 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 17:19:59 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:21:43 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-char	ft_lst_check_duplicate(t_lst **lst_to_check)
+char	ft_lst_check_duplicate_int(t_lst **lst_to_check)
 {
 	t_lst	*lst_index;
 	t_lst	*lst_index_compare;
