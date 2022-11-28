@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:18:48 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 16:07:51 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/28 00:08:31 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static char	*prepare_merge(const char **str_array)
 	if (index_array == NULL)
 		return (NULL);
 	occasions = ft_str_count_needle_occasions(str_array[0], str_array[1],
-					str_array[2]);
+			str_array[2]);
 	if (occasions == 0)
 	{
 		free (index_array);

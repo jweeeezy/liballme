@@ -6,12 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:08:22 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/27 19:29:04 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/28 00:08:09 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
-
 
 t_lst	*ft_lst_get_duplicate(t_lst *lst_to_duplicate)
 {

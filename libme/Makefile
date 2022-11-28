@@ -53,7 +53,9 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_array_index_init.c\
 					ft_str_count_needle_occasions.c\
 					ft_str_merge_needle.c\
-					ft_lst_get_duplicate.c
+					ft_lst_get_duplicate.c\
+					ft_lst_calc_sum.c\
+					ft_lst_calc_average.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

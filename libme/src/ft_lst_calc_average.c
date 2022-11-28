@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_count_nodes.c                               :+:      :+:    :+:   */
+/*   ft_lst_calc_average.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:09:50 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/27 20:18:02 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/27 23:55:04 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/28 00:07:30 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-size_t	ft_lst_count_nodes(t_lst *lst_to_count)
+long	ft_lst_calc_average(t_lst *lst_to_calculate)
 {
-	size_t	index;
-	t_lst	*lst_index;
+	long	average;
+	long	sum;
+	size_t	count_nodes;
 
-	index = 0;
-	if (lst_to_count == NULL)
-		return (0);
-	lst_index = lst_to_count;
-	while (lst_index != NULL)
-	{
-		lst_index = (*lst_index).next;
-		index++;
-	}
-	return (index);
+	average = 0;
+	sum = ft_lst_calc_sum(lst_to_calculate);
+	count_nodes = ft_lst_count_nodes(lst_to_calculate);
+	average = sum / (long) count_nodes;
+	return (average);
 }

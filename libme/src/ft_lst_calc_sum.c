@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_count_nodes.c                               :+:      :+:    :+:   */
+/*   ft_lst_calc_sum.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:09:50 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/27 20:18:02 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/27 23:37:16 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/27 23:57:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-size_t	ft_lst_count_nodes(t_lst *lst_to_count)
+long	ft_lst_calc_sum(t_lst *lst_to_calculate)
 {
-	size_t	index;
-	t_lst	*lst_index;
+	long	sum;
 
-	index = 0;
-	if (lst_to_count == NULL)
+	sum = 0;
+	if (lst_to_calculate == NULL)
 		return (0);
-	lst_index = lst_to_count;
-	while (lst_index != NULL)
+	while (lst_to_calculate != NULL)
 	{
-		lst_index = (*lst_index).next;
-		index++;
+		sum = sum + lst_to_calculate->content;
+		lst_to_calculate = lst_to_calculate->next;
 	}
-	return (index);
+	return (sum);
 }

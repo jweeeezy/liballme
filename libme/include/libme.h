@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/27 19:22:53 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/27 23:57:15 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,18 @@ typedef struct s_lst_header
 /// @param lst_to_add
 /// @param node_to_add
 void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
+//
+//
+/// @brief		Makes an avereage out of all values of a lst
+/// @param lst_to_calculate
+/// @return 	Long of average of all values of a list
+long			ft_lst_calc_average(t_lst *lst_to_calculate);
+//
+//
+/// @brief		Makes a sum out of all values of a lst
+/// @param lst_to_calculate
+/// @return 	Long of sum of all values of a list
+long			ft_lst_calc_sum(t_lst *lst_to_calculate);
 //
 //
 /// @brief		Checks if there is a duplicate value in a list
@@ -150,6 +162,7 @@ t_lst_header	*ft_lst_header_new(char *str_title);
 /// @brief		Frees a lst_header and its containing list
 /// @param lst_to_free
 void			ft_lst_header_free(t_lst_header **lst_to_free);
+
 //
 //
 /* ************************************************************************** */
