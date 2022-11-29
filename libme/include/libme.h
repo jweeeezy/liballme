@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/27 23:57:15 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/29 10:20:32 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,12 @@ size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 /// @param lst_to_count
 /// @return Size of the list (size_t)
 size_t			ft_lst_count_nodes(t_lst *lst_to_count);
+//
+//
+/// @brief
+/// @param lst_head
+/// @param node_to_delete
+void			ft_lst_delete_node(t_lst **lst_head, t_lst *node_to_delete);
 //
 //
 /// @brief 		Duplicates all values of a list in to a new list
@@ -162,7 +168,12 @@ t_lst_header	*ft_lst_header_new(char *str_title);
 /// @brief		Frees a lst_header and its containing list
 /// @param lst_to_free
 void			ft_lst_header_free(t_lst_header **lst_to_free);
-
+//
+//
+/// @brief
+/// @param lst_to_sort
+/// @return
+int				*ft_lst_sort_to_array(t_lst **lst_to_sort);
 //
 //
 /* ************************************************************************** */
@@ -264,6 +275,13 @@ char			*ft_strdup_set(char const *str_to_search,
 /// @param array_size
 /// @return 	The newly allocated array of indexes (with malloc);
 size_t			*ft_array_index_init(size_t	array_size);
+//
+//
+/// @brief
+/// @param array
+/// @param size_array
+/// @return
+int				ft_array_int_calc_median(int *array, size_t size_array);
 //
 //
 /// @brief 		Frees all strings in an array and the array itself
