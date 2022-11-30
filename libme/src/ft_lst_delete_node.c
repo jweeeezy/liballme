@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:32:04 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/29 10:01:13 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:53:44 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void ft_lst_delete_node(t_lst **lst_head, t_lst *node_to_delete)
+void	ft_lst_delete_node(t_lst **lst_head, t_lst *node_to_delete)
 {
 	if (*lst_head == NULL)
 		return ;

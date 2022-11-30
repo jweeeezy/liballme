@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find_int_second_smallest.c                  :+:      :+:    :+:   */
+/*   ft_lst_find_int_next_biggest.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 13:21:19 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/30 13:25:28 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/30 12:56:28 by jwillert          #+#    #+#             */
+/*   Updated: 2022/11/30 13:54:04 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
+#include <stdio.h>
 
-int	ft_lst_find_int_second_smallest(t_lst *lst_to_search)
+int	ft_lst_find_int_next_biggest(t_lst *lst_to_search, int int_to_compare)
 {
-	int	int_second_smallest;
-	int	int_smallest;
+	int	int_next_biggest;
+	int	tmp;
 
 	if (lst_to_search == NULL || lst_to_search->next == NULL)
 		return (0);
-	int_smallest = ft_lst_find_int_smallest(lst_to_search);
-	int_second_smallest = lst_to_search->content;
+	int_next_biggest = 0;
+	tmp = lst_to_search->content;
 	while (lst_to_search != NULL)
 	{
-		if (int_second_smallest > lst_to_search->content
-			&& lst_to_search->content != int_smallest)
-			int_second_smallest = lst_to_search->content;
+		if (lst_to_search->content > int_to_compare)
+		{
+			int_next_biggest = lst_to_search->content;
+			if (int_next_biggest < tmp)
+				tmp = int_next_biggest;
+		}
 		lst_to_search = lst_to_search->next;
 	}
-	return (int_second_smallest);
+	if (tmp != int_to_compare && tmp > int_to_compare)
+		return (tmp);
+	else if (int_next_biggest > int_to_compare)
+		return (int_next_biggest);
+	else
+		return (int_to_compare);
 }

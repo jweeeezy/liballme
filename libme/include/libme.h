@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/29 10:20:32 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:52:26 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,14 @@ int				ft_lst_find_int_smallest(t_lst *lst_to_search);
 /// @param lst_to_search
 /// @return second lowest found int
 int				ft_lst_find_int_second_smallest(t_lst *lst_to_search);
+//
+//
+/// @brief
+/// @param lst_to_search
+/// @param int_to_compare
+/// @return
+int				ft_lst_find_int_next_biggest(t_lst *lst_to_search,
+					int int_to_compare);
 //
 //
 /// @brief		Loops through a t_lst and frees every node
