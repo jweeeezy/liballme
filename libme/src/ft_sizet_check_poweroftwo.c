@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_str_free.c                               :+:      :+:    :+:   */
+/*   ft_sizet_check_poweroftwo.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 17:23:54 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/02 18:15:01 by jwillert         ###   ########.fr       */
+/*   Created: 2022/12/04 13:58:27 by jwillert          #+#    #+#             */
+/*   Updated: 2022/12/04 14:04:57 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	ft_vector_str_free(t_vector_str *vector_to_free)
+char	ft_sizet_check_poweroftwo(size_t n_to_check)
 {
-	free(vector_to_free->str);
-	free(vector_to_free);
+	if (n_to_check == 0)
+		return 0;
+	while (n_to_check != 1)
+	{
+		if (n_to_check % 2 != 0)
+			return 0;
+		n_to_check = n_to_check / 2;
+	}
+	return 1;
 }

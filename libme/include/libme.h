@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/30 14:52:26 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/04 14:02:08 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -449,6 +449,17 @@ size_t			ft_vector_str_fetch_size_allocated(
 /* ************************************************************************** */
 //
 //
+/// @brief
+typedef struct s_recursive_counters
+{
+	size_t	counter;
+	size_t	max;
+	size_t	tmp;
+	size_t	remain;
+}					t_recursive_counters;
+//
+//
+char			ft_sizet_check_poweroftwo(size_t n_to_check);
 /// @brief		Converts the address of a pointer into a hexadecimal string
 ///				(with malloc)
 /// @param ptr

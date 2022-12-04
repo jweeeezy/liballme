@@ -59,7 +59,8 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_delete_node.c\
 					ft_lst_sort_to_array.c\
 					ft_array_int_calc_median.c\
-					ft_lst_find_int_next_biggest.c
+					ft_lst_find_int_next_biggest.c\
+					ft_sizet_check_poweroftwo.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
