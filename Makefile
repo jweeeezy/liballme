@@ -33,6 +33,7 @@ $(NAME):			ft_printf_make gnl_make
 					$(REMOVE) $(OBJ_FILES)
 					$(REMOVE) libgnl.a
 					$(REMOVE) libftprintf.a
+					rm __.SYMDEF\ SORTED
 clean:
 					$(MAKE) clean -C $(LIBFT_DIR)
 					$(MAKE) clean -C $(LIBME_DIR)

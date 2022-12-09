@@ -6,12 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:56:28 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/30 13:54:04 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:34:27 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
-#include <stdio.h>
 
 int	ft_lst_find_int_next_biggest(t_lst *lst_to_search, int int_to_compare)
 {

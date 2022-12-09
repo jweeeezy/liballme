@@ -6,12 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:21:30 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/29 11:16:01 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:34:36 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
-#include <stdio.h>
 
 int	ft_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
 		t_lst *lst_dest_down)

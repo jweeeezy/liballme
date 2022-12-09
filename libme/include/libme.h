@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/04 14:02:08 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:51:55 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,9 @@ size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 /// @param lst_to_count
 /// @return Size of the list (size_t)
 size_t			ft_lst_count_nodes(t_lst *lst_to_count);
+//
+//
+size_t			ft_lst_count_streak_ascending(t_lst *lst_to_count);
 //
 //
 /// @brief
