@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:19:39 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/20 17:38:53 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:22:15 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
 
 	vector_return = vector_to_expand;
 	if (vector_to_expand == NULL)
-		return (ft_vector_str_new(str_to_add));
+		return (NULL);
 	if (size_to_add == 0)
 		size_to_add = ft_strlen(str_to_add);
 	if (vector_to_expand->size_used + size_to_add
