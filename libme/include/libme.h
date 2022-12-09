@@ -61,6 +61,8 @@ long			ft_lst_calc_sum(t_lst *lst_to_calculate);
 /// @param lst_to_check
 /// @return 0 (False) or 1 (True)
 char			ft_lst_check_duplicate_int(t_lst **lst_to_check);
+
+char			ft_lst_check_sorted_desc(t_lst *lst_to_check);
 //
 //
 /// @brief		Counts the iterations between two "t_lst" pointers
