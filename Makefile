@@ -15,7 +15,7 @@ GNL_INCLUDE			=	$(GNL_DIR)include/
 LIB_MERGE			=	ar -crT $(NAME)
 REMOVE				=	rm -f
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -g
+CFLAGS				=	-Wall -Wextra -Werror
 INCLUDE				=	-I $(INCLUDE_DIR) -I $(LIBFT_INCLUDE) -I $(LIBME_INCLUDE) -I $(FT_PRINTF_INCLUDE) -I $(GNL_INCLUDE)
 SRC_FILES			=	$(OBJ_FILES:.o=.c)
 OBJ_FILES			=	$(shell ar -t $(FT_PRINTF) | grep ft_) $(shell ar -t $(GNL) | grep get)

@@ -62,12 +62,13 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_find_int_next_biggest.c\
 					ft_sizet_check_poweroftwo.c\
 					ft_lst_check_sorted_desc.c\
-					ft_lst_count_streak_ascending.c
+					ft_lst_count_streak_ascending.c\
+					ft_exit_with_error.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
 CC				=	cc
-CFLAGS			=	-Wall -Wextra -Werror -g
+CFLAGS			=	-Wall -Wextra -Werror
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)/include/
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)

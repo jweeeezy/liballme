@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/10 09:57:53 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:58:00 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -484,5 +484,6 @@ void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 /// @brief 		Prints "Error" to stderr
 /// @param
 void			ft_error(void);
+void			ft_exit_with_error(char *error_message, int exit_status);
 
 #endif
