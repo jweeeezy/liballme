@@ -21,10 +21,12 @@ SRC_FILES			=	$(OBJ_FILES:.o=.c)
 OBJ_FILES			=	$(shell ar -t $(FT_PRINTF) | grep ft_) $(shell ar -t $(GNL) | grep get)
 
 .DELETE_ON_ERROR:
-.PHONY:				all clean fclean re list test libft libft_make libme libme_make ft_printf ft_printf_make gnl gnl_make
+.PHONY:				all liballme_make clean fclean re list test libft libft_make libme libme_make ft_printf ft_printf_make gnl gnl_make
 
 all:				$(NAME)
 $(NAME):			ft_printf_make gnl_make
+					@test ! -f liballme.a && $(MAKE) liballme_make || echo "Liballme already exists"
+liballme_make:
 					cp $(FT_PRINTF) ./
 					cp $(GNL) ./
 					ar -x ./libftprintf.a

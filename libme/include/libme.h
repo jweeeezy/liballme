@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/09 16:51:55 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/10 09:57:53 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -359,7 +359,7 @@ char			*ft_itoa_unsigned(unsigned int uint_to_convert);
 //
 //
 /// @brief		Converts a string into its int representation. Uses long int
-///				as a data type to throw an error if either malloc fails
+///				as a data type to throw an error if either string is NULL
 ///				(9999999991) or to prevent an overflow (9999999999)
 /// @param str_to_convert
 /// @return Long int representation of string
