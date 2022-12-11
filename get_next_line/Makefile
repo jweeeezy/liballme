@@ -17,13 +17,19 @@ REMOVE			=	rm -f
 BUFFER_SIZE		=	10000
 
 .DELETE_ON_ERROR:
-.PHONY:				all list clean fclean re
+.PHONY:				all clean fclean re list
 
 all:				$(NAME)
 $(NAME):			$(OBJ_FILES)
 					$(LIB_CREATE) $(OBJ)
 %.o:				%.c
 					$(CC_OBJ) -D BUFFER_SIZE=$(BUFFER_SIZE)
+clean:
+					$(REMOVE) $(OBJ)
+fclean:				clean
+					$(REMOVE) $(NAME)
+re:					fclean
+					$(MAKE)
 list:
 					@echo
 					@echo
@@ -31,9 +37,4 @@ list:
 					@ar -t $(NAME) | sort -g
 					@echo
 					@echo
-clean:
-					$(REMOVE) $(OBJ)
-fclean:				clean
-					$(REMOVE) $(NAME)
-re:					fclean
-					$(MAKE)
+

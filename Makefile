@@ -1,41 +1,31 @@
-NAME				=	liballme.a
-INCLUDE_DIR			=	./include/
-LIBFT_DIR			=	./libft/
-LIBFT				=	$(LIBFT_DIR)libft.a
-LIBFT_INCLUDE		=	$(LIBFT_DIR)include/
-LIBME_DIR			=	./libme/
-LIBME				=	$(LIBME_DIR)libme.a
-LIBME_INCLUDE		=	$(LIBME_DIR)include/
-FT_PRINTF_DIR		=	./ft_printf/
-FT_PRINTF			=	$(FT_PRINTF_DIR)libftprintf.a
-FT_PRINTF_INCLUDE 	=	$(FT_PRINTF_DIR)include/
-GNL_DIR				=	./get_next_line/
-GNL					=	$(GNL_DIR)libgnl.a
-GNL_INCLUDE			=	$(GNL_DIR)include/
-LIB_MERGE			=	ar -crT $(NAME)
-REMOVE				=	rm -f
-CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror
-INCLUDE				=	-I $(INCLUDE_DIR) -I $(LIBFT_INCLUDE) -I $(LIBME_INCLUDE) -I $(FT_PRINTF_INCLUDE) -I $(GNL_INCLUDE)
-SRC_FILES			=	$(OBJ_FILES:.o=.c)
-OBJ_FILES			=	$(shell ar -t $(FT_PRINTF) | grep ft_) $(shell ar -t $(GNL) | grep get)
+NAME									=	liballme.a
+INCLUDE_DIR								=	./include/
+LIBFT_DIR								=	./libft/
+LIBFT									=	$(LIBFT_DIR)libft.a
+LIBFT_INCLUDE							=	$(LIBFT_DIR)include/
+LIBME_DIR								=	./libme/
+LIBME									=	$(LIBME_DIR)libme.a
+LIBME_INCLUDE							=	$(LIBME_DIR)include/
+FT_PRINTF_DIR							=	./ft_printf/
+FT_PRINTF								=	$(FT_PRINTF_DIR)libftprintf.a
+FT_PRINTF_INCLUDE 						=	$(FT_PRINTF_DIR)include/
+GNL_DIR									=	./get_next_line/
+GNL										=	$(GNL_DIR)libgnl.a
+GNL_INCLUDE								=	$(GNL_DIR)include/
+LIB_MERGE								=	ar -crT $(NAME)
+REMOVE									=	rm -f
+CC										=	cc
+CFLAGS									=	-Wall -Wextra -Werror
+INCLUDE									=	-I $(INCLUDE_DIR) -I $(LIBFT_INCLUDE) -I $(LIBME_INCLUDE) -I $(FT_PRINTF_INCLUDE) -I $(GNL_INCLUDE)
+SRC_FILES								=	$(OBJ_FILES:.o=.c)
+OBJ_FILES								=	$(shell ar -t $(FT_PRINTF) | grep ft_) $(shell ar -t $(GNL) | grep get)
 
 .DELETE_ON_ERROR:
-.PHONY:				all liballme_make clean fclean re list test libft libft_make libme libme_make ft_printf ft_printf_make gnl gnl_make
+.PHONY:				all clean fclean re list liballme_make test libft libft_make libme libme_make ft_printf ft_printf_make gnl gnl_make
 
 all:				$(NAME)
 $(NAME):			ft_printf_make gnl_make
 					@test ! -f liballme.a && $(MAKE) liballme_make || echo "Liballme already exists"
-liballme_make:
-					cp $(FT_PRINTF) ./
-					cp $(GNL) ./
-					ar -x ./libftprintf.a
-					ar -x ./libgnl.a
-					ar -cr $(NAME) $(OBJ_FILES)
-					$(REMOVE) $(OBJ_FILES)
-					$(REMOVE) libgnl.a
-					$(REMOVE) libftprintf.a
-					rm __.SYMDEF\ SORTED
 clean:
 					$(MAKE) clean -C $(LIBFT_DIR)
 					$(MAKE) clean -C $(LIBME_DIR)
@@ -58,6 +48,16 @@ list:
 					@echo
 test:
 					$(CC) $(CFLAGS) $(INCLUDE) main.c $(NAME)
+liballme_make:
+					cp $(FT_PRINTF) ./
+					cp $(GNL) ./
+					ar -x ./libftprintf.a
+					ar -x ./libgnl.a
+					ar -cr $(NAME) $(OBJ_FILES)
+					$(REMOVE) $(OBJ_FILES)
+					$(REMOVE) libgnl.a
+					$(REMOVE) libftprintf.a
+					rm __.SYMDEF\ SORTED
 libft:				libft_make
 					cp $(LIBFT) ./$(NAME)
 libft_make:

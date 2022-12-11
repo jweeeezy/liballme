@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2022/11/04 14:27:18 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/11 15:20:03 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ LIB_CREATE			=	ar -crs $(NAME)
 REMOVE				=	rm -f
 
 .DELETE_ON_ERROR:
-.PHONY :				all mandatory bonus list clean fclean re
+.PHONY :				all clean fclean re mandatory bonus list
 
 all:					$(NAME)
 $(NAME):				$(MANDATORY_OBJ_FILES) $(BONUS_OBJ_FILES)
