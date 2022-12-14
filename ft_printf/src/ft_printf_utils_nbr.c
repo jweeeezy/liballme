@@ -1,97 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_nbr.c                                    :+:      :+:    :+:   */
+/*   ft_printf_utils_nbr.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 14:17:29 by jwillert          #+#    #+#             */
-/*   Updated: 2022/06/12 16:20:33 by jwillert         ###   ########.fr       */
+/*   Created: 2022/12/14 17:04:19 by jwillert          #+#    #+#             */
+/*   Updated: 2022/12/14 17:49:40 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_ifdi(int n, int length)
+t_vector_str	*ft_ifdi(int number, t_vector_str *vector)
 {
-	char	*str;
+	char	*string_to_add;
 
-	str = NULL;
-	str = ft_itoa(n);
-	if (str == NULL)
+	string_to_add = ft_itoa(number);
+	if (string_to_add == NULL)
+		vector = ft_vector_str_join(vector, "(null)", 0);
+	else
 	{
-		ft_putstr_fd("(null)", 1);
-		length = length + 6;
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+		free(string_to_add);
 	}
-	else if (str != NULL)
-	{
-		ft_putstr_fd(str, 1);
-		length = ft_strlen(str) + length;
-	}
-	free(str);
-	return (length);
+	return (vector);
 }
 
-int	ft_ifu(unsigned int nu, int length)
+t_vector_str	*ft_ifu(unsigned int number, t_vector_str *vector)
 {
-	char	*str;
+	char	*string_to_add;
 
-	str = NULL;
-	str = ft_itoa_unsigned(nu);
-	if (str == NULL)
+	string_to_add = ft_itoa_unsigned(number);
+	if (string_to_add == NULL)
+		vector = ft_vector_str_join(vector, "(null)", 0);
+	else
 	{
-		ft_putstr_fd("(null)", 1);
-		length = length + 6;
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+		free(string_to_add);
 	}
-	else if (str != NULL)
-	{
-		ft_putstr_fd(str, 1);
-		length = ft_strlen(str) + length;
-	}
-	free(str);
-	return (length);
+	return (vector);
 }
 
-int	ft_ifxlower(unsigned int nu, int length)
+t_vector_str	*ft_ifxlower(unsigned int number, t_vector_str *vector)
 {
-	char	*str;
-	int		caps;
+	char	*string_to_add;
 
-	caps = 0;
-	str = NULL;
-	str = ft_itoa_hexadecimal(nu, caps);
-	if (str == NULL)
+	string_to_add = ft_itoa_hexadecimal(number, 0);
+	if (string_to_add == NULL)
+		vector = ft_vector_str_join(vector, "(null)", 0);
+	else
 	{
-		ft_putstr_fd("(null)", 1);
-		length = length + 6;
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+		free(string_to_add);
 	}
-	else if (str != NULL)
-	{
-		ft_putstr_fd(str, 1);
-		length = ft_strlen(str) + length;
-	}
-	free(str);
-	return (length);
+	return (vector);
 }
 
-int	ft_ifxupper(unsigned int nu, int length)
+t_vector_str	*ft_ifxupper(unsigned int number, t_vector_str *vector)
 {
-	char	*str;
-	int		caps;
+	char	*string_to_add;
 
-	caps = 1;
-	str = NULL;
-	str = ft_itoa_hexadecimal(nu, caps);
-	if (str == NULL)
+	string_to_add = ft_itoa_hexadecimal(number, 1);
+	if (string_to_add == NULL)
+		vector = ft_vector_str_join(vector, "(null)", 0);
+	else
 	{
-		ft_putstr_fd("(null)", 1);
-		length = length + 6;
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+		free(string_to_add);
 	}
-	else if (str != NULL)
-	{
-		ft_putstr_fd(str, 1);
-		length = ft_strlen(str) + length;
-	}
-	free(str);
-	return (length);
+	return (vector);
 }

@@ -6,16 +6,23 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/11 15:20:03 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/14 16:43:03 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#	Library name
 NAME				=	libft.a
+MANDATORY_NAME		=	libft_m.a
+BONUS_NAME			=	libft_b.a
+
+#	Directories
 INCLUDE_DIR			=	./include/
 MANDATORY_DIR		=	./src_mandatory/
 BONUS_DIR			=	./src_bonus/
 OBJ_DIR				=	./obj/
 VPATH				=	$(MANDATORY_DIR):$(BONUS_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
+
+#	Files (42-Norm)
 MANDATORY_SRC_FILES	=	ft_isalpha.c\
 						ft_isdigit.c\
 						ft_isalnum.c\
@@ -65,31 +72,34 @@ MANDATORY_SRC		=	$(addprefix $(MANDATORY_DIR),$(MANDATORY_SRC_FILES))
 BONUS_SRC			=	$(addprefix $(BONUS_DIR),$(BONUS_SRC_FILES))
 MANDATORY_OBJ		=	$(addprefix $(OBJ_DIR),$(MANDATORY_OBJ_FILES))
 BONUS_OBJ			=	$(addprefix $(OBJ_DIR),$(BONUS_OBJ_FILES))
+
+#	General Rules
 CC					=	cc
 CFLAGS				=	-Wall -Wextra -Werror
 INCLUDE				=	-I $(INCLUDE_DIR)
 CC_OBJ				=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
-LIB_CREATE			=	ar -crs $(NAME)
+LIB_CREATE			=	ar -crs
 REMOVE				=	rm -f
 
-.DELETE_ON_ERROR:
-.PHONY :				all clean fclean re mandatory bonus list
 
+#	Deletes target in case of an error
+.DELETE_ON_ERROR:
+%.o:					%.c
+							$(CC_OBJ)
+
+#	General Targets
+.PHONY:					all clean fclean re list
 all:					$(NAME)
 $(NAME):				$(MANDATORY_OBJ_FILES) $(BONUS_OBJ_FILES)
-						$(LIB_CREATE) $(MANDATORY_OBJ) $(BONUS_OBJ)
-%.o:					%.c
-						$(CC_OBJ)
+							$(LIB_CREATE) $(NAME) $(MANDATORY_OBJ) $(BONUS_OBJ)
 clean:
-						$(REMOVE) $(MANDATORY_OBJ) $(BONUS_OBJ)
-fclean: 				clean
-						$(REMOVE) $(NAME)
+							$(REMOVE) $(MANDATORY_OBJ) $(BONUS_OBJ)
+fclean:					clean
+							$(REMOVE) $(NAME)
+							$(REMOVE) $(MANDATORY_NAME)
+							$(REMOVE) $(BONUS_NAME)
 re:						fclean
-						$(MAKE)
-mandatory:				$(MANDATORY_OBJ_FILES)
-						$(LIB_CREATE) $(MANDATORY_OBJ)
-bonus:					$(BONUS_OBJ_FILES)
-						$(LIB_CREATE) $(BONUS_OBJ)
+							$(MAKE)
 list:
 						@echo
 						@echo
@@ -98,3 +108,40 @@ list:
 						@echo
 						@echo
 
+#	Mandatory Targets
+.PHONY:					mandatory mandatory_clean mandatory_fclean mandarory_re mandatory_list
+mandatory:				$(MANDATORY_NAME)
+$(MANDATORY_NAME):		$(MANDATORY_OBJ_FILES)
+							$(LIB_CREATE) $(MANDATORY_NAME) $(MANDATORY_OBJ)
+mandatory_clean:
+							$(REMOVE) $(MANDATORY_OBJ)
+mandatory_fclean:		mandatory_clean
+							$(REMOVE) $(MANDATORY_NAME)
+mandarory_re:			mandarory_re
+							$(MAKE) mandatory
+mandatory_list:
+						@echo
+						@echo
+						@echo "Library <$(MANDATORY_NAME)> is containing the following functions:"
+						@ar -t $(MANDATORY_NAME) | sort -g
+						@echo
+						@echo
+
+#	Bonus Targets
+.PHONY:					bonus bonus_clean bonus_fclean bonus_re bonus_list
+bonus:					$(BONUS_NAME)
+$(BONUS_NAME):			$(BONUS_OBJ_FILES)
+							$(LIB_CREATE) $(BONUS_NAME) $(BONUS_OBJ)
+bonus_clean:
+						$(REMOVE) $(BONUS_OBJ)
+bonus_fclean: 			bonus_clean
+						$(REMOVE) $(BONUS_NAME)
+bonus_re:				bonus_fclean
+						$(MAKE) bonus
+bonus_list:
+						@echo
+						@echo
+						@echo "Library <$(BONUS_NAME)> is containing the following functions:"
+						@ar -t $(BONUS_NAME) | sort -g
+						@echo
+						@echo

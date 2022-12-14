@@ -12,7 +12,6 @@ FT_PRINTF_INCLUDE 						=	$(FT_PRINTF_DIR)include/
 GNL_DIR									=	./get_next_line/
 GNL										=	$(GNL_DIR)libgnl.a
 GNL_INCLUDE								=	$(GNL_DIR)include/
-LIB_MERGE								=	ar -crT $(NAME)
 REMOVE									=	rm -f
 CC										=	cc
 CFLAGS									=	-Wall -Wextra -Werror

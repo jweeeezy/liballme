@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:30:25 by jwillert          #+#    #+#             */
-/*   Updated: 2022/07/17 13:18:59 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:48:19 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ char	*ft_itoa_hexadecimal(unsigned int uint_to_convert, int flag_caps)
 	str_return = ft_uint_to_string(uint_to_convert, flag_caps);
 	if (str_return == NULL)
 		return (NULL);
-	ft_str_rev(str_return);
+	ft_str_reverse(str_return);
 	return (str_return);
 }

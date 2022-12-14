@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/10 11:58:00 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:03:16 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,6 +194,7 @@ int				*ft_lst_sort_to_array(t_lst **lst_to_sort);
 /* ************************************************************************** */
 //
 //
+char			*ft_char_to_string(char c);
 /// @brief		Checks if a string (haystack) contains another string (needle)
 /// @param haystack
 /// @param needle
@@ -267,14 +268,14 @@ char			*ft_str_merge_needles(char *str_haystack,
 //
 /// @brief 		Reverses the contents of a string in place
 /// @param str_to_reverse
-void			ft_str_rev(char *str_to_reverse);
+void			ft_str_reverse(char *str_to_reverse);
 //
 //
 /// @brief 		Duplicates str_to_search but only the chars in str_set_to_find
 /// @param str_to_search
 /// @param str_set_to_find
 /// @return Pointer to the newly allocated string or NULL
-char			*ft_strdup_set(char const *str_to_search,
+char			*ft_str_duplicate_set(char const *str_to_search,
 					char const *str_set_to_find);
 //
 //

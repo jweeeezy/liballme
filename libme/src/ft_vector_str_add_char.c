@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_rev.c                                       :+:      :+:    :+:   */
+/*   ft_vector_str_add_char.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 14:45:45 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 15:45:20 by jwillert         ###   ########.fr       */
+/*   Created: 2022/12/14 18:08:07 by jwillert          #+#    #+#             */
+/*   Updated: 2022/12/14 18:12:02 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	ft_str_rev(char *str_to_reverse)
+t_vector_str	*ft_vector_str_add_char(t_vector_str *vector_to_expand, char c_to_add)
 {
-	char	c_to_save;
-	int		length;
-	int		index;
+	t_vector_str	*vector_return;
+	size_t			size_to_add;
 
-	index = 0;
-	length = ft_strlen(str_to_reverse);
-	while (index < length / 2)
+	if (vector_to_expand == NULL)
+
+	size_to_add = 2;
+	if (vector_to_expand->size_used + size_to_add <= vector_to_expand->size_allocated)
 	{
-		c_to_save = str_to_reverse[index];
-		str_to_reverse[index] = str_to_reverse[length - 1 - index];
-		str_to_reverse[length - 1 - index] = c_to_save;
-		index++;
+		ft_strlcat(vector_to_expand->str, )
 	}
+
+
+
+
+
+
+
+
+
+
 }

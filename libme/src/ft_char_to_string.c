@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_char_to_string.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 11:14:53 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/14 17:52:26 by jwillert         ###   ########.fr       */
+/*   Created: 2022/12/14 17:59:16 by jwillert          #+#    #+#             */
+/*   Updated: 2022/12/14 18:07:22 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# define SPECIFIER "cspdiuxX%"
-# include <stdarg.h>
-# include "ft_printf_utils_str.h"
-# include "ft_printf_utils_nbr.h"
-# include "libme.h"
+#include "libme.h"
 
-/// @brief		Selfmade and slimmer version of printf (stdio.h)
-///				Can handle: %cspdiuxX%
-/// @param input
-/// @param
-/// @return Int of all bytes printed or 0
-int		ft_printf(const char *input, ...);
+char	*ft_char_to_string(char c_to_convert)
+{
+	char	*string_return;
 
-#endif
+	string_return = malloc (sizeof (char) * 2);
+	if (string_return == NULL)
+		return (NULL);
+	string_return[0] = c_to_convert;
+	string_return[1] = '\0';
+	return (string_return);
+}

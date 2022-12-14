@@ -5,51 +5,72 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 16:26:29 by jwillert          #+#    #+#             */
-/*   Updated: 2022/06/12 16:19:43 by jwillert         ###   ########.fr       */
+/*   Created: 2022/12/14 16:52:47 by jwillert          #+#    #+#             */
+/*   Updated: 2022/12/14 18:05:50 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_check_specifier(va_list args, char c, int length)
+static t_vector_str	*ft_check_specifier(va_list args, char c,
+	t_vector_str *vector)
 {
 	if (c == 'c')
-		length = ft_ifc(va_arg(args, int), length);
+		vector = ft_ifc(va_arg(args, int), vector);
 	else if (c == 's')
-		length = ft_ifs(va_arg(args, char *), length);
+		vector = ft_ifs(va_arg(args, char *), vector);
 	else if (c == 'p')
-		length = ft_ifp(va_arg(args, void *), length);
+		vector = ft_ifp(va_arg(args, void *), vector);
 	else if (c == 'd' || c == 'i')
-		length = ft_ifdi(va_arg(args, int), length);
+		vector = ft_ifdi(va_arg(args, int), vector);
 	else if (c == 'u')
-		length = ft_ifu(va_arg(args, unsigned int), length);
+		vector = ft_ifu(va_arg(args, unsigned int), vector);
 	else if (c == 'x')
-		length = ft_ifxlower(va_arg(args, unsigned int), length);
+		vector = ft_ifxlower(va_arg(args, unsigned int), vector);
 	else if (c == 'X')
-		length = ft_ifxupper(va_arg(args, unsigned int), length);
+		vector = ft_ifxupper(va_arg(args, unsigned int), vector);
 	else if (c == '%')
-		length = ft_ifperc(length);
-	return (length);
+		vector = ft_ifperc(vector);
+	return (vector);
+}
+
+static t_vector_str	*main_loop(va_list args, const char *input)
+{
+	int				index;
+	t_vector_str	*output;
+
+	index = 0;
+	output = ft_vector_str_new("");
+	if (output == NULL)
+		return (NULL);
+	while (input[index] != '\0')
+	{
+		if (input[index] == '%')
+			output = ft_check_specifier(args, input[++index], output);
+		else if (input[index] != '\0')
+			output = ft_ifc(input[index], output);
+		index++;
+	}
+	return (output);
 }
 
 int	ft_printf(const char *input, ...)
 {
-	int		i;
-	int		length;
-	va_list	args;
+	int				length;
+	va_list			args;
+	t_vector_str	*output;
 
-	i = 0;
-	length = 0;
 	va_start(args, input);
-	while (input[i] != '\0')
-	{
-		if (input[i] == '%')
-			length = ft_check_specifier(args, input[++i], length);
-		else if (input[i] != '\0')
-			length = ft_ifc(input[i], length);
-		i++;
-	}
+	output = main_loop(args, input);
 	va_end(args);
+	if (output == NULL)
+		return (1);
+	length = ft_strlen(output->str);
+	if (write(1, output->str, length) == -1)
+	{
+		ft_vector_str_free(output);
+		return (-1);
+	}
+	ft_vector_str_free(output);
 	return (length);
 }

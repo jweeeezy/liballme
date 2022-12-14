@@ -1,10 +1,27 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
+#    Updated: 2022/12/14 18:04:10 by jwillert         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#	Library Name
 NAME			=	libme.a
+
+#	Directories
 INCLUDE_DIR		=	./include/
 SRC_DIR			=	./src/
 OBJ_DIR			=	./obj/
 LIBFT_DIR		=	../libft/
-LIBFT			=	$(LIBFT_DIR)libft.a
+LIBFT			=	$(LIBFT_DIR)libft_m.a
 VPATH			=	$(SRC_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
+
+#	Files (42 Norm)
 SRC_FILES		=	ft_input_strjoin.c\
 					ft_itoa_hexadecimal.c\
 					ft_itoa_hexadecimal_long.c\
@@ -12,8 +29,8 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_ptr_get_address.c\
 					ft_str_empty.c\
 					ft_str_find_char.c\
-					ft_strdup_set.c\
-					ft_str_rev.c\
+					ft_str_duplicate_set.c\
+					ft_str_reverse.c\
 					ft_input_len.c\
 					ft_input_print.c\
 					ft_lst_free.c\
@@ -63,10 +80,13 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_sizet_check_poweroftwo.c\
 					ft_lst_check_sorted_desc.c\
 					ft_lst_count_streak_ascending.c\
-					ft_exit_with_error.c
+					ft_exit_with_error.c\
+					ft_char_to_string.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
+
+#	General rules
 CC				=	cc
 CFLAGS			=	-Wall -Wextra -Werror
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)/include/
@@ -74,16 +94,18 @@ CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f
 
+#	Deletes target in case of an error
 .DELETE_ON_ERROR:
-.PHONY :			all clean fclean re list
-
-all:				$(NAME)
-$(NAME):			$(OBJ_FILES)
-					$(MAKE) -C $(LIBFT_DIR)
-					cp $(LIBFT) $(NAME)
-					$(LIB_CREATE) $(OBJ)
 %.o:				%.c
 					$(CC_OBJ)
+
+#	General Targets
+.PHONY :			all clean fclean re list
+all:				$(NAME)
+$(NAME):			$(OBJ_FILES)
+					$(MAKE) mandatory -C  $(LIBFT_DIR)
+					cp $(LIBFT) $(NAME)
+					$(LIB_CREATE) $(OBJ)
 clean:
 					$(MAKE) clean -C $(LIBFT_DIR)
 					$(REMOVE) $(OBJ)

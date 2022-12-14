@@ -1,53 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_utils_str.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 13:13:24 by jwillert          #+#    #+#             */
-/*   Updated: 2022/09/26 12:46:16 by jwillert         ###   ########.fr       */
+/*   Created: 2022/12/14 17:31:59 by jwillert          #+#    #+#             */
+/*   Updated: 2022/12/14 18:02:43 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_ifc(char c, int length)
+t_vector_str	*ft_ifc(char c_to_add, t_vector_str *vector)
 {
-	ft_putchar_fd(c, 1);
-	length++;
-	return (length);
-}
+	char	*string_to_add;
 
-int	ft_ifs(char *str, int length)
-{
-	if (str == NULL)
+	string_to_add = ft_char_to_string(c_to_add);
+	if (string_to_add == NULL)
+		return (NULL);
+	else
 	{
-		ft_putstr_fd("(null)", 1);
-		length = length + 6;
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+		free(string_to_add);
 	}
-	else if (str != NULL)
+	return (vector);
+}
+
+t_vector_str	*ft_ifs(char *string_to_add, t_vector_str *vector)
+{
+	if (string_to_add == NULL)
+		vector = ft_vector_str_join(vector, "(null)", 0);
+	else
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+	return (vector);
+}
+
+t_vector_str	*ft_ifp(void *pointer, t_vector_str *vector)
+{
+	char	*string_to_add;
+
+	string_to_add = ft_ptr_get_address(pointer);
+	if (string_to_add == NULL)
+		vector = ft_vector_str_join(vector, "(null)", 0);
+	else
 	{
-		ft_putstr_fd(str, 1);
-		length = ft_strlen(str) + length;
+		vector = ft_vector_str_join(vector, string_to_add, 0);
+		free(string_to_add);
 	}
-	return (length);
+	return (vector);
 }
 
-int	ft_ifp(void *ptr, int length)
+t_vector_str	*ft_ifperc(t_vector_str *vector)
 {
-	char	*str_n;
-
-	str_n = NULL;
-	str_n = ft_ptr_get_address(ptr);
-	ft_putstr_fd(str_n, 1);
-	length = length + ft_strlen(str_n);
-	free(str_n);
-	return (length);
-}
-
-int	ft_ifperc(int length)
-{
-	length = ft_ifc('%', length);
-	return (length);
+	vector = ft_ifc('%', vector);
+	return (vector);
 }
