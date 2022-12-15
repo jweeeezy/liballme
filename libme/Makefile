@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/14 18:04:10 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/15 19:11:28 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,7 @@ REMOVE			=	rm -f
 %.o:				%.c
 					$(CC_OBJ)
 
-#	General Targets
+#	General targets
 .PHONY :			all clean fclean re list
 all:				$(NAME)
 $(NAME):			$(OBJ_FILES)
