@@ -49,7 +49,7 @@ LIB_EXTRACT								=	ar -x
 .PHONY:					all clean fclean re list test
 all:						$(NAME)
 $(NAME):				printf_make gnl_make
-							@test ! -f liballme.a && $(MAKE) liballme_make || echo "Liballme already exists"
+							test ! -f liballme.a && $(MAKE) liballme_make || echo "Liballme already exists!"
 liballme_make:
 							cp $(FT_PRINTF) ./
 							cp $(GNL) ./
@@ -59,7 +59,7 @@ liballme_make:
 							$(REMOVE) $(OBJ_FILES)
 							$(REMOVE) libgnl.a
 							$(REMOVE) libftprintf.a
-							rm __.SYMDEF\ SORTED
+							test ! -f __.SYMDEF\ SORTED || rm __.SYMDEF\ SORTED
 clean:
 							$(MAKE) clean -C $(LIBFT_DIR)
 							$(MAKE) clean -C $(LIBME_DIR)
@@ -120,7 +120,6 @@ printf_make:
 
 #	Get_next_line
 .PHONY:					gnl gnl_make
-
 gnl:					gnl_make
 							cp $(GNL) ./libgnl.a
 gnl_make:

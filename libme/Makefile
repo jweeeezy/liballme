@@ -89,7 +89,7 @@ OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
 #	General rules
 CC				=	cc
 CFLAGS			=	-Wall -Wextra -Werror
-INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)/include/
+INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)include/
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f

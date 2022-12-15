@@ -42,3 +42,5 @@ t_vector_str	*ft_vector_str_add_char(t_vector_str *vector_to_expand, char c_to_a
 	}
 	return (vector_return);
 }
+
+// needs testing!
