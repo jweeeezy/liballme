@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
+#    By: jwillert <jwillert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/15 19:11:28 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/16 12:01:51 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,8 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_lst_check_sorted_desc.c\
 					ft_lst_count_streak_ascending.c\
 					ft_exit_with_error.c\
-					ft_char_to_string.c
+					ft_char_to_string.c\
+					ft_dummy.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

@@ -486,5 +486,6 @@ void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 /// @param
 void			ft_error(void);
 void			ft_exit_with_error(char *error_message, int exit_status);
+void			ft_dummy(void *dummy);
 
 #endif
