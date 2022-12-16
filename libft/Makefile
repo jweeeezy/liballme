@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/14 16:43:03 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/16 15:39:05 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDE_DIR			=	./include/
 MANDATORY_DIR		=	./src_mandatory/
 BONUS_DIR			=	./src_bonus/
 OBJ_DIR				=	./obj/
-VPATH				=	$(MANDATORY_DIR):$(BONUS_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
+VPATH				=	$(MANDATORY_DIR):$(BONUS_DIR):$(OBJ_DIR)
 
 #	Files (42-Norm)
 MANDATORY_SRC_FILES	=	ft_isalpha.c\

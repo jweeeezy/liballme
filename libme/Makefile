@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/16 14:50:43 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/16 15:38:38 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_DIR			=	./src/
 OBJ_DIR			=	./obj/
 LIBFT_DIR		=	../libft/
 LIBFT			=	$(LIBFT_DIR)libft_m.a
-VPATH			=	$(SRC_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
+VPATH			=	$(SRC_DIR):$(OBJ_DIR)
 
 #	Files (42 Norm)
 SRC_FILES		=	ft_input_strjoin.c\

@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:48:58 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/14 16:50:58 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/16 15:38:55 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_DIR			=	./obj/
 LIBFT_DIR		=	../libft/
 LIBME_DIR		=	../libme/
 LIBME			=	$(LIBME_DIR)libme.a
-VPATH			=	$(SRC_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
+VPATH			=	$(SRC_DIR):$(OBJ_DIR)
 
 #	Files (42 Norm)
 SRC_FILES 		= 	ft_printf_utils_nbr.c\

@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:33:59 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/14 16:42:22 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/16 15:38:59 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME			=	libgnl.a
 INCLUDE_DIR		=	./include/
 SRC_DIR			=	./src/
 OBJ_DIR			=	./obj/
-VPATH			=	$(SRC_DIR):$(OBJ_DIR):$(INCLUDE_DIR)
+VPATH			=	$(SRC_DIR):$(OBJ_DIR)
 
 #	Files (42 Norm)
 SRC_FILES		=	get_next_line_bonus.c\
