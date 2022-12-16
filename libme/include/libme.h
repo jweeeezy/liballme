@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/14 18:03:16 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:51:43 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -404,6 +404,8 @@ typedef struct s_vector
 }				t_vector_str;
 //
 //
+t_vector_str	*ft_vector_str_add_char(t_vector_str *vector_to_expand,
+					char c_to_add);
 /// @brief		Adds another string to the existing string of vector_to_expand.
 ///				if there is enough space it will use ft_strlcat, else if more
 ///				space is needed, it will copy the values and reallocate a new

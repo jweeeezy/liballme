@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:21:41 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/09 14:34:53 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:03:49 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ t_vector_str	*ft_vector_str_new(const char *str_to_add)
 	vector_return->str = (char *) malloc ((sizeof (char) * size_of_str * 2));
 	ft_strlcpy(vector_return->str, str_to_add, size_of_str);
 	vector_return->size_used = size_of_str;
-	vector_return->size_allocated = size_of_str * 2;
+	vector_return->size_allocated = (size_of_str * 2);
 	return (vector_return);
 }
