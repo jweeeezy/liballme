@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 19:08:46 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/15 19:47:43 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/16 15:17:04 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ fclean:					clean
 							$(REMOVE) ./libftprintf.a
 							$(REMOVE) ./libgnl.a
 							$(REMOVE) ./libme.a
+							$(REMOVE) ./a.out
 re:						fclean
 							$(MAKE)
 list:
