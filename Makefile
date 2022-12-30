@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 19:08:46 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/16 15:39:10 by jwillert         ###   ########.fr        #
+#    Updated: 2022/12/30 16:35:46 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,35 +93,35 @@ test:
 #	Libft
 .PHONY:					libft libft_make libft_mandatory libft_mandatory_make libft_bonus libft_bonus_make
 libft:					libft_make
-							cp $(LIBFT) ./libft.a
+							test ! -f ./libft.a && cp $(LIBFT) ./libft.a || echo "Libft already exists!"
 libft_make:
 							$(MAKE) -C $(LIBFT_DIR)
 libft_mandatory:		libft_mandatory_make
-							cp $(LIBFT_MANDATORY) ./libft_m.a
+							test ! -f ./libft_m.a && cp $(LIBFT_MANDATORY) ./libft_m.a || echo "Libft_mandatory already exists!"
 libft_mandatory_make:
 							$(MAKE) mandatory -C $(LIBFT_DIR)
 libft_bonus:			libft_bonus_make
-							cp $(LIBFT_DIR)libft_b.a ./libft_b.a
+							test ! -f ./libft_b.a && cp $(LIBFT_DIR)libft_b.a ./libft_b.a || echo "libft_bonus already exists!"
 libft_bonus_make:
 							$(MAKE) bonus -C $(LIBFT_DIR)
 
 #	Libme
 .PHONY:					libme libme_make
 libme:					libme_make
-							cp $(LIBME) ./libme.a
+							test ! -f ./libme.a && cp $(LIBME) ./libme.a || echo "libme already exists!"
 libme_make:
 							$(MAKE) -C $(LIBME_DIR)
 
 #	Ft_printf
 .PHONY:					printf printf_make
 printf:					printf_make
-							cp $(FT_PRINTF) ./libftprintf.a
+							test ! -f ./libftprintf.a && cp $(FT_PRINTF) ./libftprintf.a || echo "libftprintf already exists!"
 printf_make:
 							$(MAKE) -C $(FT_PRINTF_DIR)
 
 #	Get_next_line
 .PHONY:					gnl gnl_make
 gnl:					gnl_make
-							cp $(GNL) ./libgnl.a
+							test ! -f ./libgnl.a && cp $(GNL) ./libgnl.a || echo "libgnl already exists!"
 gnl_make:
 							$(MAKE) -C $(GNL_DIR)
