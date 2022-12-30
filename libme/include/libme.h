@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/16 14:51:43 by jwillert         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:11:08 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ int				ft_lst_find_int_next_biggest(t_lst *lst_to_search,
 //
 /// @brief		Loops through a t_lst and frees every node
 /// @param lst_to_free
-void			ft_lst_free(t_lst *lst_to_free);
+void			ft_lst_free(t_lst **lst_to_free);
 //
 //
 /// @brief		Takes a size_t and loops to that position/index in a list
