@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_header_free.c                               :+:      :+:    :+:   */
+/*   ft_lst_print_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:17:32 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/30 19:27:31 by jwillert         ###   ########.fr       */
+/*   Created: 2023/01/01 16:54:44 by jwillert          #+#    #+#             */
+/*   Updated: 2023/01/01 17:14:26 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	ft_lst_header_free(t_lst_header *lst_to_free)
+void	ft_lst_print_node(t_lst *node_to_print)
 {
-	ft_lst_free(lst_to_free->head);
-	free(lst_to_free);
+	if (node_to_print == NULL)
+	{
+		ft_putstr_fd("null\n", 1);
+		return ;
+	}
+	ft_putstr_fd("Node: ", 1);
+	ft_putnbr_fd(node_to_print->content, 1);
+	ft_putchar_fd('\n', 1);
 }

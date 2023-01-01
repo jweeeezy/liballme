@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_header_free.c                               :+:      :+:    :+:   */
+/*   ft_lst_header_print.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:17:32 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/30 19:27:31 by jwillert         ###   ########.fr       */
+/*   Created: 2023/01/01 16:54:31 by jwillert          #+#    #+#             */
+/*   Updated: 2023/01/01 17:11:53 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-void	ft_lst_header_free(t_lst_header *lst_to_free)
+void	ft_lst_header_print(t_lst_header *lst_to_print)
 {
-	ft_lst_free(lst_to_free->head);
-	free(lst_to_free);
+	ft_putstr_fd("List name: ", 1);
+	ft_putstr_fd(lst_to_print->title, 1);
+	ft_putchar_fd('\n', 1);
+	ft_lst_print(lst_to_print->head);
 }

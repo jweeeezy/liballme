@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/16 15:38:38 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/01 17:46:43 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_ptr_get_address.c\
 					ft_str_empty.c\
 					ft_str_find_char.c\
-					ft_str_duplicate_set.c\
+					ft_strdup_set.c\
 					ft_str_reverse.c\
 					ft_input_len.c\
 					ft_input_print.c\
@@ -78,12 +78,14 @@ SRC_FILES		=	ft_input_strjoin.c\
 					ft_array_int_calc_median.c\
 					ft_lst_find_int_next_biggest.c\
 					ft_sizet_check_poweroftwo.c\
-					ft_lst_check_sorted_desc.c\
 					ft_lst_count_streak_ascending.c\
 					ft_exit_with_error.c\
 					ft_char_to_string.c\
 					ft_dummy.c\
-					ft_vector_str_add_char.c
+					ft_vector_str_add_char.c\
+					ft_lst_header_print.c\
+					ft_lst_print_node.c\
+					ft_lst_print.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))

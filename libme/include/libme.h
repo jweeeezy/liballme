@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/30 19:11:08 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/01 18:27:36 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 /* ************************************************************************** */
 //
 //
+/* *****************************  t_lst************************************* */
+//
+//
 //		int				content;
 //		struct s_lst	*next;
 typedef struct s_lst
@@ -28,15 +31,6 @@ typedef struct s_lst
 	int				content;
 	struct s_lst	*next;
 }					t_lst;
-//
-//
-//		char			*title;
-//		t_lst			*head;
-typedef struct s_lst_header
-{
-	char			*title;
-	t_lst			*head;
-}					t_lst_header;
 //
 //
 /// @brief		Adds a note to the end of a list (with malloc)
@@ -61,8 +55,6 @@ long			ft_lst_calc_sum(t_lst *lst_to_calculate);
 /// @param lst_to_check
 /// @return 0 (False) or 1 (True)
 char			ft_lst_check_duplicate_int(t_lst **lst_to_check);
-
-char			ft_lst_check_sorted_desc(t_lst *lst_to_check);
 //
 //
 /// @brief		Counts the iterations between two "t_lst" pointers
@@ -77,10 +69,13 @@ size_t			ft_lst_count_iterations(t_lst *lst_start, t_lst *lst_end);
 size_t			ft_lst_count_nodes(t_lst *lst_to_count);
 //
 //
+/// @brief		Counts a streak of ascending node values
+/// @param lst_to_count
+/// @return		Streak count or 0 if no streak
 size_t			ft_lst_count_streak_ascending(t_lst *lst_to_count);
 //
 //
-/// @brief
+/// @brief		Deletes the node of a lst
 /// @param lst_head
 /// @param node_to_delete
 void			ft_lst_delete_node(t_lst **lst_head, t_lst *node_to_delete);
@@ -131,7 +126,7 @@ int				ft_lst_find_int_smallest(t_lst *lst_to_search);
 int				ft_lst_find_int_second_smallest(t_lst *lst_to_search);
 //
 //
-/// @brief
+/// @brief		Finds the the next biggest integer value in a list
 /// @param lst_to_search
 /// @param int_to_compare
 /// @return
@@ -141,7 +136,7 @@ int				ft_lst_find_int_next_biggest(t_lst *lst_to_search,
 //
 /// @brief		Loops through a t_lst and frees every node
 /// @param lst_to_free
-void			ft_lst_free(t_lst **lst_to_free);
+void			ft_lst_free(t_lst *lst_to_free);
 //
 //
 /// @brief		Takes a size_t and loops to that position/index in a list
@@ -172,6 +167,31 @@ t_lst			*ft_lst_get_new(int value);
 t_lst			*ft_lst_get_value(t_lst *lst_to_search, int value);
 //
 //
+/// @brief 		Prints the content of a node
+/// @param node_to_print
+void			ft_lst_print_node(t_lst *node_to_print);
+//
+//
+/// @brief		Prints the content of every node in a lst
+/// @param lst_to_print
+void			ft_lst_print(t_lst *lst_to_print);
+//
+/// @brief		Lists the content of a list into an array.
+/// @param lst_to_sort
+/// @return		Newly allocated array or NULL
+int				*ft_lst_sort_to_array(t_lst **lst_to_sort);
+//
+//
+/* ***************************  t_lst_header  ******************************* */
+//
+//
+//		char			*title;
+//		t_lst			*head;
+typedef struct s_lst_header
+{
+	char			*title;
+	t_lst			*head;
+}					t_lst_header;
 /// @brief		Creates a new lst_header (with malloc) with a title
 /// @param str_title
 /// @return Pointer to the new struct or NULL
@@ -180,13 +200,12 @@ t_lst_header	*ft_lst_header_new(char *str_title);
 //
 /// @brief		Frees a lst_header and its containing list
 /// @param lst_to_free
-void			ft_lst_header_free(t_lst_header **lst_to_free);
+void			ft_lst_header_free(t_lst_header *lst_to_free);
 //
 //
-/// @brief
-/// @param lst_to_sort
-/// @return
-int				*ft_lst_sort_to_array(t_lst **lst_to_sort);
+/// @brief		Prints all nodes aswell as the title of a t_lst_header
+/// @param lst_to_print
+void			ft_lst_header_print(t_lst_header *lst_to_print);
 //
 //
 /* ************************************************************************** */
@@ -194,7 +213,6 @@ int				*ft_lst_sort_to_array(t_lst **lst_to_sort);
 /* ************************************************************************** */
 //
 //
-char			*ft_char_to_string(char c);
 /// @brief		Checks if a string (haystack) contains another string (needle)
 /// @param haystack
 /// @param needle
@@ -240,6 +258,12 @@ char			ft_str_check_viable_char(const char *str_to_check,
 					const char *str_set);
 //
 //
+/// @brief 		Duplicates str_to_search but only the chars in str_set_to_find
+/// @param str_to_search
+/// @param str_set_to_find
+/// @return Pointer to the newly allocated string or NULL
+char			*ft_strdup_set(char const *str_to_search,
+					char const *str_set_to_find);
 /// @brief 		Creates a string (with malloc) that is emtpy (only '\0')
 /// @param
 /// @return Pointer to newly allocated string or NULL
@@ -269,14 +293,6 @@ char			*ft_str_merge_needles(char *str_haystack,
 /// @brief 		Reverses the contents of a string in place
 /// @param str_to_reverse
 void			ft_str_reverse(char *str_to_reverse);
-//
-//
-/// @brief 		Duplicates str_to_search but only the chars in str_set_to_find
-/// @param str_to_search
-/// @param str_set_to_find
-/// @return Pointer to the newly allocated string or NULL
-char			*ft_str_duplicate_set(char const *str_to_search,
-					char const *str_set_to_find);
 //
 //
 /* ************************************************************************** */
@@ -334,6 +350,17 @@ size_t			ft_input_argc(char **array_to_count);
 /* ************************************************************************** */
 //
 //
+/// @brief		Converts a string into its int representation. Uses long int
+///				as a data type to throw an error if either string is NULL
+///				(9999999991) or to prevent an overflow (9999999999)
+/// @param str_to_convert
+/// @return Long int representation of string
+long			ft_atoi_long(char *str_to_convert);
+
+/// @brief 		Converts a char to a string (with malloc)
+/// @param c
+/// @return Newly allocated string or NULL
+char			*ft_char_to_string(char c_to_convert);
 /// @brief 		Converts an unsigned long int (address of a ptr) into a
 ///				hexadecimal string (with malloc) either in lowercase (flag 0)
 ///				or uppercase (flag 1)
@@ -357,14 +384,6 @@ char			*ft_itoa_hexadecimal(unsigned int uint_to_convert,
 /// @param uint_to_convert
 /// @return Newly allocated string or NULL
 char			*ft_itoa_unsigned(unsigned int uint_to_convert);
-//
-//
-/// @brief		Converts a string into its int representation. Uses long int
-///				as a data type to throw an error if either string is NULL
-///				(9999999991) or to prevent an overflow (9999999999)
-/// @param str_to_convert
-/// @return Long int representation of string
-long			ft_atoi_long(char *str_to_convert);
 //
 //
 /* ************************************************************************** */
@@ -457,17 +476,18 @@ size_t			ft_vector_str_fetch_size_allocated(
 /* ************************************************************************** */
 //
 //
-/// @brief
-typedef struct s_recursive_counters
-{
-	size_t	counter;
-	size_t	max;
-	size_t	tmp;
-	size_t	remain;
-}					t_recursive_counters;
-//
-//
-char			ft_sizet_check_poweroftwo(size_t n_to_check);
+/// @brief 		Prints "Error" to stderr
+/// @param
+void			ft_error(void);
+/// @brief 		Exits with a given error message and a given exit status or -1 if
+///				the write failed
+/// @param error_message
+/// @param exit_status
+void			ft_exit_with_error(char *error_message, int exit_status);
+/// @brief 		Dummy function to use a parameter in one line so the
+///				compiler doesnt give a warning
+/// @param dummy
+void			ft_dummy(void *dummy);
 /// @brief		Converts the address of a pointer into a hexadecimal string
 ///				(with malloc)
 /// @param ptr
@@ -482,12 +502,9 @@ char			*ft_ptr_get_address(void *ptr);
 /// @return Pointer to the new allocation or NULL
 void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 					size_t size_new);
-//
-//
-/// @brief 		Prints "Error" to stderr
-/// @param
-void			ft_error(void);
-void			ft_exit_with_error(char *error_message, int exit_status);
-void			ft_dummy(void *dummy);
+/// @brief 		Checks if a number (size t) is a power of two
+/// @param n_to_check
+/// @return		1 (true) or 0 (false)
+char			ft_sizet_check_poweroftwo(size_t n_to_check);
 
 #endif
