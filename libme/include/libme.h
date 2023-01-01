@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/01 18:27:36 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/01 18:29:12 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -479,8 +479,8 @@ size_t			ft_vector_str_fetch_size_allocated(
 /// @brief 		Prints "Error" to stderr
 /// @param
 void			ft_error(void);
-/// @brief 		Exits with a given error message and a given exit status or -1 if
-///				the write failed
+/// @brief 		Exits with a given error message and a given exit status or
+///				-1 if the write failed
 /// @param error_message
 /// @param exit_status
 void			ft_exit_with_error(char *error_message, int exit_status);
