@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:49:16 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 15:44:21 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:01:55 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static long int	str_to_lint(char *str_to_convert, size_t index,
 
 	lint_return = 0;
 	if (!(str_to_convert[index] >= 48 && str_to_convert[index] <= 57))
-		return (9999999991);
+		return (LONG_MIN);
 	while (str_to_convert[index] != '\0'
 		&& str_to_convert[index] >= 48
 		&& str_to_convert[index] <= 57)
@@ -45,7 +45,7 @@ static long int	str_to_lint(char *str_to_convert, size_t index,
 	}
 	if (lint_return * sign_algebraic > 2147483647
 		|| lint_return * sign_algebraic < -2147483648)
-		return (9999999999);
+		return (LONG_MAX);
 	return (lint_return * sign_algebraic);
 }
 
@@ -56,7 +56,7 @@ long int	ft_atoi_long(char *str_to_convert)
 	size_t		offset;
 
 	if (str_to_convert == NULL)
-		return (9999999991);
+		return (LONG_MIN);
 	sign_algebraic = 1;
 	index = str_iter_spaces(str_to_convert);
 	if (str_to_convert[index] == '+' || str_to_convert[index] == '-')
@@ -69,6 +69,6 @@ long int	ft_atoi_long(char *str_to_convert)
 	while (ft_isdigit(str_to_convert[offset]) && str_to_convert[offset] != '\0')
 		offset++;
 	if (offset - index > 10)
-		return (9999999999);
+		return (LONG_MAX);
 	return (str_to_lint(str_to_convert, index, sign_algebraic));
 }

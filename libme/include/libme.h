@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/02 16:24:00 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:48:20 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBME_H
 # include "libft.h"
 # include <float.h>
+# include <limits.h>
 
 //
 //
@@ -371,9 +372,15 @@ size_t			ft_input_argc(char **array_to_count);
 /* ************************************************************************** */
 //
 //
+/// @brief		Converts a string into a float. Uses double as a data type
+/// @param str_to_convert
+/// @return		Float representation of string
+long double			ft_atof_long(char *str_to_convert);
+//
+//
 /// @brief		Converts a string into its int representation. Uses long int
 ///				as a data type to throw an error if either string is NULL
-///				(9999999991) or to prevent an overflow (9999999999)
+///				(LONG_MIN) or to prevent an overflow (LONG_MAX)
 /// @param str_to_convert
 /// @return Long int representation of string
 long			ft_atoi_long(char *str_to_convert);
