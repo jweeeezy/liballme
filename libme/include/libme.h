@@ -6,13 +6,14 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/01 18:29:12 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:05:26 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBME_H
 # define LIBME_H
 # include "libft.h"
+# include <float.h>
 
 //
 //
@@ -213,6 +214,23 @@ void			ft_lst_header_print(t_lst_header *lst_to_print);
 /* ************************************************************************** */
 //
 //
+/// @brief		Checks if a char is present more than once in a string
+/// @param str_to_check
+/// @param c_to_check
+/// @return
+char			ft_str_check_duplicate_char(char *str_to_check,
+					char c_to_check);
+//
+//
+/// @brief		Checks if a char from a set is present more than once in
+///				a string
+/// @param str_to_check
+/// @param set_to_check
+/// @return		1 (True) or 0 (False)
+char			ft_str_check_duplicate_set(char *str_to_check,
+					char *set_to_check);
+//
+//
 /// @brief		Checks if a string (haystack) contains another string (needle)
 /// @param haystack
 /// @param needle
@@ -220,16 +238,7 @@ void			ft_lst_header_print(t_lst_header *lst_to_print);
 /// @return 0 (False) or 1 (True)
 char			ft_str_check_needle(const char *haystack, const char *needle,
 					size_t length);
-//
-//
-/// @brief		Counts how many occasions of needle_a followed by needle_b or
-///				vice versa exist in the haystack
-/// @param haystack
-/// @param needle_a
-/// @param needle_b
-/// @return		size_t of occasion count
-size_t			ft_str_count_needle_occasions(const char *haystack,
-					const char *needle_a, const char *needle_b);
+
 //
 //
 /// @brief		Checks if a specific char (c_to_check) has a specific char
@@ -258,12 +267,16 @@ char			ft_str_check_viable_char(const char *str_to_check,
 					const char *str_set);
 //
 //
-/// @brief 		Duplicates str_to_search but only the chars in str_set_to_find
-/// @param str_to_search
-/// @param str_set_to_find
-/// @return Pointer to the newly allocated string or NULL
-char			*ft_strdup_set(char const *str_to_search,
-					char const *str_set_to_find);
+/// @brief		Counts how many occasions of needle_a followed by needle_b or
+///				vice versa exist in the haystack
+/// @param haystack
+/// @param needle_a
+/// @param needle_b
+/// @return		size_t of occasion count
+size_t			ft_str_count_needle_occasions(const char *haystack,
+					const char *needle_a, const char *needle_b);
+//
+//
 /// @brief 		Creates a string (with malloc) that is emtpy (only '\0')
 /// @param
 /// @return Pointer to newly allocated string or NULL
@@ -293,6 +306,14 @@ char			*ft_str_merge_needles(char *str_haystack,
 /// @brief 		Reverses the contents of a string in place
 /// @param str_to_reverse
 void			ft_str_reverse(char *str_to_reverse);
+//
+//
+/// @brief 		Duplicates str_to_search but only the chars in str_set_to_find
+/// @param str_to_search
+/// @param str_set_to_find
+/// @return Pointer to the newly allocated string or NULL
+char			*ft_strdup_set(char const *str_to_search,
+					char const *str_set_to_find);
 //
 //
 /* ************************************************************************** */
