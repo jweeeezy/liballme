@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/02 16:05:26 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:24:00 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 /* ************************************************************************** */
 //
 //
-/* *****************************  t_lst************************************* */
+/* *****************************  t_lst  *********************************** */
 //
 //
 //		int				content;
@@ -259,7 +259,7 @@ char			ft_str_check_precursor_digit(const char *str_to_check,
 char			ft_str_check_set(const char *str_to_check, const char *str_set);
 //
 //
-/// @brief		Checks a string for anything other than a char of str_set
+/// @brief		Checks a string for anything other than set of viable chars
 /// @param str_to_check
 /// @param str_set
 /// @return 0 (False) or 1 (True)
