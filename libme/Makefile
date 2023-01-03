@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/02 17:47:49 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/03 13:45:54 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ VPATH			=	$(SRC_DIR):$(OBJ_DIR)
 SRC_FILES		=	ft_array_index_init.c\
 					ft_array_int_calc_median.c\
 					ft_array_str_free.c\
-					ft_atof_long.c\
+					ft_atod_long.c\
 					ft_atoi_long.c\
 					ft_char_to_string.c\
 					ft_dummy.c\

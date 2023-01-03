@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atof_long.c                                     :+:      :+:    :+:   */
+/*   ft_atod_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:15:10 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/02 19:24:29 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/03 13:46:02 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
-
-
-#include <stdio.h>
 
 static int	check_algebraic_sign(char *str_to_check)
 {
@@ -33,7 +30,7 @@ static char	check_input_error(char *str_to_check)
 	return (0);
 }
 
-long double	shift_fractions(long int fractions, char *str_to_convert)
+static long double	shift_fractions(char *str_to_convert, long int fractions)
 {
 	long double	result;
 	size_t		length;
@@ -48,12 +45,30 @@ long double	shift_fractions(long int fractions, char *str_to_convert)
 	return (result);
 }
 
-long double	ft_atof_long(char *str_to_convert)
+static long double	calculate_fractions(char *str_to_convert)
+{
+	char		*offset_point;
+	long int	fractions;
+	long double	result;
+
+	offset_point = ft_strchr(str_to_convert, '.');
+	if (offset_point == NULL)
+		return (LONG_MIN);
+	offset_point++;
+	if (*offset_point == '\0')
+		return (LONG_MIN);
+	fractions = ft_atoi_long(offset_point);
+	if (fractions == LONG_MAX)
+		return (LDBL_MAX);
+	result = shift_fractions(str_to_convert, fractions);
+	return (result);
+}
+
+long double	ft_atod_long(char *str_to_convert)
 {
 	int			sign;
 	long int	integer;
 	long int	fractions;
-	char		*offset_point;
 
 	if (str_to_convert == NULL)
 		return (LDBL_MIN);
@@ -69,15 +84,10 @@ long double	ft_atof_long(char *str_to_convert)
 	integer = ft_atoi_long(str_to_convert);
 	if (integer == LONG_MAX)
 		return (LDBL_MAX);
-	offset_point = ft_strchr(str_to_convert, '.');
-	if (offset_point == NULL || *(++offset_point) == '\0')
-		return ((long double) integer * sign);
-	fractions = ft_atoi_long(offset_point);
+	fractions = calculate_fractions(str_to_convert);
 	if (fractions == LONG_MAX)
 		return (LDBL_MAX);
-
-	printf("integer: %ld\n", integer);
-	printf("%c\n", *offset_point);
-	printf("fractions: %ld\n", fractions);
-	return ((shift_fractions(fractions, offset_point) + (long double) integer) * sign);
+	else if (fractions == LONG_MIN)
+		return ((long double) integer * sign);
+	return (((long double) integer + fractions) * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/02 18:48:20 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/03 13:45:39 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,7 +375,7 @@ size_t			ft_input_argc(char **array_to_count);
 /// @brief		Converts a string into a float. Uses double as a data type
 /// @param str_to_convert
 /// @return		Float representation of string
-long double			ft_atof_long(char *str_to_convert);
+long double		ft_atod_long(char *str_to_convert);
 //
 //
 /// @brief		Converts a string into its int representation. Uses long int
