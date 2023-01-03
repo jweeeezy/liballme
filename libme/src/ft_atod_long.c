@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:15:10 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/03 14:00:19 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:30:56 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_algebraic_sign(char *str_to_check)
 {
-	if (*str_to_check == '=')
+	if (*str_to_check == '-')
 		return (-1);
 	else if (*str_to_check == '+')
 		return (0);
@@ -30,44 +30,52 @@ static char	check_input_error(char *str_to_check)
 	return (0);
 }
 
-static long double	shift_fractions(char *str_to_convert, long int fractions)
-{
-	long double	result;
-	size_t		length;
-
-	result = (long double) fractions;
-	length = ft_strlen(str_to_convert);
-	while (length > 0)
-	{
-		result = result / 10;
-		length--;
-	}
-	return (result);
-}
-
 static long double	calculate_fractions(char *str_to_convert)
 {
 	char		*offset_point;
-	long int	fractions;
+	char		*offset_end;
 	long double	result;
 
 	offset_point = ft_strchr(str_to_convert, '.');
-	if (offset_point == NULL)
+	if (offset_point == NULL || *offset_point + 1 == '\0')
 		return (LDBL_MIN);
-	offset_point++;
-	if (*offset_point == '\0')
-		return (LDBL_MIN);
-	fractions = ft_atoi_long(offset_point);
-	if (fractions == LONG_MAX)
+	if (ft_strlen(offset_point) > 7)
 		return (LDBL_MAX);
-	result = shift_fractions(offset_point, fractions);
+	result = 0;
+	offset_end = offset_point;
+	while (*offset_end != '\0')
+		offset_end++;
+	offset_end--;
+	while (offset_end != offset_point)
+	{
+		result = result / 10 + (*offset_end - 48);
+		offset_end--;
+	}
+	return (result / 10);
+}
+
+static long double	calculate_integer(char *str_to_convert)
+{
+	long double	result;
+	size_t		counter;
+
+	result = 0;
+	counter = 0;
+	while (*str_to_convert != '\0' && *str_to_convert != '.')
+	{
+		result = result * 10 + (*str_to_convert - 48);
+		str_to_convert++;
+		counter++;
+	}
+	if (counter > 10)
+		return (LDBL_MAX);
 	return (result);
 }
 
 long double	ft_atod_long(char *str_to_convert)
 {
 	int			sign;
-	long int	integer;
+	long double	integer;
 	long double	fractions;
 
 	if (str_to_convert == NULL)
@@ -81,13 +89,13 @@ long double	ft_atod_long(char *str_to_convert)
 			sign = 1;
 		str_to_convert++;
 	}
-	integer = ft_atoi_long(str_to_convert);
-	if (integer == LONG_MAX)
+	integer = calculate_integer(str_to_convert);
+	if (integer == LDBL_MAX)
 		return (LDBL_MAX);
 	fractions = calculate_fractions(str_to_convert);
 	if (fractions == LDBL_MAX)
 		return (LDBL_MAX);
 	else if (fractions == LDBL_MIN)
-		return ((long double) integer * sign);
-	return (((long double) integer + fractions) * sign);
+		return (integer * sign);
+	return ((integer + fractions) * sign);
 }
