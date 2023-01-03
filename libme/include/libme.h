@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/03 13:45:39 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/03 14:04:26 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -372,9 +372,11 @@ size_t			ft_input_argc(char **array_to_count);
 /* ************************************************************************** */
 //
 //
-/// @brief		Converts a string into a float. Uses double as a data type
+/// @brief		Converts a string into a float. Uses double as a data type to
+///				throw an error if either string is NULL (LDBL_MIN) or if an
+///				error is found in parsing or to prevent an overflow (LDBL_MAX)
 /// @param str_to_convert
-/// @return		Float representation of string
+/// @return		double representation of string (Type cast for float!)
 long double		ft_atod_long(char *str_to_convert);
 //
 //

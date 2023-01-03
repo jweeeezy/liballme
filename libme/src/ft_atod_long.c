@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:15:10 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/03 13:46:02 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/03 14:00:19 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ static long double	calculate_fractions(char *str_to_convert)
 
 	offset_point = ft_strchr(str_to_convert, '.');
 	if (offset_point == NULL)
-		return (LONG_MIN);
+		return (LDBL_MIN);
 	offset_point++;
 	if (*offset_point == '\0')
-		return (LONG_MIN);
+		return (LDBL_MIN);
 	fractions = ft_atoi_long(offset_point);
 	if (fractions == LONG_MAX)
 		return (LDBL_MAX);
-	result = shift_fractions(str_to_convert, fractions);
+	result = shift_fractions(offset_point, fractions);
 	return (result);
 }
 
@@ -68,7 +68,7 @@ long double	ft_atod_long(char *str_to_convert)
 {
 	int			sign;
 	long int	integer;
-	long int	fractions;
+	long double	fractions;
 
 	if (str_to_convert == NULL)
 		return (LDBL_MIN);
@@ -85,9 +85,9 @@ long double	ft_atod_long(char *str_to_convert)
 	if (integer == LONG_MAX)
 		return (LDBL_MAX);
 	fractions = calculate_fractions(str_to_convert);
-	if (fractions == LONG_MAX)
+	if (fractions == LDBL_MAX)
 		return (LDBL_MAX);
-	else if (fractions == LONG_MIN)
+	else if (fractions == LDBL_MIN)
 		return ((long double) integer * sign);
 	return (((long double) integer + fractions) * sign);
 }
