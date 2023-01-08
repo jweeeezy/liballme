@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/03 13:45:54 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/09 00:42:06 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,8 +73,9 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_str_check_duplicate_char.c\
 					ft_str_check_duplicate_set.c\
 					ft_str_check_needle.c\
-					ft_str_check_precursor_digit.c\
 					ft_str_check_set.c\
+					ft_str_check_viable_algebraic_signs.c\
+					ft_str_check_viable_precursor_digit.c\
 					ft_str_check_viable_char.c\
 					ft_str_count_needle_occasions.c\
 					ft_str_empty.c\

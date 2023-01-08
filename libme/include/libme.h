@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/03 14:04:26 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/09 00:40:47 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,7 +239,19 @@ char			ft_str_check_duplicate_set(char *str_to_check,
 /// @return 0 (False) or 1 (True)
 char			ft_str_check_needle(const char *haystack, const char *needle,
 					size_t length);
-
+//
+//
+/// @brief		Checks if at least one char of str_set is found in str_to_check
+/// @param str_to_check
+/// @param str_set
+/// @return 0 (False) or 1 (True)
+char			ft_str_check_set(const char *str_to_check, const char *str_set);
+//
+//
+/// @brief
+/// @param str_to_check
+/// @return
+char			ft_str_check_viable_algebraic_signs(const char *str_to_check);
 //
 //
 /// @brief		Checks if a specific char (c_to_check) has a specific char
@@ -249,15 +261,8 @@ char			ft_str_check_needle(const char *haystack, const char *needle,
 /// @param c_precursor
 /// @param c_to_check
 /// @return 0 (False) or 1 (True)
-char			ft_str_check_precursor_digit(const char *str_to_check,
+char			ft_str_check_viable_precursor_digit(const char *str_to_check,
 					char c_precursor, char c_to_check);
-//
-//
-/// @brief		Checks if at least one char of str_set is found in str_to_check
-/// @param str_to_check
-/// @param str_set
-/// @return 0 (False) or 1 (True)
-char			ft_str_check_set(const char *str_to_check, const char *str_set);
 //
 //
 /// @brief		Checks a string for anything other than set of viable chars
