@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:28:03 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/25 11:36:32 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:19:26 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 size_t	*ft_array_index_init(size_t	array_size)
 {

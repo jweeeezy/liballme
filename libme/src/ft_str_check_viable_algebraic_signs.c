@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 22:59:07 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/09 00:40:58 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:35:29 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include "libft.h"
 
 static char	check_needles(const char *haystack,
 				const char **needles, size_t length)

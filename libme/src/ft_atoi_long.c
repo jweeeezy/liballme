@@ -6,11 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:49:16 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/02 18:01:55 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:38:43 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "limits.h"
 
 static size_t	str_iter_spaces(char *str_to_iter)
 {

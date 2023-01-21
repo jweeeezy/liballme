@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:49:29 by jwillert          #+#    #+#             */
-/*   Updated: 2022/10/24 15:49:34 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:36:20 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 char	*ft_str_empty(void)
 {

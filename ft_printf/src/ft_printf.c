@@ -6,11 +6,15 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:52:47 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/16 15:20:14 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:44:12 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdarg.h>
+#include "ft_printf_utils_nbr.h"
+#include "ft_printf_utils_str.h"
+#include "libme.h"
+#include <unistd.h>
 
 static t_vector_str	*ft_check_specifier(va_list args, char c,
 	t_vector_str *vector)

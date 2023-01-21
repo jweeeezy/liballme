@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:49:18 by jwillert          #+#    #+#             */
-/*   Updated: 2022/07/17 12:58:08 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:05:44 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-static int	ft_str_iter_spaces(const char *str_to_convert, int index)
+static int	str_iter_spaces(const char *str_to_convert, int index)
 {
 	while ((str_to_convert[index] == '\b')
 		|| (str_to_convert[index] == '\t')
@@ -26,7 +26,7 @@ static int	ft_str_iter_spaces(const char *str_to_convert, int index)
 	return (index);
 }
 
-static int	ft_str_to_int(const char *str_to_convert,
+static int	str_to_int(const char *str_to_convert,
 						int index, int sign_algebraic)
 {
 	size_t	int_return;
@@ -57,12 +57,12 @@ int	ft_atoi(const char *str_to_convert)
 	sign_algebraic = 1;
 	if (str_to_convert == NULL)
 		return (0);
-	index = ft_str_iter_spaces(str_to_convert, index);
+	index = str_iter_spaces(str_to_convert, index);
 	if (str_to_convert[index] == '+' || str_to_convert[index] == '-')
 	{
 		if (str_to_convert[index] == '-')
 			sign_algebraic = -1;
 		index++;
 	}
-	return (ft_str_to_int(str_to_convert, index, sign_algebraic));
+	return (str_to_int(str_to_convert, index, sign_algebraic));
 }

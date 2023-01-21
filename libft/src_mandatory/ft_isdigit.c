@@ -6,11 +6,9 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:02:21 by jwillert          #+#    #+#             */
-/*   Updated: 2022/09/26 17:02:30 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:06:22 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c_to_check)
 {

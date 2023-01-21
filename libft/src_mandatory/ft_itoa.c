@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:26 by jwillert          #+#    #+#             */
-/*   Updated: 2022/07/17 13:31:57 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:07:39 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-static int	ft_get_digits(int int_to_convert, int int_digits)
+static int	get_digits(int int_to_convert, int int_digits)
 {
 	while (int_to_convert / 10 != 0)
 	{
@@ -22,11 +22,11 @@ static int	ft_get_digits(int int_to_convert, int int_digits)
 	return (int_digits);
 }
 
-static char	*ft_int_to_str_negative(char *str_return, int int_to_convert,
+static char	*int_to_str_negative(char *str_return, int int_to_convert,
 			int int_digits)
 {
 	int_digits++;
-	int_digits = ft_get_digits(int_to_convert, int_digits);
+	int_digits = get_digits(int_to_convert, int_digits);
 	str_return = malloc (sizeof(char) * (int_digits + 1));
 	if (str_return == NULL)
 		return (NULL);
@@ -42,10 +42,10 @@ static char	*ft_int_to_str_negative(char *str_return, int int_to_convert,
 	return (str_return);
 }
 
-static char	*ft_int_to_str_positive(char *str_return, int int_to_convert,
+static char	*int_to_str_positive(char *str_return, int int_to_convert,
 			int int_digits)
 {
-	int_digits = ft_get_digits(int_to_convert, int_digits);
+	int_digits = get_digits(int_to_convert, int_digits);
 	str_return = malloc (sizeof(char) * (int_digits + 1));
 	if (str_return == NULL)
 		return (NULL);
@@ -68,10 +68,10 @@ char	*ft_itoa(int int_to_convert)
 	int_digits = 1;
 	str_return = NULL;
 	if (int_to_convert < 0)
-		str_return = ft_int_to_str_negative(str_return, int_to_convert,
+		str_return = int_to_str_negative(str_return, int_to_convert,
 				int_digits);
 	else if (int_to_convert > 0)
-		str_return = ft_int_to_str_positive(str_return, int_to_convert,
+		str_return = int_to_str_positive(str_return, int_to_convert,
 				int_digits);
 	else if (int_to_convert == 0)
 	{

@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:30:25 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/14 16:48:23 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:29:52 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-static int	ft_ulint_get_digits(unsigned long int int_to_convert)
+static int	get_digits(unsigned long int int_to_convert)
 {
 	int	index;
 
@@ -25,7 +25,7 @@ static int	ft_ulint_get_digits(unsigned long int int_to_convert)
 	return (index);
 }
 
-static char	*ft_ulint_to_string(unsigned long int int_to_convert,
+static char	*ulint_to_string(unsigned long int int_to_convert,
 				int flag_caps)
 {
 	unsigned long int	int_remain;
@@ -36,7 +36,7 @@ static char	*ft_ulint_to_string(unsigned long int int_to_convert,
 	string_return = NULL;
 	index = 0;
 	string_return = malloc (sizeof (char)
-			* ft_ulint_get_digits(int_to_convert) + 1);
+			* get_digits(int_to_convert) + 1);
 	if (string_return == NULL)
 		return (NULL);
 	while (int_to_convert != 0)
@@ -68,7 +68,7 @@ char	*ft_itoa_hexadecimal_long(unsigned long int int_to_convert,
 		string_return[1] = '\0';
 		return (string_return);
 	}
-	string_return = ft_ulint_to_string(int_to_convert, flag_caps);
+	string_return = ulint_to_string(int_to_convert, flag_caps);
 	if (string_return == NULL)
 		return (NULL);
 	ft_str_reverse(string_return);

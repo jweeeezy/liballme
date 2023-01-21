@@ -6,11 +6,65 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:53:23 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/05 09:43:38 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 17:58:05 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include <stdlib.h>
+
+size_t	gnl_strlen(const char *string)
+{
+	size_t	index;
+
+	index = 0;
+	if (string == NULL)
+		return (0);
+	while (string[index] != '\0')
+		index++;
+	return (index);
+}
+
+size_t	gnl_strlcpy(char *string_target,
+		char *string_source, size_t size_needed)
+{
+	size_t	index;
+
+	index = 0;
+	if (size_needed <= 0)
+		return (gnl_strlen(string_source));
+	while (index < (size_needed - 1) && string_source[index] != '\0')
+	{
+		string_target[index] = string_source[index];
+		index++;
+	}
+	if (index < size_needed)
+		string_target[index] = '\0';
+	while (string_source[index] != '\0')
+		index++;
+	return (index);
+}
+
+size_t	gnl_strlcat(char *string_target,
+		char *string_source, size_t size_needed)
+{
+	size_t	offset;
+	size_t	size_target;
+	size_t	size_source;
+
+	size_target = gnl_strlen(string_target);
+	size_source = gnl_strlen(string_source);
+	if (size_target > size_needed)
+		return (size_source + size_needed);
+	offset = size_target;
+	while (*string_source != '\0' && offset + 1 < size_needed)
+	{
+		string_target[offset] = *string_source;
+		offset++;
+		string_source++;
+	}
+	string_target[offset] = '\0';
+	return (size_source + size_target);
+}
 
 char	*gnl_strjoin(char *string_first, char *string_second)
 {
@@ -36,58 +90,4 @@ char	*gnl_strjoin(char *string_first, char *string_second)
 	gnl_strlcat(string_new, string_second, size);
 	free(string_first);
 	return (string_new);
-}
-
-size_t	gnl_strlcat(char *string_target,
-		char *string_source, size_t size_needed)
-{
-	size_t	offset;
-	size_t	size_target;
-	size_t	size_source;
-
-	size_target = gnl_strlen(string_target);
-	size_source = gnl_strlen(string_source);
-	if (size_target > size_needed)
-		return (size_source + size_needed);
-	offset = size_target;
-	while (*string_source != '\0' && offset + 1 < size_needed)
-	{
-		string_target[offset] = *string_source;
-		offset++;
-		string_source++;
-	}
-	string_target[offset] = '\0';
-	return (size_source + size_target);
-}
-
-size_t	gnl_strlcpy(char *string_target,
-		char *string_source, size_t size_needed)
-{
-	size_t	index;
-
-	index = 0;
-	if (size_needed <= 0)
-		return (gnl_strlen(string_source));
-	while (index < (size_needed - 1) && string_source[index] != '\0')
-	{
-		string_target[index] = string_source[index];
-		index++;
-	}
-	if (index < size_needed)
-		string_target[index] = '\0';
-	while (string_source[index] != '\0')
-		index++;
-	return (index);
-}
-
-size_t	gnl_strlen(const char *string)
-{
-	size_t	index;
-
-	index = 0;
-	if (string == NULL)
-		return (0);
-	while (string[index] != '\0')
-		index++;
-	return (index);
 }

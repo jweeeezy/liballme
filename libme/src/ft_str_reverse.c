@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:45:45 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/14 16:46:15 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:37:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include "libft.h"
 
 void	ft_str_reverse(char *str_to_reverse)
 {

@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 18:59:15 by jwillert          #+#    #+#             */
-/*   Updated: 2022/07/17 13:41:56 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:08:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memcpy(void *ptr_dst, const void *ptr_src, size_t bytes)
 {

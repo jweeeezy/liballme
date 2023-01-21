@@ -6,11 +6,9 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:02:39 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 14:58:04 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:06:18 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isascii(int c_to_check)
 {

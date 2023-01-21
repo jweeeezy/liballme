@@ -6,11 +6,9 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:32:06 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/15 18:37:28 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:26:53 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libme.h"
 
 char	ft_int_compare_absolute_smallest(int value_a, int value_b)
 {

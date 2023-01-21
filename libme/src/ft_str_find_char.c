@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:50:04 by jwillert          #+#    #+#             */
-/*   Updated: 2022/10/24 15:52:56 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:36:37 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 char	ft_str_find_char(char const *str_to_search, char const char_to_find)
 {

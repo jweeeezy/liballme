@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:13:01 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 15:18:48 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:09:42 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_print_nbr(int int_to_print, int fd, int digits)
+static void	print_nbr(int int_to_print, int fd, int digits)
 {
 	int		digit_to_print;
 	size_t	digit_factor;
@@ -37,7 +37,7 @@ static void	ft_print_nbr(int int_to_print, int fd, int digits)
 	}
 }
 
-static int	ft_get_digits(int int_to_count)
+static int	get_digits(int int_to_count)
 {
 	int	digits;
 
@@ -61,5 +61,5 @@ void	ft_putnbr_fd(int int_to_print, int fd)
 		ft_putchar_fd('0', fd);
 		return ;
 	}
-	ft_print_nbr(int_to_print, fd, ft_get_digits(int_to_print));
+	print_nbr(int_to_print, fd, get_digits(int_to_print));
 }

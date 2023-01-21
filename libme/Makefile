@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/21 17:39:47 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/21 18:43:43 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_dummy.c\
 					ft_error.c\
 					ft_exit_with_error.c\
-					ft_input_argc.c\
+					ft_input_count_arguments.c\
 					ft_input_check_empty_str.c\
-					ft_input_len.c\
+					ft_input_count_length.c\
 					ft_input_print.c\
 					ft_input_strjoin.c\
 					ft_int_compare_absolute_biggest.c\
@@ -42,8 +42,8 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_itoa_hexadecimal_long.c\
 					ft_itoa_unsigned.c\
 					ft_lst_add_back.c\
-					ft_lst_calc_average.c\
-					ft_lst_calc_sum.c\
+					ft_lst_calculate_average.c\
+					ft_lst_calculate_sum.c\
 					ft_lst_check_duplicate_int.c\
 					ft_lst_count_iterations.c\
 					ft_lst_count_nodes.c\
@@ -109,7 +109,7 @@ REMOVE			=	rm -f
 					$(CC_OBJ)
 
 #	General targets
-.PHONY :			all clean fclean re list src
+.PHONY :			all clean fclean re list
 all:				$(NAME)
 $(NAME):			$(OBJ_FILES)
 					$(MAKE) mandatory -C  $(LIBFT_DIR)
@@ -125,8 +125,6 @@ re:					fclean
 					$(MAKE)
 list:
 					@echo
-					@echo
 					@echo "Library <$(NAME)> is containing the following functions:"
-					@ar -t $(NAME) | sort -g
-					@echo
+					@ar -t $(NAME) | grep ft | sort -g
 					@echo

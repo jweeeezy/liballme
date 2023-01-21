@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:33:59 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/21 17:39:04 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/21 17:59:02 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,6 @@ re:					fclean
 					$(MAKE)
 list:
 					@echo
-					@echo
 					@echo "Library <$(NAME)> is containing the following functions:"
-					@ar -t $(NAME) | sort -g
-					@echo
+					@ar -t $(NAME) | grep get | sort -g
 					@echo

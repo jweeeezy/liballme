@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:58:00 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/13 13:42:19 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:19:54 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 void	ft_array_str_free(char **array_to_free)
 {

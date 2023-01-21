@@ -6,11 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 08:41:19 by jwillert          #+#    #+#             */
-/*   Updated: 2022/07/10 14:45:34 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 17:57:14 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line_utils_bonus.h"
+#include <stdlib.h>
+#include <libc.h>
 
 static char	gnl_search_char(char *string_to_search, char char_to_search)
 {

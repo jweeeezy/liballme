@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_input_argc.c                                    :+:      :+:    :+:   */
+/*   ft_lst_calculate_average.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 13:42:03 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/21 16:28:49 by jwillert         ###   ########.fr       */
+/*   Created: 2022/11/27 23:55:04 by jwillert          #+#    #+#             */
+/*   Updated: 2023/01/21 18:31:37 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-size_t	ft_input_argc(char **array_to_count)
+long	ft_lst_calculate_average(t_lst *lst_to_calculate)
 {
-	size_t	index;
+	long	average;
+	long	sum;
+	size_t	count_nodes;
 
-	index = 0;
-	while (array_to_count[index] != NULL)
-		index++;
-	return (index);
+	average = 0;
+	sum = ft_lst_calculate_sum(lst_to_calculate);
+	count_nodes = ft_lst_count_nodes(lst_to_calculate);
+	average = sum / (long) count_nodes;
+	return (average);
 }

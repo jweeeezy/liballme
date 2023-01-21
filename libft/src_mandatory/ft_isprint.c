@@ -6,11 +6,9 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:04:20 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 14:58:29 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:06:26 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c_to_check)
 {

@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:49:58 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/02 16:07:07 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:34:28 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 char	ft_str_check_duplicate_char(char *str_to_check, char c_to_check)
 {

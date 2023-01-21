@@ -6,11 +6,9 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:25:30 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 14:57:43 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:06:09 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalnum(int c_to_check)
 {

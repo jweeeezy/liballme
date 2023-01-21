@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:06:08 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/29 10:21:43 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:19:41 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 int	ft_array_int_calc_median(int *array, size_t size_array)
 {

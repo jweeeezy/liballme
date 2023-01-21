@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 13:58:27 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/09 14:31:40 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:34:15 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 char	ft_sizet_check_poweroftwo(size_t n_to_check)
 {

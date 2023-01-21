@@ -6,13 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:58:38 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/14 18:05:37 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 17:48:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_UTILS_NBR_H
 # define FT_PRINTF_UTILS_NBR_H
-# include "ft_printf.h"
 # include "libme.h"
 
 //	takes int n and (output-)length and converts like 'd' & 'i'

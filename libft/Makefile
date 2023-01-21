@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/21 17:39:32 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/21 18:17:33 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,10 +103,8 @@ re:						fclean
 							$(MAKE)
 list:
 						@echo
-						@echo
 						@echo "Library <$(NAME)> is containing the following functions:"
-						@ar -t $(NAME) | sort -g
-						@echo
+						@ar -t $(NAME) | grep ft | sort -g
 						@echo
 
 #	Mandatory Targets
@@ -122,10 +120,8 @@ mandarory_re:			mandarory_re
 							$(MAKE) mandatory
 mandatory_list:
 						@echo
-						@echo
 						@echo "Library <$(MANDATORY_NAME)> is containing the following functions:"
-						@ar -t $(MANDATORY_NAME) | sort -g
-						@echo
+						@ar -t $(MANDATORY_NAME) | grep ft | sort -g
 						@echo
 
 #	Bonus Targets
@@ -141,8 +137,6 @@ bonus_re:				bonus_fclean
 						$(MAKE) bonus
 bonus_list:
 						@echo
-						@echo
 						@echo "Library <$(BONUS_NAME)> is containing the following functions:"
-						@ar -t $(BONUS_NAME) | sort -g
-						@echo
+						@ar -t $(BONUS_NAME) | grep ft | sort -g
 						@echo

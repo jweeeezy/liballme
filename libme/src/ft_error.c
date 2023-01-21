@@ -6,11 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:05:18 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/03 13:26:17 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:39:14 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <unistd.h>
+#include <stdlib.h>
 
 void	ft_error(void)
 {

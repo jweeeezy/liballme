@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:48:02 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/11 16:56:29 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:35:12 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 char	ft_str_check_set(const char *str_to_check, const char *str_set)
 {

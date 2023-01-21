@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:49:49 by jwillert          #+#    #+#             */
-/*   Updated: 2022/10/24 15:49:54 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:24:04 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include "libft.h"
 
 void	ft_input_print(char **array_to_print)
 {

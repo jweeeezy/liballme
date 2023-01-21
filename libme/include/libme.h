@@ -6,15 +6,14 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/09 00:40:47 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:33:37 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBME_H
 # define LIBME_H
+# include <stdlib.h>
 # include "libft.h"
-# include <float.h>
-# include <limits.h>
 
 //
 //
@@ -44,13 +43,13 @@ void			ft_lst_add_back(t_lst *lst_to_add, t_lst *node_to_add);
 /// @brief		Makes an avereage out of all values of a lst
 /// @param lst_to_calculate
 /// @return 	Long of average of all values of a list
-long			ft_lst_calc_average(t_lst *lst_to_calculate);
+long			ft_lst_calculate_average(t_lst *lst_to_calculate);
 //
 //
 /// @brief		Makes a sum out of all values of a lst
 /// @param lst_to_calculate
 /// @return 	Long of sum of all values of a list
-long			ft_lst_calc_sum(t_lst *lst_to_calculate);
+long			ft_lst_calculate_sum(t_lst *lst_to_calculate);
 //
 //
 /// @brief		Checks if there is a duplicate value in a list
@@ -359,17 +358,18 @@ char			*ft_input_strjoin(char **array_to_combine);
 /// @brief 		Counts the length of all chars in an array of strings
 /// @param array_to_count
 /// @return Size_t of the length
-size_t			ft_input_len(char **array_to_count);
+size_t			ft_input_count_length(char **array_to_count);
+//
+//
+/// @brief 		Counts the number of strings in an array of strings
+/// @param array_to_count
+/// @return Size_t of the amount of strings
+size_t			ft_input_count_arguments(char **array_to_count);
 //
 //
 /// @brief 		Prints the content of an array of strings
 /// @param array_to_print
 void			ft_input_print(char **array_to_print);
-//
-/// @brief 		Counts the number of strings in an array of strings
-/// @param array_to_count
-/// @return Size_t of the amount of strings
-size_t			ft_input_argc(char **array_to_count);
 //
 //
 /* ************************************************************************** */

@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:41:12 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 14:12:14 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:13:05 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *str_to_count)
 {

@@ -6,11 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:15:10 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/09 00:41:47 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:38:30 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
+#include <float.h>
 
 static int	check_algebraic_sign(char *str_to_check)
 {

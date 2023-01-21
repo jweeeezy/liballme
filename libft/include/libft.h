@@ -6,18 +6,14 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/16 14:15:09 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:18:25 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
 # include <stdlib.h>
-# include <stdint.h>
 
-//
-//
 /* ************************************************************************** */
 /* 								LIST RELATED								 */
 /* ************************************************************************** */
@@ -369,7 +365,5 @@ void	ft_putnbr_fd(int int_to_print, int fd);
 /// @param str_to_print
 /// @param fd
 void	ft_putstr_fd(char *str_to_print, int fd);
-//
-//
 
 #endif

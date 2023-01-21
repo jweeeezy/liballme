@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:04:31 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 16:17:16 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:07:58 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memchr(const void *ptr_to_search, int c_to_find, size_t bytes)
 {

@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:54:22 by jwillert          #+#    #+#             */
-/*   Updated: 2022/08/03 13:12:15 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:11:31 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strchr(const char *str_to_search, int c_to_find)
 {

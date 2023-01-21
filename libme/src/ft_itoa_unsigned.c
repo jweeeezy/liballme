@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:26 by jwillert          #+#    #+#             */
-/*   Updated: 2022/12/14 16:48:39 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:30:55 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-static int	ft_uint_get_digits(unsigned int uint_to_convert, int int_digits)
+static int	get_digits(unsigned int uint_to_convert, int int_digits)
 {
 	while (uint_to_convert / 10 != 0)
 	{
@@ -22,10 +22,10 @@ static int	ft_uint_get_digits(unsigned int uint_to_convert, int int_digits)
 	return (int_digits);
 }
 
-static char	*ft_uint_to_str(char *str_return,
+static char	*uint_to_str(char *str_return,
 		unsigned int uint_to_convert, int int_digits)
 {
-	int_digits = ft_uint_get_digits(uint_to_convert, int_digits);
+	int_digits = get_digits(uint_to_convert, int_digits);
 	str_return = malloc (sizeof(char) * (int_digits + 1));
 	if (str_return == NULL)
 		return (NULL);
@@ -48,7 +48,7 @@ char	*ft_itoa_unsigned(unsigned int uint_to_convert)
 	int_digits = 1;
 	str_return = NULL;
 	if (uint_to_convert > 0)
-		str_return = ft_uint_to_str(str_return, uint_to_convert, int_digits);
+		str_return = uint_to_str(str_return, uint_to_convert, int_digits);
 	else if (uint_to_convert == 0)
 	{
 		str_return = malloc (sizeof(char) * (2));

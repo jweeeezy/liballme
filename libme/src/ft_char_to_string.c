@@ -6,11 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:59:16 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/01 17:35:54 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:20:40 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libme.h"
+#include <stdlib.h>
 
 char	*ft_char_to_string(char c_to_convert)
 {
