@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 19:08:46 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/09 00:42:51 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/21 17:38:23 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ OBJ_FILES								=	$(shell ar -t $(FT_PRINTF) | grep ft_) $(shell ar -t $(GNL) |
 #	General Rules
 REMOVE									=	rm -f
 CC										=	cc
-CFLAGS									=	-Wall -Wextra -Werror
+DEBUG									=	$(shell echo $$DEBUG_FLAG)
+CFLAGS									=	-Wall -Wextra -Werror $(DEBUG)
 INCLUDE									=	-I $(INCLUDE_DIR) -I $(LIBFT_INCLUDE) -I $(LIBME_INCLUDE) -I $(FT_PRINTF_INCLUDE) -I $(GNL_INCLUDE)
 LIB_CREATE								=	ar -crs
 LIB_EXTRACT								=	ar -x

@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2022/12/16 15:39:05 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/21 17:39:32 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,8 @@ BONUS_OBJ			=	$(addprefix $(OBJ_DIR),$(BONUS_OBJ_FILES))
 
 #	General Rules
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror
+DEBUG				=	$(shell echo $$DEBUG_FLAG)
+CFLAGS				=	-Wall -Wextra -Werror $(DEBUG)
 INCLUDE				=	-I $(INCLUDE_DIR)
 CC_OBJ				=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE			=	ar -crs
