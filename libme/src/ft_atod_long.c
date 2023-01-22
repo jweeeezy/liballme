@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:15:10 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 18:38:30 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:56:17 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	check_algebraic_sign(char *str_to_check)
 static char	check_input_error(char *str_to_check)
 {
 	if (ft_str_check_viable_char(str_to_check, "01234567890.+-") == 0
-		|| ft_str_check_set(str_to_check, "01234567890") == 0
+		|| ft_str_check_set(str_to_check, "0123456789") == 0
 		|| ft_str_check_duplicate_set(str_to_check, ".+-") == 1
 		|| ft_str_check_viable_algebraic_signs(str_to_check) == 0)
 		return (1);
