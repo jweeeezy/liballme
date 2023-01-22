@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:48:45 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 18:26:38 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/22 11:41:25 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*merge(char **array_to_combine, char *str_merge)
 	return (str_merge);
 }
 
-char	*ft_input_strjoin(char **array_to_combine)
+char	*ft_input_str_join(char **array_to_combine)
 {
 	char	*str_return;
 

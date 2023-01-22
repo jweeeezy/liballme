@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/21 18:43:43 by jwillert         ###   ########.fr        #
+#    Updated: 2023/01/22 11:42:04 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ VPATH			=	$(SRC_DIR):$(OBJ_DIR)
 
 #	Files (42 Norm)
 SRC_FILES		=	ft_array_index_init.c\
-					ft_array_int_calc_median.c\
+					ft_array_int_calculate_median.c\
 					ft_array_str_free.c\
 					ft_atod_long.c\
 					ft_atoi_long.c\
@@ -35,7 +35,7 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_input_check_empty_str.c\
 					ft_input_count_length.c\
 					ft_input_print.c\
-					ft_input_strjoin.c\
+					ft_input_str_join.c\
 					ft_int_compare_absolute_biggest.c\
 					ft_int_compare_absolute_smallest.c\
 					ft_itoa_hexadecimal.c\
@@ -82,7 +82,7 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_str_find_char.c\
 					ft_str_merge_needle.c\
 					ft_str_reverse.c\
-					ft_strdup_set.c\
+					ft_str_duplicate_set.c\
 					ft_vector_str_add_char.c\
 					ft_vector_str_fetch_size_allocated.c\
 					ft_vector_str_fetch_size_used.c\

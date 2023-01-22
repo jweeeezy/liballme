@@ -6,13 +6,13 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:06:08 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 18:19:41 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/22 11:40:30 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_array_int_calc_median(int *array, size_t size_array)
+int	ft_array_int_calculate_median(int *array, size_t size_array)
 {
 	int		median;
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_set.c                                    :+:      :+:    :+:   */
+/*   ft_str_duplicate_set.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:45:54 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 18:37:33 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/01/22 11:39:18 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	count_char_found(char const *str_to_search,
 	return (counter);
 }
 
-char	*ft_strdup_set(char const *str_to_search, char const *str_set_to_find)
+char	*ft_str_duplicate_set(char const *str_to_search, char const *str_set_to_find)
 {
 	size_t	index;
 	size_t	counter;
