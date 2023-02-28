@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 18:33:37 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:11:36 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -505,6 +505,26 @@ size_t			ft_vector_str_fetch_size_used(
 size_t			ft_vector_str_fetch_size_allocated(
 					t_vector_str *vector_to_search);
 //
+//
+/// @brief
+/// @param vector_first
+/// @param vector_second
+/// @return
+t_vector_str	*ft_vector_str_merge(t_vector_str *vector_first,
+					t_vector_str *vector_second);
+//
+//
+/// @brief
+/// @param vector_first
+/// @param str_delimiter
+/// @param vector_second
+/// @return
+t_vector_str	*ft_vector_str_merge_delimiter(t_vector_str *vector_first,
+					char *str_delimiter, t_vector_str *vector_second);
+//
+//
+t_vector_str	*ft_vector_str_join_delimiter(t_vector_str *vector_to_expand,
+					char *str_delimiter, char *str_to_add);
 //
 /* ************************************************************************** */
 /*				 					OTHER									 */

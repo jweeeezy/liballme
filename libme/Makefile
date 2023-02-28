@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/22 11:42:04 by jwillert         ###   ########.fr        #
+#    Updated: 2023/02/28 21:11:30 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,10 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_vector_str_fetch_str.c\
 					ft_vector_str_free.c\
 					ft_vector_str_join.c\
-					ft_vector_str_new.c
+					ft_vector_str_join_delimiter.c\
+					ft_vector_str_new.c\
+					ft_vector_str_merge.c\
+					ft_vector_str_merge_delimiter.c
 OBJ_FILES		=	$(SRC_FILES:.c=.o)
 SRC				=	$(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
