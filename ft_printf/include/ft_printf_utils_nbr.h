@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:58:38 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 17:48:21 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:45:21 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ t_vector_str	*ft_ifxlower(unsigned int number, t_vector_str *vector);
 //	ft_itoa_hexadecimal	| prints string or (null) | returns new length
 t_vector_str	*ft_ifxupper(unsigned int number, t_vector_str *vector);
 
-#endif
+#endif	//	FT_PRINTF_UTILS_NBR_H

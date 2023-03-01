@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 18:18:25 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:46:08 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -366,4 +366,4 @@ void	ft_putnbr_fd(int int_to_print, int fd);
 /// @param fd
 void	ft_putstr_fd(char *str_to_print, int fd);
 
-#endif
+#endif	//	LIBFT_H

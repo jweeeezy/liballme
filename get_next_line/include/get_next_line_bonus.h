@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:53:06 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 17:54:26 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:44:47 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,4 @@
 /// @return 	Current line or NULL if End of File / Error occured
 char	*get_next_line(int fd);
 
-#endif
+#endif	//	GET_NEXT_LINE_BONUS

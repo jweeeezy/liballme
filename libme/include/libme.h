@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/02/28 21:11:36 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:46:50 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -562,4 +562,4 @@ void			*ft_reallocf(void *ptr_to_realloc, size_t size_old,
 /// @return		1 (true) or 0 (false)
 char			ft_sizet_check_poweroftwo(size_t n_to_check);
 
-#endif
+#endif	//	LIBME_H

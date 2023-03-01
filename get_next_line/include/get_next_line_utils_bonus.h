@@ -6,12 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:53:29 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 17:54:39 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:44:40 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_UTILS_BONUS_H
+# define GET_NEXT_LINE_UTILS_BONUS_H
 # include <stdlib.h>
 
 //
@@ -46,4 +46,4 @@ size_t	gnl_strlcpy(char *string_target,
 /// @return Size_t of all bytes
 size_t	gnl_strlen(const char *string);
 
-#endif
+#endif	//	GET_NEXT_LINE_UTILS_BONUS_H

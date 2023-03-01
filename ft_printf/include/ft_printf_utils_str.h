@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:58:41 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 17:48:19 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:45:31 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,4 @@ t_vector_str	*ft_ifp(void *pointer, t_vector_str *vector);
 //	the char to ouput | returns new length
 t_vector_str	*ft_ifperc(t_vector_str *vector);
 
-#endif
+#endif	//	FT_PRINTF_UTILS_STR_H

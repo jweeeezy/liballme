@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:14:53 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 17:51:58 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:45:42 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,4 @@
 /// @return Int of all bytes printed or 0
 int		ft_printf(const char *input, ...);
 
-#endif
+#endif	//	FT_PRINTF_H
