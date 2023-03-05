@@ -13,7 +13,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # define SPECIFIER "cspdiuxX%"
-# include "libme.h"
 
 /// @brief		Selfmade and slimmer version of printf (stdio.h)
 ///				Can handle: %cspdiuxX%

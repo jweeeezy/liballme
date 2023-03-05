@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 t_vector_str	*ft_vector_str_add_char(t_vector_str *vector_to_expand,
 					char c_to_add)

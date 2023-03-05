@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 void	ft_lst_header_print(t_lst_header *lst_to_print)
 {

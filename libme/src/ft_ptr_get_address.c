@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 char	*ft_ptr_get_address(void *ptr)
 {

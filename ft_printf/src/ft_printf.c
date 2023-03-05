@@ -15,6 +15,7 @@
 #include "ft_printf_utils_str.h"
 #include "libme.h"
 #include <unistd.h>
+#include "libft.h"
 
 static t_vector_str	*ft_check_specifier(va_list args, char c,
 	t_vector_str *vector)

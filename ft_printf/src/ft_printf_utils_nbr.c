@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 t_vector_str	*ft_ifdi(int number, t_vector_str *vector)
 {

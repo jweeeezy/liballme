@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 static int	needle_check(const char **str_array, size_t *index_array)
 {

@@ -12,6 +12,7 @@
 
 #include "libme.h"
 #include "limits.h"
+#include "libft.h"
 
 static size_t	str_iter_spaces(char *str_to_iter)
 {

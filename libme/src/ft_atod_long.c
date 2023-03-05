@@ -12,6 +12,7 @@
 
 #include "libme.h"
 #include <float.h>
+#include "libft.h"
 
 static int	check_algebraic_sign(char *str_to_check)
 {

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 void	ft_lst_print_node(t_lst *node_to_print)
 {

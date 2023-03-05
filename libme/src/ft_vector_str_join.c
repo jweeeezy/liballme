@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libme.h"
+#include "libft.h"
 
 t_vector_str	*ft_vector_str_join(t_vector_str *vector_to_expand,
 					char *str_to_add, size_t size_to_add)

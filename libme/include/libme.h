@@ -13,7 +13,6 @@
 #ifndef LIBME_H
 # define LIBME_H
 # include <stdlib.h>
-# include "libft.h"
 
 //
 //
