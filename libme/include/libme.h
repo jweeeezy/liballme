@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/03/01 12:46:50 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:43:04 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,7 +295,7 @@ char			ft_str_find_char(char const *str_to_search,
 					char const char_to_find);
 //
 //
-/// @brief
+/// @brief		***not tested***
 /// @param str_haystack
 /// @param str_needle_a
 /// @param str_needle_b
@@ -332,7 +332,7 @@ char			*ft_strdup_set(char const *str_to_search,
 size_t			*ft_array_index_init(size_t	array_size);
 //
 //
-/// @brief
+/// @brief		***not tested***
 /// @param array
 /// @param size_array
 /// @return
@@ -505,25 +505,35 @@ size_t			ft_vector_str_fetch_size_allocated(
 					t_vector_str *vector_to_search);
 //
 //
-/// @brief
+/// @brief		Merges two vectors into one another. If first is empty
+///				it will return the second vector.
 /// @param vector_first
 /// @param vector_second
-/// @return
+/// @return		NULL on Failure, t_vector_str on SUCESS
 t_vector_str	*ft_vector_str_merge(t_vector_str *vector_first,
 					t_vector_str *vector_second);
 //
 //
-/// @brief
+/// @brief		Merges two vectors delimiting the two string with a char
+///				str_delimiter. If first vector is empty it will return
+///				the second.
 /// @param vector_first
 /// @param str_delimiter
 /// @param vector_second
-/// @return
+/// @return		NULL on Failure, t_vector_str on SUCESS
 t_vector_str	*ft_vector_str_merge_delimiter(t_vector_str *vector_first,
 					char *str_delimiter, t_vector_str *vector_second);
 //
 //
+/// @brief 		Appends a string to the vector string with a char str_delimiter
+///				in between.
+/// @param vector_to_expand
+/// @param str_delimiter
+/// @param str_to_add
+/// @return		NULL on Failure, t_vector_str on SUCESS
 t_vector_str	*ft_vector_str_join_delimiter(t_vector_str *vector_to_expand,
 					char *str_delimiter, char *str_to_add);
+//
 //
 /* ************************************************************************** */
 /*				 					OTHER									 */
