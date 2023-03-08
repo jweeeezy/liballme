@@ -83,6 +83,7 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_str_merge_needle.c\
 					ft_str_reverse.c\
 					ft_str_duplicate_set.c\
+					ft_str_join_delimiter.c\
 					ft_vector_str_add_char.c\
 					ft_vector_str_fetch_size_allocated.c\
 					ft_vector_str_fetch_size_used.c\

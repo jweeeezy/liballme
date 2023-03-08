@@ -293,6 +293,8 @@ char			*ft_str_empty(void);
 /// @return 0 (False) or 1 (True)
 char			ft_str_find_char(char const *str_to_search,
 					char const char_to_find);
+char			*ft_strjoin_delimiter(char *str_first, char *str_delimiter,
+					char *str_second);
 //
 //
 /// @brief		***not tested***
