@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:48:58 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/21 18:00:01 by jwillert         ###   ########.fr        #
+#    Updated: 2023/03/28 20:50:14 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
 CC				=	cc
 DEBUG			=	$(shell echo $$DEBUG_FLAG)
 CFLAGS			=	-Wall -Wextra -Werror $(DEBUG)
-INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBME_DIR)/include -I $(LIBFT_DIR)/include
+INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBME_DIR)include -I \
+					$(LIBFT_DIR)include
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f
@@ -62,6 +63,7 @@ re:					fclean
 					$(MAKE)
 list:
 					@echo
-					@echo "Library <$(NAME)> is containing the following functions:"
+					@echo "Library <$(NAME)> is containing the \
+					following functions:"
 					@ar -t $(NAME) | grep ft | sort -g
 					@echo

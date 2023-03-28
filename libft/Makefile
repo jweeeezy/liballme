@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2023/01/21 18:17:33 by jwillert         ###   ########.fr        #
+#    Updated: 2023/03/28 20:52:15 by jwillert         ###   ########           #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,12 +103,14 @@ re:						fclean
 							$(MAKE)
 list:
 						@echo
-						@echo "Library <$(NAME)> is containing the following functions:"
+						@echo "Library <$(NAME)> is containing the following \
+						functions:"
 						@ar -t $(NAME) | grep ft | sort -g
 						@echo
 
 #	Mandatory Targets
-.PHONY:					mandatory mandatory_clean mandatory_fclean mandarory_re mandatory_list
+.PHONY:					mandatory mandatory_clean mandatory_fclean \
+						mandarory_re mandatory_list
 mandatory:				$(MANDATORY_NAME)
 $(MANDATORY_NAME):		$(MANDATORY_OBJ_FILES)
 							$(LIB_CREATE) $(MANDATORY_NAME) $(MANDATORY_OBJ)
@@ -120,7 +122,8 @@ mandarory_re:			mandarory_re
 							$(MAKE) mandatory
 mandatory_list:
 						@echo
-						@echo "Library <$(MANDATORY_NAME)> is containing the following functions:"
+						@echo "Library <$(MANDATORY_NAME)> is containing the \
+						following functions:"
 						@ar -t $(MANDATORY_NAME) | grep ft | sort -g
 						@echo
 
@@ -137,6 +140,7 @@ bonus_re:				bonus_fclean
 						$(MAKE) bonus
 bonus_list:
 						@echo
-						@echo "Library <$(BONUS_NAME)> is containing the following functions:"
+						@echo "Library <$(BONUS_NAME)> is containing the \
+						following functions:"
 						@ar -t $(BONUS_NAME) | grep ft | sort -g
 						@echo
