@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 19:08:46 by jwillert          #+#    #+#              #
-#    Updated: 2023/03/28 21:48:29 by jwillert         ###   ########           #
+#    Updated: 2023/04/01 19:56:14 by jwillert         ###   ########           #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ INCLUDE									=	-I $(INCLUDE_DIR) \
 											-I $(GNL_INCLUDE)
 LIB_CREATE								=	ar -crs
 LIB_EXTRACT								=	ar -x
+LIST_MSG								= "Library is containing the following\
+										  functions:"
 
 #	Deletes targets in case of an error
 .DELETE_ON_ERROR:
@@ -92,8 +94,7 @@ re:						fclean
 list:
 							@echo
 							@echo
-							@echo "Library <$(NAME)> is containing the \
-							following functions:"
+							@echo $(LIST_MSG)
 							@ar -t $(NAME) | sort -g | grep .o
 							@echo
 							@echo

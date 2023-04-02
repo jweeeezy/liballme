@@ -6,13 +6,14 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 08:41:19 by jwillert          #+#    #+#             */
-/*   Updated: 2023/01/21 17:57:14 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:52:00 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_utils_bonus.h"
 #include <stdlib.h>
-#include <libc.h>
+#include <unistd.h>
+#include <limits.h>
 
 static char	gnl_search_char(char *string_to_search, char char_to_search)
 {
@@ -111,10 +112,10 @@ static char	*gnl_read_until_newline(int fd, char *buffer_static)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer_static[FOPEN_MAX];
+	static char	*buffer_static[OPEN_MAX];
 	char		*buffer_return;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
 	buffer_static[fd] = gnl_read_until_newline(fd, buffer_static[fd]);
 	if (buffer_static[fd] == NULL)

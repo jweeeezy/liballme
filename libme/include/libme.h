@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/03/06 20:43:04 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:25:28 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 
 //
 //
+
 /* ************************************************************************** */
 /* 							LINKED LIST RELATED								 */
 /* ************************************************************************** */
+
 //
 //
 /* *****************************  t_lst  *********************************** */
@@ -322,9 +324,11 @@ char			*ft_strdup_set(char const *str_to_search,
 					char const *str_set_to_find);
 //
 //
+
 /* ************************************************************************** */
 /*		 					INPUT / ARGV / ARRAY RELATED					 */
 /* ************************************************************************** */
+
 //
 //
 /// @brief 		Initializes an array of array_size of size_t and sets all
@@ -373,9 +377,11 @@ size_t			ft_input_count_arguments(char **array_to_count);
 void			ft_input_print(char **array_to_print);
 //
 //
+
 /* ************************************************************************** */
 /*		 					TYPE CONVERSION									 */
 /* ************************************************************************** */
+
 //
 //
 /// @brief		Converts a string into a float. Uses double as a data type to
@@ -392,7 +398,6 @@ long double		ft_atod_long(char *str_to_convert);
 /// @param str_to_convert
 /// @return Long int representation of string
 long			ft_atoi_long(char *str_to_convert);
-
 /// @brief 		Converts a char to a string (with malloc)
 /// @param c
 /// @return Newly allocated string or NULL
@@ -422,9 +427,11 @@ char			*ft_itoa_hexadecimal(unsigned int uint_to_convert,
 char			*ft_itoa_unsigned(unsigned int uint_to_convert);
 //
 //
+
 /* ************************************************************************** */
 /* 									INT RELATED								 */
 /* ************************************************************************** */
+
 //
 //
 /// @brief 		Compares the absolute conversion of two integer values
@@ -443,9 +450,11 @@ char			ft_int_compare_absolute_smallest(int value_a, int value_b);
 char			ft_int_compare_absolute_biggest(int value_a, int value_b);
 //
 //
+
 /* ************************************************************************** */
 /*				 					VECTOR									 */
 /* ************************************************************************** */
+
 //
 //
 //	char 	*str;
