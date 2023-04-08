@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:41:20 by jwillert          #+#    #+#              #
-#    Updated: 2023/03/28 20:52:59 by jwillert         ###   ########           #
+#    Updated: 2023/04/08 12:43:55 by jwillert         ###   ########           #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_itoa_hexadecimal.c\
 					ft_itoa_hexadecimal_long.c\
 					ft_itoa_unsigned.c\
+					ft_itoa_unsigned_long.c\
 					ft_lst_add_back.c\
 					ft_lst_calculate_average.c\
 					ft_lst_calculate_sum.c\

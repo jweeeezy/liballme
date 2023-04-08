@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/04/01 21:25:28 by jwillert         ###   ########          */
+/*   Updated: 2023/04/08 12:44:34 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -425,6 +425,7 @@ char			*ft_itoa_hexadecimal(unsigned int uint_to_convert,
 /// @param uint_to_convert
 /// @return Newly allocated string or NULL
 char			*ft_itoa_unsigned(unsigned int uint_to_convert);
+char			*ft_itoa_unsigned_long(unsigned long int uint_to_convert);
 //
 //
 
