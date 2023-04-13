@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 19:08:46 by jwillert          #+#    #+#              #
-#    Updated: 2023/04/01 19:56:14 by jwillert         ###   ########           #
+#    Updated: 2023/04/13 18:27:32 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,13 +72,9 @@ liballme_make:
 							$(REMOVE) libftprintf.a
 							test ! -f __.SYMDEF\ SORTED || rm __.SYMDEF\ SORTED
 clean:
-							$(MAKE) clean -C $(LIBFT_DIR)
-							$(MAKE) clean -C $(LIBME_DIR)
 							$(MAKE) clean -C $(FT_PRINTF_DIR)
 							$(MAKE) clean -C $(GNL_DIR)
 fclean:					clean
-							$(MAKE) fclean -C $(LIBFT_DIR)
-							$(MAKE) fclean -C $(LIBME_DIR)
 							$(MAKE) fclean -C $(FT_PRINTF_DIR)
 							$(MAKE) fclean -C $(GNL_DIR)
 							$(REMOVE) $(NAME)
