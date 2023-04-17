@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_calc_sum.c                                  :+:      :+:    :+:   */
+/*   ft_lst_calculate_sum.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:37:16 by jwillert          #+#    #+#             */
-/*   Updated: 2022/11/27 23:57:21 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:00:36 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libme.h"
 
-long	ft_lst_calc_sum(t_lst *lst_to_calculate)
+long	ft_lst_calculate_sum(t_lst *lst_to_calculate)
 {
 	long	sum;
 

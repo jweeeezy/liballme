@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libme.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:59:51 by jwillert          #+#    #+#             */
-/*   Updated: 2023/04/08 12:44:34 by jwillert         ###   ########          */
+/*   Updated: 2023/04/17 23:00:43 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
