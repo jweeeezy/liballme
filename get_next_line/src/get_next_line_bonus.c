@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 08:41:19 by jwillert          #+#    #+#             */
-/*   Updated: 2023/04/01 19:52:00 by jwillert         ###   ########          */
+/*   Updated: 2023/04/17 22:13:15 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <stdio.h>
 
 static char	gnl_search_char(char *string_to_search, char char_to_search)
 {
@@ -112,10 +113,10 @@ static char	*gnl_read_until_newline(int fd, char *buffer_static)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer_static[OPEN_MAX];
+	static char	*buffer_static[FOPEN_MAX];
 	char		*buffer_return;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
 		return (NULL);
 	buffer_static[fd] = gnl_read_until_newline(fd, buffer_static[fd]);
 	if (buffer_static[fd] == NULL)
