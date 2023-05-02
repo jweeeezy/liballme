@@ -10,24 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdlib.h>	// needed for NULL, size_t
 
-char	ft_str_check_duplicate_char(char *str_to_check, char c_to_check)
+char	ft_str_check_duplicate_char(const char *str_to_check,
+			const char c_to_check)
 {
 	size_t	index;
 	char	flag;
 
 	index = 0;
 	flag = 0;
-	if (str_to_check == NULL)
-		return (0);
-	while (str_to_check[index] != '\0')
+	while (str_to_check != NULL && str_to_check[index] != '\0')
 	{
 		if (str_to_check[index] == c_to_check && flag == 0)
+		{
 			flag = 1;
+		}
 		else if (str_to_check[index] == c_to_check && flag == 1)
+		{
 			return (1);
-		index++;
+		}
+		index += 1;
 	}
 	return (0);
 }

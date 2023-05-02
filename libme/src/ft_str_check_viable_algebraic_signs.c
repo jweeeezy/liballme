@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"	// needed for size_t, NULL, ft_strlen(), ft_strncmp(),
+					// ft_isdigit()
 
 static char	check_needles(const char *haystack,
 				const char **needles, size_t length)
@@ -21,7 +22,9 @@ static char	check_needles(const char *haystack,
 	index = 0;
 	counter_needles = 0;
 	if (haystack == NULL || needles == NULL)
+	{
 		return (0);
+	}
 	index = 0;
 	while (index < length && haystack[index] != '\0')
 	{
@@ -30,10 +33,12 @@ static char	check_needles(const char *haystack,
 		{
 			if (ft_strncmp(haystack + index, needles[counter_needles],
 					ft_strlen(needles[counter_needles])) == 0)
+			{
 				return (1);
-			counter_needles++;
+			}
+			counter_needles += 1;
 		}
-		index++;
+		index += 1;
 	}
 	return (0);
 }
@@ -43,7 +48,9 @@ static char	check_sign_precursor(const char *str_to_check, char c_precursor)
 	size_t	index;
 
 	if (str_to_check == NULL)
+	{
 		return (0);
+	}
 	index = 0;
 	while (str_to_check[index] != '\0')
 	{
@@ -51,9 +58,11 @@ static char	check_sign_precursor(const char *str_to_check, char c_precursor)
 		{
 			if (ft_isdigit(str_to_check[index + 1]) == 0
 				|| (str_to_check[index - 1] != c_precursor && index > 0))
+			{
 				return (0);
+			}
 		}
-		index++;
+		index += 1;
 	}
 	return (1);
 }
@@ -68,8 +77,12 @@ char	ft_str_check_viable_algebraic_signs(const char *str_to_check)
 	array[3] = "--";
 	array[4] = NULL;
 	if (check_needles(str_to_check, array, ft_strlen(str_to_check) == 1))
+	{
 		return (0);
+	}
 	if (check_sign_precursor(str_to_check, ' ') == 0)
+	{
 		return (0);
+	}
 	return (1);
 }

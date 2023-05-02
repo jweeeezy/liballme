@@ -23,7 +23,9 @@
 
 //
 //
+
 /* *****************************  t_lst  *********************************** */
+
 //
 //
 //		int				content;
@@ -184,7 +186,9 @@ void			ft_lst_print(t_lst *lst_to_print);
 int				*ft_lst_sort_to_array(t_lst **lst_to_sort);
 //
 //
+
 /* ***************************  t_lst_header  ******************************* */
+
 //
 //
 //		char			*title;
@@ -210,17 +214,19 @@ void			ft_lst_header_free(t_lst_header *lst_to_free);
 void			ft_lst_header_print(t_lst_header *lst_to_print);
 //
 //
+
 /* ************************************************************************** */
 /* 								STRING RELATED								*/
 /* ************************************************************************** */
+
 //
 //
 /// @brief		Checks if a char is present more than once in a string
 /// @param str_to_check
 /// @param c_to_check
 /// @return
-char			ft_str_check_duplicate_char(char *str_to_check,
-					char c_to_check);
+char			ft_str_check_duplicate_char(const char *str_to_check,
+					const char c_to_check);
 //
 //
 /// @brief		Checks if a char from a set is present more than once in
@@ -228,8 +234,8 @@ char			ft_str_check_duplicate_char(char *str_to_check,
 /// @param str_to_check
 /// @param set_to_check
 /// @return		1 (True) or 0 (False)
-char			ft_str_check_duplicate_set(char *str_to_check,
-					char *set_to_check);
+char			ft_str_check_duplicate_set(const char *str_to_check,
+					const char *set_to_check);
 //
 //
 /// @brief		Checks if a string (haystack) contains another string (needle)
@@ -252,17 +258,6 @@ char			ft_str_check_set(const char *str_to_check, const char *str_set);
 /// @param str_to_check
 /// @return
 char			ft_str_check_viable_algebraic_signs(const char *str_to_check);
-//
-//
-/// @brief		Checks if a specific char (c_to_check) has a specific char
-///				(c_precursor) as a precursor and a digit afterwards
-///				(used to check for viable algebraic signs in input)
-/// @param str_to_check
-/// @param c_precursor
-/// @param c_to_check
-/// @return 0 (False) or 1 (True)
-char			ft_str_check_viable_precursor_digit(const char *str_to_check,
-					char c_precursor, char c_to_check);
 //
 //
 /// @brief		Checks a string for anything other than set of viable chars
@@ -293,10 +288,10 @@ char			*ft_str_empty(void);
 /// @param str_to_search
 /// @param char_to_find
 /// @return 0 (False) or 1 (True)
-char			ft_str_find_char(char const *str_to_search,
+char			ft_str_check_char(char const *str_to_search,
 					char const char_to_find);
-char			*ft_str_join_delimiter(char *str_first, char *str_delimiter,
-					char *str_second);
+char			*ft_str_join_delimiter(char *str_first,
+					const char *str_delimiter, const char *str_second);
 //
 //
 /// @brief		***not tested***
@@ -320,8 +315,8 @@ void			ft_str_reverse(char *str_to_reverse);
 /// @param str_to_search
 /// @param str_set_to_find
 /// @return Pointer to the newly allocated string or NULL
-char			*ft_strdup_set(char const *str_to_search,
-					char const *str_set_to_find);
+char			*ft_strdup_set(const char *str_to_search,
+					const char *str_set_to_find);
 //
 //
 
@@ -547,9 +542,11 @@ t_vector_str	*ft_vector_str_join_delimiter(t_vector_str *vector_to_expand,
 					char *str_delimiter, char *str_to_add);
 //
 //
+
 /* ************************************************************************** */
 /*				 					OTHER									 */
 /* ************************************************************************** */
+
 //
 //
 /// @brief 		Prints "Error" to stderr

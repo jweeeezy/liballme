@@ -76,11 +76,10 @@ SRC_FILES		=	ft_array_index_init.c\
 					ft_str_check_needle.c\
 					ft_str_check_set.c\
 					ft_str_check_viable_algebraic_signs.c\
-					ft_str_check_viable_precursor_digit.c\
 					ft_str_check_viable_char.c\
 					ft_str_count_needle_occasions.c\
 					ft_str_empty.c\
-					ft_str_find_char.c\
+					ft_str_check_char.c\
 					ft_str_merge_needle.c\
 					ft_str_reverse.c\
 					ft_str_duplicate_set.c\
@@ -114,7 +113,7 @@ REMOVE			=	rm -f
 					$(CC_OBJ)
 
 #	General targets
-.PHONY :			all clean fclean re list
+.PHONY :			all clean fclean re list test
 all:				$(NAME)
 $(NAME):			$(OBJ_FILES)
 					$(MAKE) mandatory -C  $(LIBFT_DIR)
@@ -134,3 +133,6 @@ list:
 					functions:"
 					@ar -t $(NAME) | grep ft | sort -g
 					@echo
+test:				$(NAME)
+					$(CC) $(CFLAGS) $(INCLUDE) main.c $(NAME)
+					

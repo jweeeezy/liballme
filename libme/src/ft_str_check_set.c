@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdlib.h>	// needed for NULL, size_t
 
 char	ft_str_check_set(const char *str_to_check, const char *str_set)
 {
@@ -20,17 +20,21 @@ char	ft_str_check_set(const char *str_to_check, const char *str_set)
 	index = 0;
 	index_set = 0;
 	if (str_to_check == NULL || str_set == NULL)
+	{
 		return (0);
+	}
 	while (str_to_check[index] != '\0')
 	{
 		index_set = 0;
 		while (str_set[index_set] != '\0')
 		{
 			if (str_to_check[index] == str_set[index_set])
+			{
 				return (1);
-			index_set++;
+			}
+			index_set += 1;
 		}
-		index++;
+		index += 1;
 	}
 	return (0);
 }

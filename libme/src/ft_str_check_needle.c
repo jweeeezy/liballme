@@ -10,20 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"	// needed for NULL, size_t, ft_strlen()
 
-char	ft_str_check_needle(const char *haystack, const char *needle,
-				size_t length)
+static int	loop_and_check_for_needle(const char *haystack,
+			const char *needle, size_t length)
 {
 	size_t	index;
 	size_t	counter_needle;
 
 	index = 0;
 	counter_needle = 0;
-	if (haystack == NULL || needle == NULL)
-		return (0);
-	if (ft_strlen(needle) <= 0)
-		return (1);
 	while (index < length && haystack[index] != '\0')
 	{
 		counter_needle = 0;
@@ -37,7 +33,21 @@ char	ft_str_check_needle(const char *haystack, const char *needle,
 				counter_needle++;
 			}
 		}
-		index++;
+		index += 1;
 	}
 	return (0);
+}
+
+char	ft_str_check_needle(const char *haystack, const char *needle,
+				size_t length)
+{
+	if (haystack == NULL || needle == NULL)
+	{
+		return (0);
+	}
+	if (ft_strlen(needle) == 0)
+	{
+		return (1);
+	}
+	return (loop_and_check_for_needle(haystack, needle, length));
 }

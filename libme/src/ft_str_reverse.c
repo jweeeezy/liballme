@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"	// needed for ft_strlen()
 
 void	ft_str_reverse(char *str_to_reverse)
 {
@@ -19,12 +19,16 @@ void	ft_str_reverse(char *str_to_reverse)
 	int		index;
 
 	index = 0;
+	if (str_to_reverse == NULL)
+	{
+		return ;
+	}
 	length = ft_strlen(str_to_reverse);
 	while (index < length / 2)
 	{
 		c_to_save = str_to_reverse[index];
 		str_to_reverse[index] = str_to_reverse[length - 1 - index];
 		str_to_reverse[length - 1 - index] = c_to_save;
-		index++;
+		index += 1;
 	}
 }
