@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:33:59 by jwillert          #+#    #+#              #
-#    Updated: 2023/03/28 20:50:35 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/03 14:46:52 by jwillert         ###   ########           #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,3 +59,5 @@ list:
 					following functions:"
 					@ar -t $(NAME) | grep get | sort -g
 					@echo
+test:				$(NAME)
+					$(CC) $(CFLAGS) $(INCLUDE) main.c $(NAME)

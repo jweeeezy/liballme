@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:48:58 by jwillert          #+#    #+#              #
-#    Updated: 2023/03/28 20:50:14 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/03 13:59:24 by jwillert         ###   ########           #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ CC				=	cc
 DEBUG			=	$(shell echo $$DEBUG_FLAG)
 CFLAGS			=	-Wall -Wextra -Werror $(DEBUG)
 INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBME_DIR)include -I \
-					$(LIBFT_DIR)include
+					$(LIBFT_DIR)include -Wno-gnu-include-next \
+					-I ./LeakSanitizer
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f
@@ -49,21 +50,25 @@ REMOVE			=	rm -f
 .PHONY:				all clean fclean re list
 
 all:				$(NAME)
-$(NAME):			$(OBJ_FILES)
+$(NAME):			$(OBJ_FILES) $(LIBME)
+						$(LIB_CREATE) $(OBJ)
+$(LIBME):
 					$(MAKE) -C $(LIBME_DIR)
-					cp $(LIBME) $(NAME)
-					$(LIB_CREATE) $(OBJ)
+						cp $(LIBME) $(NAME)
 clean:
 					$(MAKE) clean -C $(LIBME_DIR)
-					$(REMOVE) $(OBJ)
+						$(REMOVE) $(OBJ)
 fclean: 			clean
-					$(MAKE) fclean -C $(LIBME_DIR)
-					$(REMOVE) $(NAME)
+						$(MAKE) fclean -C $(LIBME_DIR)
+						$(REMOVE) $(NAME)
 re:					fclean
-					$(MAKE)
+						$(MAKE)
 list:
-					@echo
-					@echo "Library <$(NAME)> is containing the \
-					following functions:"
-					@ar -t $(NAME) | grep ft | sort -g
-					@echo
+						@echo
+						@echo "Library <$(NAME)> is containing the \
+						following functions:"
+						@ar -t $(NAME) | grep ft | sort -g
+						@echo
+test:				$(NAME)
+						$(CC) $(CFLAGS) $(INCLUDE) $(NAME) main.c \
+							-LLeakSanitizer -llsan -lc++
