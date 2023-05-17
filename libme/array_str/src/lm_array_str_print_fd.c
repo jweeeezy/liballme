@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_str.h                                        :+:      :+:    :+:   */
+/*   lm_array_str_print_fd.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 18:46:02 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/17 14:32:22 by jwillert         ###   ########.fr       */
+/*   Created: 2022/10/24 15:49:49 by jwillert          #+#    #+#             */
+/*   Updated: 2023/05/17 14:28:16 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_STR_H
-# define ARRAY_STR_H
-# include <stdlib.h>	// needed for size_t
+#include <libft.h>	// needed for NULL, size_t, ft_putstr_fd(), ft_putchar_fd()
 
-size_t	lm_array_str_count_length(char **array_to_count);
-size_t	lm_array_str_count_arguments(char **array_to_count);
-void	lm_array_print_fd(char **array_to_print, int fd_target);
-void	lm_array_str_free(char **array_to_free);
+void	lm_array_print_fd(char **array_to_print, int fd_target)
+{
+	size_t	index;
 
-#endif	// ARRAY_STR_H
+	index = 0;
+	while (array_to_print[index] != NULL)
+	{
+		ft_putstr_fd(array_to_print[index], fd_target);
+		ft_putchar_fd('\n', fd_target);
+		index += 1;
+	}
+}
