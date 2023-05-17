@@ -6,12 +6,12 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:46:44 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 16:39:05 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/17 16:55:21 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #	Library Name
-NAME		=	lm_int.a
+NAME			=	../lm_int.a
 
 #	Directories
 INCLUDE_DIR		=	../include

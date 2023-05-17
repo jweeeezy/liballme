@@ -6,13 +6,13 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 16:44:35 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 16:45:23 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/17 16:54:41 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #	Library Name
-NAME			=	lm_vec_str.a
+NAME			=	../lm_vec_str.a
 
 #	Directories
 INCLUDE_DIR		=	../include/
