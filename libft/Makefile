@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 13:58:30 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/17 17:55:35 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ MANDATORY_NAME		=	libft_m.a
 BONUS_NAME			=	libft_b.a
 
 #	Directories
-INCLUDE_DIR			=	./
+INCLUDE_DIR			=	./include/
 MANDATORY_DIR		=	./src_mandatory/
 BONUS_DIR			=	./src_bonus/
 OBJ_DIR				=	./obj/

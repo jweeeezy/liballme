@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 16:43:23 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 16:55:04 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/17 19:02:12 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJ				=	$(addprefix $(OBJ_DIR),$(OBJ_FILES))
 CC				=	cc
 DEBUG			=	$(shell echo $$DEBUG_FLAG)
 CFLAGS			=	-Wall -Wextra -Werror $(DEBUG)
-INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)
+INCLUDE			=	-I $(INCLUDE_DIR) -I $(LIBFT_DIR)include
 CC_OBJ			=	$(CC) $(INCLUDE) $(CFLAGS) -c $^ -o $(OBJ_DIR)$@
 LIB_CREATE		=	ar -crs $(NAME)
 REMOVE			=	rm -f
