@@ -6,12 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:26 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/03 16:25:38 by jwillert         ###   ########          */
+/*   Updated: 2023/05/17 14:42:45 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"			// needed for ft_strjoin(), NULL, malloc()
-#include <libme/convert.h>	// needed for lm_convert_li_to_a_hex()
+#include <libft.h>		// needed for ft_strjoin(), NULL, malloc()
+#include <convert.h>	// needed for lm_convert_li_to_a_hex()
 
 char	*lm_convert_p_to_a(void *ptr)
 {
@@ -30,7 +30,7 @@ char	*lm_convert_p_to_a(void *ptr)
 	}
 	else
 	{
-		str_ptr_address = lm_convert_li_to_a_hex(
+		str_ptr_address = lm_convert_ui_to_a_hex(
 				(unsigned long) ptr, 0);
 		if (str_ptr_address == NULL)
 		{

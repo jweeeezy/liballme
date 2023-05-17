@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:48:45 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/03 18:40:20 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:41:06 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ char	*lm_convert_array_str_to_a(char **array_to_convert)
 {
 	char	*str_return;
 
-	if (array_to_combine == NULL)
+	if (array_to_convert == NULL)
 		return (NULL);
 	str_return = (char *) malloc (sizeof (char)
-			* count_length(array_to_combine)
-			+ count_arguments(array_to_combine));
+			* count_length(array_to_convert)
+			+ count_arguments(array_to_convert));
 	if (str_return == NULL)
 		return (NULL);
-	str_return = merge(array_to_combine, str_return);
+	str_return = merge(array_to_convert, str_return);
 	return (str_return);
 }

@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:30:25 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/03 18:40:09 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:41:25 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ char	*lm_convert_ui_to_a_hex(unsigned int uint_to_convert, int flag_caps)
 	str_return = uint_to_string(uint_to_convert, flag_caps);
 	if (str_return == NULL)
 		return (NULL);
-	ft_str_reverse(str_return);
+	str_reverse(str_return);
 	return (str_return);
 }

@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:15:10 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/03 18:40:55 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:31:30 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 static int	check_algebraic_sign(char *str_to_check)
 {
 	if (*str_to_check == '-')
+	{
 		return (-1);
+	}
 	else if (*str_to_check == '+')
+	{
 		return (0);
+	}
 	return (1);
 }
 
