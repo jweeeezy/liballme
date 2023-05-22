@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string.h                                           :+:      :+:    :+:   */
+/*   lm_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:26:47 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/06 17:08:41 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:11:07 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRING_H
 # define STRING_H
 # include <stdlib.h>	// needed for size_t
+
+/// @brief 		Compares char for char of two strings and checks for a
+///				difference in value
+/// @param str_first
+/// @param str_second
+/// @return		First Difference in value or 0 if no difference was found
+char	lm_str_cmp(const char *str_first, const char *str_second);
 
 /// @brief		Checks if a char is present more than once in a string
 /// @param str_to_check

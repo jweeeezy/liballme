@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 16:35:07 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 19:02:05 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/22 11:05:32 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC_FILES		=	lm_str_check_char_duplicate.c\
 					lm_str_check_set.c\
 					lm_str_check_viable_algebraic_signs.c\
 					lm_str_check_viable_set.c\
+					lm_str_cmp.c\
 					lm_str_count_needle_appended.c\
 					lm_str_duplicate_set.c\
 					lm_str_get_empty.c\
