@@ -6,7 +6,7 @@
 #    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 16:23:34 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 19:01:59 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/22 09:58:40 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRC_FILES		=	lm_lst_add_back.c\
 					lm_lst_get_last.c\
 					lm_lst_get_new.c\
 					lm_lst_header_free.c\
-					lm_lst_header_new.c\
+					lm_lst_header_get_new.c\
 					lm_lst_header_print_fd.c\
 					lm_lst_print_fd.c\
 					lm_lst_print_node_fd.c\

@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:48:15 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/17 15:04:44 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/22 09:42:36 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ size_t	lm_lst_count_iterations(t_lst *lst_start, t_lst *lst_end)
 	{
 		index++;
 		lst_index = lst_index->next;
+	}
+	if (lst_index == NULL && lst_index != lst_end)
+	{
+		return (0);
 	}
 	return (index);
 }
