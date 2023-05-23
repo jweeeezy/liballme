@@ -53,10 +53,8 @@ $(NAME):			$(LIBFT) $(OBJ_FILES)
 $(LIBFT):
 					$(MAKE) mandatory -C $(LIBFT_DIR)
 clean:
-					$(MAKE) clean -C $(LIBFT_DIR)
 						$(REMOVE) $(OBJ)
 fclean: 			clean
-						$(MAKE) fclean -C $(LIBFT_DIR)
 						$(REMOVE) $(NAME)
 re:					fclean
 						$(MAKE)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
+#    By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:48:58 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 19:10:28 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/24 00:11:27 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,12 +62,8 @@ $(CONVERT_LIB):
 $(VEC_STR_LIB):
 						$(MAKE) -C $(VEC_STR_DIR)
 clean:
-						$(MAKE) clean -C $(CONVERT_DIR)
-						$(MAKE) clean -C $(VEC_STR_DIR)
 						$(REMOVE) $(OBJ)
 fclean: 			clean
-						$(MAKE) fclean -C $(CONVERT_DIR)
-						$(MAKE) fclean -C $(VEC_STR_DIR)
 						$(REMOVE) $(NAME)
 re:					fclean
 						$(MAKE)

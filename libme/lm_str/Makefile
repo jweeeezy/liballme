@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
+#    By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 16:35:07 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/22 11:05:32 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/24 00:15:07 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,10 +62,8 @@ $(NAME):			$(LIBFT) $(OBJ_FILES)
 $(LIBFT):
 					$(MAKE) mandatory -C $(LIBFT_DIR)
 clean:
-					$(MAKE) clean -C $(LIBFT_DIR)
 						$(REMOVE) $(OBJ)
 fclean: 			clean
-						$(MAKE) fclean -C $(LIBFT_DIR)
 						$(REMOVE) $(NAME)
 re:					fclean
 						$(MAKE)
