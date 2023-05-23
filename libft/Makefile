@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
+#    By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 08:51:38 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/17 17:55:35 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/24 00:22:34 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,8 +91,8 @@ REMOVE				=	rm -f
 #	General Targets
 .PHONY:					all clean fclean re list
 all:					$(NAME)
-$(NAME):				$(MANDATORY_OBJ_FILES) $(BONUS_OBJ_FILES)
-							$(LIB_CREATE) $(NAME) $(MANDATORY_OBJ) $(BONUS_OBJ)
+$(NAME):				$(MANDATORY_OBJ_FILES)
+							$(LIB_CREATE) $(NAME) $(MANDATORY_OBJ)
 clean:
 							$(REMOVE) $(MANDATORY_OBJ) $(BONUS_OBJ)
 fclean:					clean
