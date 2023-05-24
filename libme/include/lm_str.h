@@ -6,12 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:26:47 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/22 11:11:07 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:37:57 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRING_H
-# define STRING_H
+#ifndef LM_STR_H
+# define LM_STR_H
 # include <stdlib.h>	// needed for size_t
 
 /// @brief 		Compares char for char of two strings and checks for a
@@ -104,4 +104,4 @@ char	*lm_str_join_delimiter(char *str_first, const char *str_delimiter,
 /// @param str_to_reverse
 void	lm_str_reverse(char *str_to_reverse);
 
-#endif	// STRING_H
+#endif	// LM_STR_H

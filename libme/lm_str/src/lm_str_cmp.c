@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:07:26 by pnolte            #+#    #+#             */
-/*   Updated: 2023/05/22 11:10:34 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:33:13 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	lm_str_cmp(const char *string_first, const char *string_second)
 	{
 		if (string_first[index] != string_second[index])
 			return ((unsigned char)string_first[index]
-				 - (unsigned char)string_second[index]);
+				(unsigned char)string_second[index]);
 		index++;
 	}
 	return (0);

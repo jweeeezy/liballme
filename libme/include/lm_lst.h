@@ -6,12 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 19:11:57 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/22 10:01:58 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:39:07 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LST_H
-# define LST_H
+#ifndef LM_LST_H
+# define LM_LST_H
 # include <stdlib.h>	// needed for size_t
 
 /* *****************************  t_lst  *********************************** */
@@ -97,7 +97,7 @@ int				lm_lst_find_int_smallest(t_lst *lst_to_search);
 /// @param lst_index
 /// @param lst_dest_up
 /// @param lst_dest_down
-/// @return	Shortest amount of iterations either negative (up) or positive (down)
+/// @return	Shortest no. of iterations either negative (up) or positive (down)
 int				lm_lst_find_shortest_path(t_lst *lst_index, t_lst *lst_dest_up,
 					t_lst *lst_dest_down);
 
@@ -132,12 +132,10 @@ t_lst			*lm_lst_get_last(t_lst *lst_to_iterate);
 /// @return Ptr to the node
 t_lst			*lm_lst_get_new(int value);
 
-
 /// @brief 	Prints the content of a node to a target fd
 /// @param node_to_print
 /// @param fd_target
 void			lm_lst_print_node_fd(t_lst *node_to_print, int fd_target);
-
 
 /// @brief	Prints all contents of all nodes to a target fd
 /// @param lst_to_print
@@ -173,4 +171,4 @@ t_lst_header	*lm_lst_header_get_new(char *str_title);
 void			lm_lst_header_print_fd(t_lst_header *lst_to_print,
 					int fd_target);
 
-#endif	// LST_H
+#endif	// LM_LST_H

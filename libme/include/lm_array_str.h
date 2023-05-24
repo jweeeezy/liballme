@@ -6,12 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:46:02 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/21 21:58:07 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:35:54 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_STR_H
-# define ARRAY_STR_H
+#ifndef LM_ARRAY_STR_H
+# define LM_ARRAY_STR_H
 # include <stdlib.h>	// needed for size_t
 
 /// @brief	Counts all characters of all strings in an char **array
@@ -33,4 +33,4 @@ void	lm_array_print_fd(char **array_to_print, int fd_target);
 /// @param array_to_free
 void	lm_array_str_free(char **array_to_free);
 
-#endif	// ARRAY_STR_H
+#endif	// LM_ARRAY_STR_H

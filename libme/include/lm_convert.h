@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.h                                          :+:      :+:    :+:   */
+/*   lm_convert.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:24:26 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/03 18:33:19 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:36:52 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_H
-# define CONVERT_H
+#ifndef LM_CONVERT_H
+# define LM_CONVERT_H
 
 /// @brief 		Converts an array of strings into one string (with malloc)
 /// @param array_to_convert
@@ -70,4 +70,4 @@ char		*lm_convert_uli_to_a_hex(unsigned long int int_to_convert,
 /// @return		Newly allocated string or NULL
 char		*lm_convert_uli_to_a(unsigned long int int_to_convert);
 
-#endif	// CONVERT_H
+#endif	// LM_CONVERT_H

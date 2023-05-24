@@ -6,12 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 20:54:44 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/21 22:06:07 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:34:55 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VEC_STR_H
-# define VEC_STR_H
+#ifndef LM_VEC_STR_H
+# define LM_VEC_STR_H
 # include <stdlib.h>	// needed for size_t
 
 //	char 	*str;
