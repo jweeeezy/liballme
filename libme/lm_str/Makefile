@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jwillert <jwillert@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 16:35:07 by jwillert          #+#    #+#              #
-#    Updated: 2023/05/24 00:15:07 by jwillert         ###   ########.fr        #
+#    Updated: 2023/05/24 13:34:02 by jwillert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC_FILES		=	lm_str_check_char_duplicate.c\
 					lm_str_check_set_duplicate.c\
 					lm_str_check_set.c\
 					lm_str_check_viable_algebraic_signs.c\
+					lm_str_check_viable_end.c\
 					lm_str_check_viable_set.c\
 					lm_str_cmp.c\
 					lm_str_count_needle_appended.c\

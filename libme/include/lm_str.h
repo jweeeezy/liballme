@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:26:47 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/24 10:37:57 by jwillert         ###   ########          */
+/*   Updated: 2023/05/24 13:34:33 by jwillert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	lm_str_check_set(const char *str_to_check, const char *str_set);
 /// @param str_to_check
 /// @return		0 (False) or 1 (True)
 char	lm_str_check_viable_algebraic_signs(const char *str_to_check);
+
+char	lm_str_check_viable_end(const char *str_to_check, const char *end);
 
 /// @brief		Checks if the str_to_check contains a char that is not present
 ///				in the set (not viable)
