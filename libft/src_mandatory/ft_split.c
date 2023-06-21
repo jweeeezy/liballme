@@ -6,12 +6,11 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:11 by jwillert          #+#    #+#             */
-/*   Updated: 2023/06/21 13:40:51 by jwillert         ###   ########          */
+/*   Updated: 2023/06/21 13:45:27 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>	// needed for NULL, size_t, ft_substr(), free()
-#include <stdio.h>
 
 static size_t	count_words(char const *str_to_count, char c_delimiter)
 {
@@ -20,8 +19,6 @@ static size_t	count_words(char const *str_to_count, char c_delimiter)
 
 	index = 0;
 	counter_words = 0;
-	if (str_to_count == NULL)
-		printf("Hello\n");
 	while (str_to_count[index] != '\0')
 	{
 		if (str_to_count[index] != c_delimiter
