@@ -6,11 +6,12 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:11 by jwillert          #+#    #+#             */
-/*   Updated: 2023/06/21 13:39:00 by jwillert         ###   ########          */
+/*   Updated: 2023/06/21 13:40:51 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>	// needed for NULL, size_t, ft_substr(), free()
+#include <stdio.h>
 
 static size_t	count_words(char const *str_to_count, char c_delimiter)
 {
