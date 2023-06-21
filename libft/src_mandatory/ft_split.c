@@ -6,7 +6,7 @@
 /*   By: jwillert <jwillert@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 18:03:11 by jwillert          #+#    #+#             */
-/*   Updated: 2023/05/03 21:11:47 by jwillert         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:39:00 by jwillert         ###   ########          */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static size_t	count_words(char const *str_to_count, char c_delimiter)
 
 	index = 0;
 	counter_words = 0;
+	if (str_to_count == NULL)
+		printf("Hello\n");
 	while (str_to_count[index] != '\0')
 	{
 		if (str_to_count[index] != c_delimiter
